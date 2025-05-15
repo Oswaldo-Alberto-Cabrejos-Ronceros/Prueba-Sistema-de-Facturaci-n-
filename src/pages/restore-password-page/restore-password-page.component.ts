@@ -8,5 +8,5 @@ import { RestorePasswordCardComponent } from '../../components/restore-password-
   styleUrl: './restore-password-page.component.css'
 })
 export class RestorePasswordPageComponent {
-@HostBinding('class') class = 'flex flex-col flex-1 items-center justify-center';
+@HostBinding('class') class = 'flex flex-col flex-1 items-center';
 }

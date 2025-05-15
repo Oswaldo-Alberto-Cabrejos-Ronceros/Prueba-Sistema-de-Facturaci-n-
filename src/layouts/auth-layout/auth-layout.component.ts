@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderAuthLayoutComponent } from './components/header-auth-layout/header-auth-layout.component';
 @Component({
@@ -8,5 +8,6 @@ import { HeaderAuthLayoutComponent } from './components/header-auth-layout/heade
   styleUrl: './auth-layout.component.css'
 })
 export class AuthLayoutComponent {
-
+  @HostBinding('class') class =
+    'min-h-screen w-full flex flex-col bg-neutral-100 ';
 }

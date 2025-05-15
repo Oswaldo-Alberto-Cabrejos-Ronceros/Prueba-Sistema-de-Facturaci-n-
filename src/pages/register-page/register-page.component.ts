@@ -10,7 +10,7 @@ import { RegistrationCompanyDataCardComponent } from '../../components/registrat
 })
 export class RegisterPageComponent {
   @HostBinding('class') class =
-    'flex flex-col flex-1 min-h-screen items-center ';
+    'flex flex-col flex-1 items-center ';
   //variable reactiva para definir el numero de paso
   stepNumber = signal<number>(1);
   nextStep = () => {

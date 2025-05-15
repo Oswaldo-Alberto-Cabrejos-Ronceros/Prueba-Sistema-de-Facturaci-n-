@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { CardLoginComponent } from '../../components/card-login/card-login.component';
 @Component({
   selector: 'app-login-page',
@@ -7,5 +7,6 @@ import { CardLoginComponent } from '../../components/card-login/card-login.compo
   styleUrl: './login-page.component.css'
 })
 export class LoginPageComponent {
-
+  @HostBinding('class') class =
+    'flex flex-col flex-1 items-center ';
 }
