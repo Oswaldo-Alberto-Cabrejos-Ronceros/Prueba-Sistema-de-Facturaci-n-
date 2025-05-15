@@ -9,5 +9,5 @@ import { ButtonPrimaryComponent } from "../button-primary/button-primary.compone
   styleUrl: './registration-company-data-card.component.css'
 })
 export class RegistrationCompanyDataCardComponent {
-@HostBinding('class') class = 'w-full max-w-lg px-2 py-4 gap-4 flex flex-col items-center justify-center';
+@HostBinding('class') class = 'w-full max-w-lg px-2 pb-4 gap-4 flex flex-col items-center justify-center';
 }

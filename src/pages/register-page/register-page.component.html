@@ -1,1 +1,5 @@
-<app-registration-card></app-registration-card>
+<div class="w-ful min-w-lg px-2">
+<p class=" font-semibold text-lg pb-6 pt-8">PASO {{stepNumber()}} DE 3</p>
+</div>
+<app-registration-card *ngIf="stepNumber()===1" (eventNextStep)="nextStep()"></app-registration-card>
+<app-registration-company-data-card *ngIf="stepNumber()===2"></app-registration-company-data-card>
