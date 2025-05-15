@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { Input } from '@angular/core';
 @Component({
   selector: 'app-input-primary',
@@ -10,4 +10,6 @@ export class InputPrimaryComponent {
 @Input() type:string="";
 @Input() name:string="";
 @Input() placeholder:string="";
+@HostBinding('class') class='relative w-full max-w-lg min-w-min'
+
 }
