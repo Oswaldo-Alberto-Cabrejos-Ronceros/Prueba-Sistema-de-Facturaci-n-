@@ -9,5 +9,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './card-login.component.css'
 })
 export class CardLoginComponent {
- @HostBinding('class') class = 'w-full max-w-5xl px-2 py-4 gap-2 flex flex-col items-center justify-center';
+ @HostBinding('class') class = 'w-full max-w-5xl px-2 py-4 gap-4 flex flex-col items-center justify-center';
 }
