@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-button-primary',
   imports: [],
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './button-primary.component.css'
 })
 export class ButtonPrimaryComponent {
+@Input() nombre:string=''
 
 }
