@@ -8,5 +8,5 @@ import { Input } from '@angular/core';
 })
 export class ButtonPrimaryComponent {
 @Input() nombre:string=''
-@HostBinding('class') class='h-16 w-full flex items-center justify-center'
+@HostBinding('class') class='h-16 w-full max-w-lg flex items-center justify-center'
 }
