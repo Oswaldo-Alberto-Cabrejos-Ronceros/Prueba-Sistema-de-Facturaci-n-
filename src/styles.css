@@ -3,3 +3,5 @@
 @theme {
   --color-red-450: oklch(0.64 0.2355 25.331 / 96.31%);
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

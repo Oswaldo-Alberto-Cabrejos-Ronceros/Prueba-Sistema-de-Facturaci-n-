@@ -9,5 +9,5 @@ import { HeaderAuthLayoutComponent } from './components/header-auth-layout/heade
 })
 export class AuthLayoutComponent {
   @HostBinding('class') class =
-    'min-h-screen w-full flex flex-col bg-neutral-100 ';
+    'min-h-screen w-full flex flex-col bg-neutral-100 dark:bg-slate-800';
 }
