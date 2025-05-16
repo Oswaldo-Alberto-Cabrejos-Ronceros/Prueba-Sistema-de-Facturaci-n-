@@ -2,6 +2,7 @@ import { Component, HostBinding, signal } from '@angular/core';
 import { RegistrationCardComponent } from '../../components/registration-card/registration-card.component';
 import { CommonModule } from '@angular/common';
 import { RegistrationCompanyDataCardComponent } from '../../components/registration-company-data-card/registration-company-data-card.component';
+import { RegistrationChooseSectorCompanyCardComponent } from '../../components/registration-choose-sector-company-card/registration-choose-sector-company-card.component';
 import { ButtonIconComponent } from '../../components/button-icon/button-icon.component';
 @Component({
   selector: 'app-register-page',
@@ -10,6 +11,7 @@ import { ButtonIconComponent } from '../../components/button-icon/button-icon.co
     CommonModule,
     RegistrationCompanyDataCardComponent,
     ButtonIconComponent,
+    RegistrationChooseSectorCompanyCardComponent
   ],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.css',

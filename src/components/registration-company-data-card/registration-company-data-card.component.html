@@ -1,7 +1,7 @@
 <div class="w-full flex justify-start">
   <h2 class="text-4xl font-bold pb-6">Datos de la empresa</h2>
 </div>
-<form class="w-full flex flex-col gap-4">
+<form (ngSubmit)="goToNextStep()" class="w-full flex flex-col gap-4">
       <app-input-primary
     type="text"
     name="ruc"
