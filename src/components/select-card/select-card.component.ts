@@ -11,5 +11,5 @@ export class SelectCardComponent {
   @Input() label = ''
   @Input() name=''
     @HostBinding('class') class =
-    'min-h-62 max-h-96 min-w-36 max-w-64 w-full h-full flex flex-col bg-neutral-100';
+    'min-h-62 max-h-96 min-w-36 max-w-64 w-full h-full flex flex-col bg-transparent';
 }

@@ -15,7 +15,7 @@ import { ButtonPrimaryComponent } from '../button-primary/button-primary.compone
 })
 export class InfoCardComponent {
   @HostBinding('class') class =
-    'w-full max-w-3xl h-[90%] p-8 rounded-3xl gap-4 flex flex-col bg-neutral-100';
+    'w-full max-w-3xl h-[90%] p-8 rounded-3xl gap-4 flex flex-col bg-neutral-100 dark:bg-neutral-800';
   @Input() title: string = '';
   @Output() close = new EventEmitter<void>();
   onClose = () => {
