@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @theme {
   --color-red-450: oklch(0.64 0.2355 25.331 / 96.31%);
+  --shadow-uniform: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

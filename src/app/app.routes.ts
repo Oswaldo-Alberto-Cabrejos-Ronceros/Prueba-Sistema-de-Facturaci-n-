@@ -3,6 +3,7 @@ import { AuthLayoutComponent } from '../layouts/auth-layout/auth-layout.componen
 import { LoginPageComponent } from '../pages/login-page/login-page.component';
 import { RegisterPageComponent } from '../pages/register-page/register-page.component';
 import { RestorePasswordPageComponent } from '../pages/restore-password-page/restore-password-page.component';
+import { PrincipalLayoutComponent } from '../layouts/principal-layout/principal-layout.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/auth/login',pathMatch:'full'},
@@ -24,4 +25,11 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path:'app',
+    component:PrincipalLayoutComponent,
+    children:[
+      
+    ]
+  }
 ];
