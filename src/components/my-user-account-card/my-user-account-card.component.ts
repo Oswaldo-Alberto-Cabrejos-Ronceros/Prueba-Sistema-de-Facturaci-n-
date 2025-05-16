@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LogoutCardComponent } from '../logout-card/logout-card.component';
+import { ButtonIconLabelUnderlineComponent } from '../button-icon-label-underline/button-icon-label-underline.component';
+
 @Component({
   selector: 'app-my-user-account-card',
-  imports: [LogoutCardComponent,RouterLink,CommonModule],
+  imports: [ButtonIconLabelUnderlineComponent,RouterLink,CommonModule],
   templateUrl: './my-user-account-card.component.html',
   styleUrl: './my-user-account-card.component.css'
 })
