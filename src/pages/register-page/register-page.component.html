@@ -1,0 +1,9 @@
+<div class="min-w-lg flex gap-2 px-2 items-center pb-2 pt-8">
+  <app-button-icon (click)="previousStep()" ariaLabel="Retroceder" iconName="arrow_back"
+    *ngIf="stepNumber()!=1"></app-button-icon>
+  <p class=" font-semibold text-lg">PASO {{stepNumber()}} DE 3</p>
+</div>
+<app-registration-card *ngIf="stepNumber()===1" (eventNextStep)="nextStep()"></app-registration-card>
+<app-registration-company-data-card *ngIf="stepNumber()===2"
+  (eventNextStep)="nextStep()"></app-registration-company-data-card>
+<app-registration-choose-sector-company-card *ngIf="stepNumber()===3"></app-registration-choose-sector-company-card>

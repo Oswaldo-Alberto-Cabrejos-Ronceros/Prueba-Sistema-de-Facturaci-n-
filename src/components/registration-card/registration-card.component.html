@@ -1,0 +1,58 @@
+<app-shared-modal [show]="showModal" (close)="closeModal()">
+  <app-info-card (close)="closeModal()" title="Términos y condiciones">
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+    <h3 class="text-xl font-bold py-4">Prueba</h3>
+    <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis porro voluptatum quaerat ipsa,
+      praesentium optio nesciunt est pariatur fugit rem animi repudiandae asperiores quasi perspiciatis molestiae,
+      corporis id quibusdam.</p>
+
+  </app-info-card>
+</app-shared-modal>
+<div class="w-full max-w-lg flex justify-start">
+  <h2 class="text-4xl font-bold pb-6">Crea tu cuenta</h2>
+</div>
+<form (ngSubmit)="goToNextStep()" class="w-full grid grid-cols-2 gap-4">
+  <app-input-primary class="col-span-2" type="text" name="correo" placeholder="Correo"></app-input-primary>
+  <app-input-primary class="col-span-2" type="password" name="password" placeholder="Contraseña"></app-input-primary>
+  <app-input-primary class="col-span-2" type="tel" name="telefono" placeholder="Télefono"></app-input-primary>
+  <app-input-primary type="text" name="name" placeholder="Nombre"></app-input-primary>
+  <app-input-primary type="text" name="lastname" placeholder="Apellidos"></app-input-primary>
+  <app-button-primary class="col-span-2" nombre="Siguiente"></app-button-primary>
+</form>
+<div class="flex items-center justify-center gap-2 py-4 text-sm">
+  <p>Al continuar indicas que has leído y aceptas los</p>
+  <p (click)="openModal()"
+    class="text-red-500 transition-all duration-150 hover:underline hover: underline-offset-4 py-2 cursor-pointer">Terminos y
+    condiciones</p>
+</div>

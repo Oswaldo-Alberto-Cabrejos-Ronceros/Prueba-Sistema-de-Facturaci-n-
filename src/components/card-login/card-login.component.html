@@ -1,0 +1,21 @@
+
+  <div class="w-full max-w-lg flex justify-start">
+    <h2 class="text-4xl font-bold py-6">
+      Iniciar sesión
+    </h2>
+  </div>
+
+  <app-input-primary type="text" name="correo" placeholder="Correo"></app-input-primary>
+  <app-input-primary type="password" name="password" placeholder="Contraseña"></app-input-primary>
+  <div class="w-full max-w-lg flex justify-start pb-2 pt-1 px-3">
+  <a routerLink="/auth/restore-password"
+    class="block text-sm text-gray-600 transition-all duration-150 hover:text-neutral-900 hover:underline underline-offset-4 ">Olvidate
+    tu contraseña</a>
+  </div>
+
+  <app-button-primary nombre="Ingresar"></app-button-primary>
+  <div class="flex items-center justify-center gap-2 py-4 text-sm">
+    <p>¿No tienes una cuenta?</p> <a routerLink="/auth/registro"
+      class="text-red-500 transition-all duration-150 hover:underline hover: underline-offset-4 py-2">Registrate</a>
+  </div>
+

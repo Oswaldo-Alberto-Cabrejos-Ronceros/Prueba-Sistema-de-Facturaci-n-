@@ -1,0 +1,28 @@
+<div class="w-full flex justify-start">
+  <h2 class="text-4xl font-bold pb-6">Datos de la empresa</h2>
+</div>
+<form (ngSubmit)="goToNextStep()" class="w-full flex flex-col gap-4">
+      <app-input-primary
+    type="text"
+    name="ruc"
+    placeholder="RUC"
+  ></app-input-primary>
+      <app-input-primary
+    type="text"
+    name="razon_social"
+    placeholder="Razón Social"
+  ></app-input-primary>
+      <app-input-primary
+    type="text"
+    name="nombre_Comercial"
+    placeholder="Nombre Comercial (Opcional)"
+  ></app-input-primary>
+    <app-input-primary
+    type="text"
+    name="domicilio_fiscal"
+    placeholder="Domicilio Fiscal"
+  ></app-input-primary>
+    <app-button-primary
+    nombre="Siguiente"
+  ></app-button-primary>
+</form>
