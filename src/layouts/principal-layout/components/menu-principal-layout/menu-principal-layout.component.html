@@ -3,9 +3,11 @@
   class="py-4 px-2 flex flex-col h-screen border-r-1 border-neutral-300 dark:border-neutral-50 transition-all duration-300"
   [ngClass]="isDisplayedMenu() ? 'w-64' : 'w-20 justify-center'">
 
-  <!-- contiene button y select empresas -->
+  <!-- contiene button lo principal -->
   <div class="w-full flex flex-col" [ngClass]="isDisplayedMenu()?'items-start':'items-center'"><app-button-icon ariaLabel="Logo" iconName="public"></app-button-icon></div>
-  <!-- contiene el menu de opciones -->
+    <app-button-icon-label-secondary name="EXPORTACIONES EL CHINO" iconName="expand_all" ></app-button-icon-label-secondary>
+    <app-my-companies-card></app-my-companies-card>
+    <!-- contiene el menu de opciones -->
   <nav class="flex-1 flex flex-col">
 
   </nav>

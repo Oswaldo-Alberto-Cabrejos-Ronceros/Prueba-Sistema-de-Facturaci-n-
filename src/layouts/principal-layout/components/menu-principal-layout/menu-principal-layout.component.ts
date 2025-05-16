@@ -9,6 +9,8 @@ import { ButtonIconComponent } from '../../../../components/button-icon/button-i
 import { ButtonIconLabelComponent } from '../../../../components/button-icon-label/button-icon-label.component';
 import { CommonModule } from '@angular/common';
 import { MyUserAccountCardComponent } from '../../../../components/my-user-account-card/my-user-account-card.component';
+import { ButtonIconLabelSecondaryComponent } from '../../../../components/button-icon-label-secondary/button-icon-label-secondary.component';
+import { MyCompaniesCardComponent } from '../../../../components/my-companies-card/my-companies-card.component';
 
 @Component({
   selector: 'app-menu-principal-layout',
@@ -17,6 +19,8 @@ import { MyUserAccountCardComponent } from '../../../../components/my-user-accou
     ButtonIconLabelComponent,
     CommonModule,
     MyUserAccountCardComponent,
+    ButtonIconLabelSecondaryComponent,
+    MyCompaniesCardComponent
   ],
   templateUrl: './menu-principal-layout.component.html',
   styleUrl: './menu-principal-layout.component.css',
