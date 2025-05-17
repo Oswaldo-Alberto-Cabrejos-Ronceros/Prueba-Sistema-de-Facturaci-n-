@@ -20,7 +20,7 @@ import { MyCompaniesCardComponent } from '../../../../components/my-companies-ca
     CommonModule,
     MyUserAccountCardComponent,
     ButtonIconLabelSecondaryComponent,
-    MyCompaniesCardComponent
+    MyCompaniesCardComponent,
   ],
   templateUrl: './menu-principal-layout.component.html',
   styleUrl: './menu-principal-layout.component.css',
@@ -32,6 +32,10 @@ export class MenuPrincipalLayoutComponent {
   //para mostrar carta de usuario
   showCardUser = signal<boolean>(false);
 
+  //para mostrar carta de mi empresas
+
+  showMyCompaniesCard = signal<boolean>(false);
+
   //para cambiar el depliegue del menu
   changeDisplayedMenu = () => {
     this.isDisplayedMenu.update((value) => (value = !value));
@@ -42,25 +46,46 @@ export class MenuPrincipalLayoutComponent {
     this.showCardUser.update((value) => (value = !value));
   };
 
+  //para manejar mostrar carta de mis empresas
+
+  handleShowMyCampaniesCard = ()=>{
+    this.showMyCompaniesCard.update((value)=>!value)
+  }
+
   //referencia para carduser
   @ViewChild('cardRef', { read: ElementRef }) cardRef!: ElementRef;
+  //referencia para boton que abre cardUser
   @ViewChild('buttonCardUserRef', { read: ElementRef })
   buttonCardUserRef!: ElementRef;
+  //referencia para myCompaniesCard
+  @ViewChild('myCompaniesCardRef',{read:ElementRef}) myCompaniesCardRef!:ElementRef
+  //referencia para el boton que abre myCompaniesCard
+  @ViewChild('buttonCompaniesCardRef',{read:ElementRef}) buttonCompaniesCardRef!:ElementRef
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
+    //elemento clickeado
     const clickedElement = event.target as HTMLElement;
 
+    //todo referente a carduser
     const clickedInsideCard =
       this.cardRef?.nativeElement?.contains(clickedElement);
     const clickedInsideButton =
       this.buttonCardUserRef?.nativeElement?.contains(clickedElement);
-    console.log(clickedInsideCard, clickedInsideButton);
 
     // Si se hace clic fuera del card Y del botón, ocultar
     if (!clickedInsideCard && !clickedInsideButton && this.showCardUser()) {
       this.showCardUser.set(false);
-      console.log('ocultar');
     }
+
+    //todo referente a myCompaniesCard
+    //click dentro de myCompaniesCard
+    const clickedInsideMyCompaniesCard = this.myCompaniesCardRef?.nativeElement?.contains(clickedElement)
+    //click dentro del botonMyCompanies
+    const clickedInsideButtonMyCompniesCard= this.buttonCompaniesCardRef?.nativeElement?.contains(clickedElement)
+    if(!clickedInsideMyCompaniesCard && !clickedInsideButtonMyCompniesCard && this.showMyCompaniesCard()){
+      this.showMyCompaniesCard.set(false)
+    }
+
   }
 }
