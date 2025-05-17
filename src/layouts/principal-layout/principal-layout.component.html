@@ -9,15 +9,10 @@
   <app-menu-header (open)="handleSmallMenu()" class="block lg:hidden"></app-menu-header>
   <!-- carta de mes de prueba -->
   <app-trial-month-card></app-trial-month-card>
-  <!-- barra de navegacion de usuario dentro de una vista -->
-  <app-nav-bar-user>
-    <ng-template #leftTemplate>
-      <app-tab-bar [options]="menuItems"></app-tab-bar>
-    </ng-template>
-  </app-nav-bar-user>
 
+  <!-- router-oulet -->
 
-
+  <router-outlet></router-outlet>
 
   <div class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden" [hidden]="!isSmallMenuOpen()"
     (click)="handleSmallMenu()">

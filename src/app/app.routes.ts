@@ -4,6 +4,8 @@ import { LoginPageComponent } from '../pages/login-page/login-page.component';
 import { RegisterPageComponent } from '../pages/register-page/register-page.component';
 import { RestorePasswordPageComponent } from '../pages/restore-password-page/restore-password-page.component';
 import { PrincipalLayoutComponent } from '../layouts/principal-layout/principal-layout.component';
+import { SalesLayoutComponent } from '../layouts/sales-layout/sales-layout.component';
+import { SalesPageComponent } from '../pages/sales-page/sales-page.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/auth/login',pathMatch:'full'},
@@ -29,8 +31,14 @@ export const routes: Routes = [
     path:'app',
     component:PrincipalLayoutComponent,
     children:[      {
-        path: 'login',
-        component: LoginPageComponent,
+        path: 'sales',
+        component: SalesLayoutComponent,
+        children:[
+          {
+            path:'',
+            component:SalesPageComponent
+          }
+        ]
       },
                   {
         path: 'registro',

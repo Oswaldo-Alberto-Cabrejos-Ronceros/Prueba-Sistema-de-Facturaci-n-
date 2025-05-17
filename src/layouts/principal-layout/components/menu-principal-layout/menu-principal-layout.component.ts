@@ -104,7 +104,7 @@ export class MenuPrincipalLayoutComponent {
 
   menuItems: { to: string; title: string; iconName: string }[] = [
     {
-      to: '/app/registro',
+      to: '/app/sales',
       title: 'Ventas',
       iconName: 'credit_card',
     },
