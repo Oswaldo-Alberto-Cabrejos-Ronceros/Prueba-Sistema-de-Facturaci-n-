@@ -1,9 +1,11 @@
 import { AfterViewInit, Component, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
+import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
+import { ButtonSecondaryComponent } from "../../components/button-secondary/button-secondary.component";
 
 @Component({
   selector: 'app-sales-page',
-  imports: [],
+  imports: [ButtonIconLabelTerciaryComponent, ButtonSecondaryComponent],
   templateUrl: './sales-page.component.html',
   styleUrl: './sales-page.component.css'
 })
