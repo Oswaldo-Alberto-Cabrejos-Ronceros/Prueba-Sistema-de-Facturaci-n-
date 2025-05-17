@@ -5,6 +5,7 @@
     <a
       [routerLink]="option.to"
       routerLinkActive="text-neutral-900 dark:text-neutral-100 active"
+      [routerLinkActiveOptions]="{ exact: true }"
       #tab>
       <span class="px-8 py-3 h-full flex items-center justify-center">
         {{ option.title }}

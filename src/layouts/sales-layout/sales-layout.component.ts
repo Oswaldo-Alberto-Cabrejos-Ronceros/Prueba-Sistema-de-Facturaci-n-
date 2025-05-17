@@ -22,7 +22,7 @@ export class SalesLayoutComponent {
       title: 'Facturación',
     },
     {
-      to: '/app/quotions',
+      to: '/app/sales/quotations',
       title: 'Cotizaciones',
     },
   ];

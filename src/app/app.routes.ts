@@ -4,8 +4,11 @@ import { LoginPageComponent } from '../pages/login-page/login-page.component';
 import { RegisterPageComponent } from '../pages/register-page/register-page.component';
 import { RestorePasswordPageComponent } from '../pages/restore-password-page/restore-password-page.component';
 import { PrincipalLayoutComponent } from '../layouts/principal-layout/principal-layout.component';
+//ventas
 import { SalesLayoutComponent } from '../layouts/sales-layout/sales-layout.component';
 import { SalesPageComponent } from '../pages/sales-page/sales-page.component';
+import { BillingPageComponent } from '../pages/billing-page/billing-page.component';
+import { QuotationsPageComponent } from '../pages/quotations-page/quotations-page.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/auth/login',pathMatch:'full'},
@@ -37,6 +40,14 @@ export const routes: Routes = [
           {
             path:'',
             component:SalesPageComponent
+          },
+                    {
+            path:'billing',
+            component:BillingPageComponent
+          },
+                              {
+            path:'quotations',
+            component:QuotationsPageComponent
           }
         ]
       },

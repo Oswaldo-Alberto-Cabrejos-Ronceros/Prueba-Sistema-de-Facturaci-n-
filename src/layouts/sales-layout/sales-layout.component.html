@@ -1,8 +1,9 @@
-  <!-- barra de navegacion de usuario dentro de una vista -->
-  <app-nav-bar-user>
-    <ng-template #leftTemplate>
-      <app-tab-bar [options]="menuItems"></app-tab-bar>
-    </ng-template>
-  </app-nav-bar-user>
-
+<!-- barra de navegacion de usuario dentro de una vista -->
+<app-nav-bar-user>
+  <ng-template #leftTemplate>
+    <app-tab-bar [options]="menuItems"></app-tab-bar>
+  </ng-template>
+</app-nav-bar-user>
+<div class="flex-1 flex p-2">
   <router-outlet></router-outlet>
+</div>
