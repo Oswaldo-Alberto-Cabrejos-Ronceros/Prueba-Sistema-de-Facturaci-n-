@@ -5,6 +5,7 @@ import { MenuHeaderComponent } from '../../components/menu-header/menu-header.co
 import { CommonModule } from '@angular/common';
 import { TabBarComponent } from "../../components/tab-bar/tab-bar.component";
 import { ButtonSecondaryComponent } from "../../components/button-secondary/button-secondary.component";
+import { ButtonIconSecondaryComponent } from "../../components/button-icon-secondary/button-icon-secondary.component";
 @Component({
   selector: 'app-principal-layout',
   imports: [
@@ -13,7 +14,8 @@ import { ButtonSecondaryComponent } from "../../components/button-secondary/butt
     MenuHeaderComponent,
     CommonModule,
     TabBarComponent,
-    ButtonSecondaryComponent
+    ButtonSecondaryComponent,
+    ButtonIconSecondaryComponent
 ],
   templateUrl: './principal-layout.component.html',
   styleUrl: './principal-layout.component.css',
