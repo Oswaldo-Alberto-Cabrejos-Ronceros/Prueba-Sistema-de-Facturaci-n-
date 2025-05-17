@@ -3,6 +3,7 @@ import { MenuPrincipalLayoutComponent } from './components/menu-principal-layout
 import { TrialMonthCardComponent } from '../../components/trial-month-card/trial-month-card.component';
 import { MenuHeaderComponent } from '../../components/menu-header/menu-header.component';
 import { CommonModule } from '@angular/common';
+import { TabBarComponent } from "../../components/tab-bar/tab-bar.component";
 @Component({
   selector: 'app-principal-layout',
   imports: [
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
     TrialMonthCardComponent,
     MenuHeaderComponent,
     CommonModule,
-  ],
+    TabBarComponent
+],
   templateUrl: './principal-layout.component.html',
   styleUrl: './principal-layout.component.css',
 })
@@ -22,4 +24,21 @@ export class PrincipalLayoutComponent {
   handleSmallMenu() {
     this.isSmallMenuOpen.update((value) => (value = !value));
   }
+
+  //elementos para el menu
+
+  menuItems: { to: string; title: string }[] = [
+    {
+      to: '/app/registro',
+      title: 'Ventas',
+    },
+    {
+      to: '/app/restore-password',
+      title: 'Compras',
+    },
+    {
+      to: '/app/login',
+      title: 'Productos',
+    },
+  ];
 }

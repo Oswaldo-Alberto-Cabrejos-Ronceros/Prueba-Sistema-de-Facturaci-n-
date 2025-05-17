@@ -1,0 +1,21 @@
+<div class="relative flex font-bold h-16 text-lg text-neutral-500 dark:text-neutral-400" #tabContainer>
+  <div *ngFor="let option of options"
+       class="h-full hover:text-neutral-900 dark:hover:text-neutral-100 transition-all"
+       #tabWrapper>
+    <a
+      [routerLink]="option.to"
+      routerLinkActive="text-neutral-900 dark:text-neutral-100 active"
+      #tab>
+      <span class="px-8 py-3 h-full flex items-center justify-center">
+        {{ option.title }}
+      </span>
+    </a>
+  </div>
+
+  <!-- barra de seleccion -->
+  <div
+    class="absolute bottom-0 h-1 bg-red-600 transition-all duration-300"
+    [style.width.px]="indicatorWidth"
+    [style.left.px]="indicatorLeft"
+  ></div>
+</div>
