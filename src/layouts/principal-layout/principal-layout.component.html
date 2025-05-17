@@ -1,20 +1,14 @@
-<app-menu-principal-layout
-  [hidden]="!isSmallMenuOpen()"
-  class="fixed z-40 bg-white lg:hidden">
+<app-menu-principal-layout [hidden]="!isSmallMenuOpen()" class="fixed z-40 bg-white lg:hidden">
 </app-menu-principal-layout>
 
 <!-- menu principal permanente en pantallas grandes -->
-<app-menu-principal-layout
-  class="hidden lg:block z-50">
+<app-menu-principal-layout class="hidden lg:block z-50">
 </app-menu-principal-layout>
 <div class="flex-1 flex flex-col">
   <app-menu-header (open)="handleSmallMenu()" class="block lg:hidden"></app-menu-header>
   <app-trial-month-card></app-trial-month-card>
   <app-tab-bar [options]="menuItems"></app-tab-bar>
-  <app-button-icon-secondary ariaLabel="Usuario" iconName="person"></app-button-icon-secondary>
-  <div
-  class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden"
-  [hidden]="!isSmallMenuOpen()"
-  (click)="handleSmallMenu()">
-</div>
+  <div class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden" [hidden]="!isSmallMenuOpen()"
+    (click)="handleSmallMenu()">
+  </div>
 </div>
