@@ -1,8 +1,9 @@
 import { Component, HostBinding } from '@angular/core';
 import { MenuPrincipalLayoutComponent } from './components/menu-principal-layout/menu-principal-layout.component';
+import { TrialMonthCardComponent } from '../../components/trial-month-card/trial-month-card.component';
 @Component({
   selector: 'app-principal-layout',
-  imports: [MenuPrincipalLayoutComponent],
+  imports: [MenuPrincipalLayoutComponent,TrialMonthCardComponent],
   templateUrl: './principal-layout.component.html',
   styleUrl: './principal-layout.component.css'
 })
