@@ -10,7 +10,8 @@
     <div *ngIf="rightTemplate">
       <ng-container *ngTemplateOutlet="rightTemplate"></ng-container>
     </div>
-    <app-button-icon-label-terciary ariaLabel="usuario" iconName="person"></app-button-icon-label-terciary>
+    <app-button-icon-label-terciary (click)="handlePopup()"  #triggerMyUser ariaLabel="usuario" iconName="person"></app-button-icon-label-terciary>
+    <app-pop-up-my-user-acount [trigger]="triggerMyUserRef " [visible]="showPopup"></app-pop-up-my-user-acount>
   </div>
 
 </nav>

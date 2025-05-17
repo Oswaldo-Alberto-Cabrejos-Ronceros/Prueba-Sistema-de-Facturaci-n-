@@ -5,13 +5,19 @@
 <app-menu-principal-layout class="hidden lg:block z-50">
 </app-menu-principal-layout>
 <div class="flex-1 flex flex-col">
+  <!-- menu superios para pantallas pequeñas -->
   <app-menu-header (open)="handleSmallMenu()" class="block lg:hidden"></app-menu-header>
+  <!-- carta de mes de prueba -->
   <app-trial-month-card></app-trial-month-card>
+  <!-- barra de navegacion de usuario dentro de una vista -->
   <app-nav-bar-user>
     <ng-template #leftTemplate>
       <app-tab-bar [options]="menuItems"></app-tab-bar>
     </ng-template>
   </app-nav-bar-user>
+
+
+
 
   <div class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden" [hidden]="!isSmallMenuOpen()"
     (click)="handleSmallMenu()">

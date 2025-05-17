@@ -1,0 +1,23 @@
+  <app-pop-up-card [visible]="visible" [trigger]="trigger">
+     <!-- for menu -->
+  <nav class="w-full flex flex-col ">
+    <!-- items -->
+    <div *ngFor="let option of options" [routerLink]="option.to"
+      class="w-full flex items-center px-8 py-3 justify-start transition-colors duration-150 hover:bg-neutral-200 dark:hover:dark:bg-neutral-700 cursor-pointer">
+      <p class="text-base">
+        {{option.title}}
+      </p>
+    </div>
+  </nav>
+  <!-- for footer -->
+  <div class="flex flex-col mx-8 gap-1 border-t py-1 border-neutral-300 dark:border-neutral-50 text-sm">
+    <p>
+      Has iniciado sesión como
+    </p>
+    <!-- nombre de la empresa -->
+    <p class="font-bold">
+      {{nameCompany}}
+    </p>
+    <app-button-icon-label-underline label="Cerrar Sesión" iconName="logout"></app-button-icon-label-underline>
+  </div>
+  </app-pop-up-card>

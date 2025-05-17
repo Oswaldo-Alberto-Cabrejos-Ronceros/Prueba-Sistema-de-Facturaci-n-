@@ -15,7 +15,7 @@ import { NavBarUserComponent } from '../../components/nav-bar-user/nav-bar-user.
     CommonModule,
     TabBarComponent,
     NavBarUserComponent
-  ],
+],
   templateUrl: './principal-layout.component.html',
   styleUrl: './principal-layout.component.css',
 })
