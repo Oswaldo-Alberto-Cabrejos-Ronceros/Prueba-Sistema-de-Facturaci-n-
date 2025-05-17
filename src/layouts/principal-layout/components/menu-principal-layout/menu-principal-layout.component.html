@@ -6,12 +6,12 @@
   <!-- contenido principal -->
   <div class="w-full flex flex-col px-2" [ngClass]="isDisplayedMenu()?'items-start':'items-center'"><app-button-icon ariaLabel="Logo" iconName="public"></app-button-icon></div>
     <!-- buton de mis empresas -->
-     <app-button-icon-label-secondary class="px-2" #buttonCompaniesCardRef (click)="handleShowMyCampaniesCard()" name="EXPORTACIONES EL CHINO" iconName="expand_all" ></app-button-icon-label-secondary>
+     <app-button-icon-label-secondary class="px-2" #buttonCompaniesCardRef (click)="handleShowMyCampaniesCard()" name="EXPORTACIONES EL CHINO" iconName="expand_all" [isDisplayed]="isDisplayedMenu()"></app-button-icon-label-secondary>
   <!-- carta mis empresas -->
     <app-my-companies-card #myCompaniesCardRef (close)="handleShowMyCampaniesCard()" class="fixed top-0 left-0 ml-6 mt-16" [hidden]="!showMyCompaniesCard()" ></app-my-companies-card>
     <!-- contiene el menu de opciones -->
   <nav class="flex-1 flex flex-col gap-4 py-4">
-    <app-nav-item *ngFor="let item of menuItems" [to]="item.to" [title]="item.title" [iconName]="item.iconName"></app-nav-item>
+    <app-nav-item *ngFor="let item of menuItems" [to]="item.to" [title]="item.title" [iconName]="item.iconName" [isDisplayed]="isDisplayedMenu()"></app-nav-item>
   </nav>
   <!-- footer -->
   <div class="w-full flex flex-col px-2" >
