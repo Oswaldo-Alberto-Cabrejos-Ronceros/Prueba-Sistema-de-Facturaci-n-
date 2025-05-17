@@ -1,0 +1,35 @@
+<div class="w-80 bg-white dark:bg-neutral-800 flex flex-col rounded-xl shadow-uniform pb-4">
+
+  <!-- for title y buttonclose -->
+  <div class="pl-8 pr-5 py-4 flex items-center justify-between z-20">
+    <p class="text-lg font-extrabold">Mis Empresas</p>
+    <app-button-icon ariaLabel="Cerrar" (click)="onClose()" iconName="close"></app-button-icon>
+  </div>
+  <!-- for menu -->
+  <nav class="w-full flex flex-col ">
+    <div *ngFor="let company of companies"
+      class="w-full flex items-center justify-between px-8 py-3 transition-colors duration-150 hover:bg-neutral-200 dark:hover:bg-neutral-700 cursor-pointer"
+      [ngClass]="!company.selected?'bg-transparent':'bg-neutral-200 dark:bg-neutral-700'">
+
+      <p class="text-lg font-medium">
+        {{company.title}}
+      </p>
+      <div [hidden]="!company.selected" class="material-symbols-rounded text-green-800">
+        check
+      </div>
+    </div>
+  </nav>
+  <!-- for footer -->
+  <div class="flex flex-col mx-8 gap-1 border-t py-1 mt-4 border-neutral-300 dark:border-neutral-50 text-sm">
+
+    <p>
+      Has iniciado sesión como <!-- nombre de la empresa -->
+      <span class="font-bold">
+        exportaciones
+      </span>
+    </p>
+
+    <app-button-icon-label-underline label="Administrar Empresas"
+      iconName="business_center"></app-button-icon-label-underline>
+  </div>
+</div>

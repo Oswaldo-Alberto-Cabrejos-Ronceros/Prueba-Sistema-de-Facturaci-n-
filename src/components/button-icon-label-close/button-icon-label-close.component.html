@@ -1,0 +1,11 @@
+<button class="h-full w-full flex gap-2 items-center justify-center rounded-xl p-4 max-w-lg min-w-min transition-colors duration-150 bg-red-500 hover:bg-red-450 cursor-pointer text-neutral-50 relative">
+  <span (click)="onClose()" class="material-symbols-rounded absolute top-0 right-0 mt-2 mr-2 " >
+close
+  </span>
+<span class="material-symbols-rounded p-0 size-min text-4xl!" [ariaLabel]="name" >
+{{iconName}}
+</span>
+  <span class=" text-base text-left font-bold mt-1 pr-8">
+    {{name}}
+  </span>
+</button>

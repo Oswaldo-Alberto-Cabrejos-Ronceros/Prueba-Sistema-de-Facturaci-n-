@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 
 @Component({
@@ -10,4 +10,5 @@ import { IconComponent } from '../icon/icon.component';
 export class ButtonIconComponent {
 @Input() ariaLabel:string=''
 @Input() iconName:string=''
+@HostBinding('class') class='size-12'
 }
