@@ -1,0 +1,16 @@
+<nav class="w-full flex justify-between border-b border-neutral-300 dark:border-neutral-50">
+  <!-- para contenido de izquierda -->
+  <div *ngIf="leftTemplate">
+    <ng-container *ngTemplateOutlet="leftTemplate"></ng-container>
+  </div>
+  <!-- contiene el boton de usuario y contenido de izquierda -->
+  <div class="py-2 pr-8 flex gap-1">
+    <!--  -->
+    <!-- contenido de derecha -->
+    <div *ngIf="rightTemplate">
+      <ng-container *ngTemplateOutlet="rightTemplate"></ng-container>
+    </div>
+    <app-button-icon-label-terciary ariaLabel="usuario" iconName="person"></app-button-icon-label-terciary>
+  </div>
+
+</nav>
