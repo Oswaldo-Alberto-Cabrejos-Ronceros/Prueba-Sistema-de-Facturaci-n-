@@ -8,7 +8,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 })
 export class DatePickerComponent {
 
-  @HostBinding('class') class="w-full max-w-64"
+  @HostBinding('class') class="w-full max-w-lg"
 @Input() name:string=''
 @Input() placeholder:string=''
 }

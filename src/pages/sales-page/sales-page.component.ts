@@ -2,10 +2,11 @@ import { AfterViewInit, Component, HostBinding, TemplateRef, ViewChild } from '@
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
 import { ButtonSecondaryComponent } from "../../components/button-secondary/button-secondary.component";
-import { DatePickerComponent } from '../../components/date-picker/date-picker.component';
+import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
+import { DatePickerComponent } from "../../components/date-picker/date-picker.component";
 @Component({
   selector: 'app-sales-page',
-  imports: [ButtonIconLabelTerciaryComponent, ButtonSecondaryComponent,DatePickerComponent],
+  imports: [ButtonIconLabelTerciaryComponent, ButtonSecondaryComponent, DatePickerSetComponent, DatePickerComponent],
   templateUrl: './sales-page.component.html',
   styleUrl: './sales-page.component.css'
 })
