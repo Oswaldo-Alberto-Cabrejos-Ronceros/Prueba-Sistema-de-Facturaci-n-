@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { MyUserAccountCardComponent } from '../../../../components/my-user-account-card/my-user-account-card.component';
 import { ButtonIconLabelSecondaryComponent } from '../../../../components/button-icon-label-secondary/button-icon-label-secondary.component';
 import { MyCompaniesCardComponent } from '../../../../components/my-companies-card/my-companies-card.component';
+import { NavItemComponent } from '../../../../components/nav-item/nav-item.component';
 
 @Component({
   selector: 'app-menu-principal-layout',
@@ -21,6 +22,7 @@ import { MyCompaniesCardComponent } from '../../../../components/my-companies-ca
     MyUserAccountCardComponent,
     ButtonIconLabelSecondaryComponent,
     MyCompaniesCardComponent,
+    NavItemComponent
   ],
   templateUrl: './menu-principal-layout.component.html',
   styleUrl: './menu-principal-layout.component.css',
@@ -48,9 +50,9 @@ export class MenuPrincipalLayoutComponent {
 
   //para manejar mostrar carta de mis empresas
 
-  handleShowMyCampaniesCard = ()=>{
-    this.showMyCompaniesCard.update((value)=>!value)
-  }
+  handleShowMyCampaniesCard = () => {
+    this.showMyCompaniesCard.update((value) => !value);
+  };
 
   //referencia para carduser
   @ViewChild('cardRef', { read: ElementRef }) cardRef!: ElementRef;
@@ -58,9 +60,11 @@ export class MenuPrincipalLayoutComponent {
   @ViewChild('buttonCardUserRef', { read: ElementRef })
   buttonCardUserRef!: ElementRef;
   //referencia para myCompaniesCard
-  @ViewChild('myCompaniesCardRef',{read:ElementRef}) myCompaniesCardRef!:ElementRef
+  @ViewChild('myCompaniesCardRef', { read: ElementRef })
+  myCompaniesCardRef!: ElementRef;
   //referencia para el boton que abre myCompaniesCard
-  @ViewChild('buttonCompaniesCardRef',{read:ElementRef}) buttonCompaniesCardRef!:ElementRef
+  @ViewChild('buttonCompaniesCardRef', { read: ElementRef })
+  buttonCompaniesCardRef!: ElementRef;
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
@@ -80,12 +84,37 @@ export class MenuPrincipalLayoutComponent {
 
     //todo referente a myCompaniesCard
     //click dentro de myCompaniesCard
-    const clickedInsideMyCompaniesCard = this.myCompaniesCardRef?.nativeElement?.contains(clickedElement)
+    const clickedInsideMyCompaniesCard =
+      this.myCompaniesCardRef?.nativeElement?.contains(clickedElement);
     //click dentro del botonMyCompanies
-    const clickedInsideButtonMyCompniesCard= this.buttonCompaniesCardRef?.nativeElement?.contains(clickedElement)
-    if(!clickedInsideMyCompaniesCard && !clickedInsideButtonMyCompniesCard && this.showMyCompaniesCard()){
-      this.showMyCompaniesCard.set(false)
+    const clickedInsideButtonMyCompniesCard =
+      this.buttonCompaniesCardRef?.nativeElement?.contains(clickedElement);
+    if (
+      !clickedInsideMyCompaniesCard &&
+      !clickedInsideButtonMyCompniesCard &&
+      this.showMyCompaniesCard()
+    ) {
+      this.showMyCompaniesCard.set(false);
     }
-
   }
+  //for menu
+  //elementos para el menu
+
+  menuItems: { to: string; title: string; iconName: string }[] = [
+    {
+      to: '/app/registro',
+      title: 'Ventas',
+      iconName: 'credit_card',
+    },
+    {
+      to: '/app/restore-password',
+      title: 'Compras',
+      iconName: 'shopping_bag',
+    },
+    {
+      to: '/app/login',
+      title: 'Productos',
+      iconName: 'inventory_2',
+    },
+  ];
 }

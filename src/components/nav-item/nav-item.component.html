@@ -1,0 +1,7 @@
+<div class="w-full flex items-center cursor-pointer group px-2" [routerLink]="to">
+  <div routerLinkActive="font-bold! text-red-600" [routerLinkActiveOptions]="{ exact: true }"
+    class="flex  items-center justify-center gap-2 px-4 py-2 w-min rounded-2xl transition-colors duration-150 group-hover:bg-red-100 group-hover:text-red-500 font-semibold">
+    <span class="material-symbols-rounded"> {{iconName}}</span>
+    <p>{{title}}</p>
+  </div>
+</div>

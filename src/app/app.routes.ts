@@ -28,8 +28,17 @@ export const routes: Routes = [
   {
     path:'app',
     component:PrincipalLayoutComponent,
-    children:[
-      
+    children:[      {
+        path: 'login',
+        component: LoginPageComponent,
+      },
+                  {
+        path: 'registro',
+        component: RegisterPageComponent,
+      }, {
+        path: 'restore-password',
+        component: RestorePasswordPageComponent,
+      },
     ]
   }
 ];
