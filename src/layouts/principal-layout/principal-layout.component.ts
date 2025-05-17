@@ -4,8 +4,7 @@ import { TrialMonthCardComponent } from '../../components/trial-month-card/trial
 import { MenuHeaderComponent } from '../../components/menu-header/menu-header.component';
 import { CommonModule } from '@angular/common';
 import { TabBarComponent } from "../../components/tab-bar/tab-bar.component";
-import { ButtonIconLabelComponent } from "../../components/button-icon-label/button-icon-label.component";
-import { ButtonIconLabelSecondaryComponent } from "../../components/button-icon-label-secondary/button-icon-label-secondary.component";
+import { ButtonSecondaryComponent } from "../../components/button-secondary/button-secondary.component";
 @Component({
   selector: 'app-principal-layout',
   imports: [
@@ -14,8 +13,7 @@ import { ButtonIconLabelSecondaryComponent } from "../../components/button-icon-
     MenuHeaderComponent,
     CommonModule,
     TabBarComponent,
-    ButtonIconLabelComponent,
-    ButtonIconLabelSecondaryComponent
+    ButtonSecondaryComponent
 ],
   templateUrl: './principal-layout.component.html',
   styleUrl: './principal-layout.component.css',
