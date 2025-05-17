@@ -4,6 +4,7 @@ import { TrialMonthCardComponent } from '../../components/trial-month-card/trial
 import { MenuHeaderComponent } from '../../components/menu-header/menu-header.component';
 import { CommonModule } from '@angular/common';
 import { TabBarComponent } from "../../components/tab-bar/tab-bar.component";
+import { ButtonIconSecondaryComponent } from '../../components/button-icon-secondary/button-icon-secondary.component';
 @Component({
   selector: 'app-principal-layout',
   imports: [
@@ -11,7 +12,8 @@ import { TabBarComponent } from "../../components/tab-bar/tab-bar.component";
     TrialMonthCardComponent,
     MenuHeaderComponent,
     CommonModule,
-    TabBarComponent
+    TabBarComponent,
+    ButtonIconSecondaryComponent
 ],
   templateUrl: './principal-layout.component.html',
   styleUrl: './principal-layout.component.css',

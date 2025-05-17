@@ -11,6 +11,7 @@
   <app-menu-header (open)="handleSmallMenu()" class="block lg:hidden"></app-menu-header>
   <app-trial-month-card></app-trial-month-card>
   <app-tab-bar [options]="menuItems"></app-tab-bar>
+  <app-button-icon-secondary ariaLabel="Usuario" iconName="person"></app-button-icon-secondary>
   <div
   class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden"
   [hidden]="!isSmallMenuOpen()"
