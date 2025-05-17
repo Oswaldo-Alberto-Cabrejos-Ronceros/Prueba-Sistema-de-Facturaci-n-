@@ -1,12 +1,12 @@
 <!-- principal -->
 <div
-  class="py-4  flex flex-col h-screen border-r-1 bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-50 transition-all duration-300 overflow-hidden"
+  class="py-4  flex flex-col h-screen border-r-1 bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-50 transition-all duration-300"
   [ngClass]="isDisplayedMenu() ? 'w-64' : 'w-20 justify-center'">
 
   <!-- contenido principal -->
   <div class="w-full flex flex-col px-2" [ngClass]="isDisplayedMenu()?'items-start':'items-center'"><app-button-icon ariaLabel="Logo" iconName="public"></app-button-icon></div>
     <!-- buton de mis empresas -->
-     <app-button-icon-label-secondary class="px-2" #buttonCompaniesCardRef (click)="handleShowMyCampaniesCard()" name="EXPORTACIONES EL CHINO" iconName="expand_all" [isDisplayed]="isDisplayedMenu()"></app-button-icon-label-secondary>
+     <app-button-icon-label-secondary class="px-2 overflow-hidden" #buttonCompaniesCardRef (click)="handleShowMyCampaniesCard()" name="EXPORTACIONES EL CHINO" iconName="expand_all" [isDisplayed]="isDisplayedMenu()"></app-button-icon-label-secondary>
   <!-- carta mis empresas -->
     <app-my-companies-card #myCompaniesCardRef (close)="handleShowMyCampaniesCard()" class="fixed top-0 left-0 ml-6 mt-16 z-10" [hidden]="!showMyCompaniesCard()" ></app-my-companies-card>
     <!-- contiene el menu de opciones -->
