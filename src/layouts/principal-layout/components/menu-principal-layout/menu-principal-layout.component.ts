@@ -12,6 +12,7 @@ import { MyUserAccountCardComponent } from '../../../../components/my-user-accou
 import { ButtonIconLabelSecondaryComponent } from '../../../../components/button-icon-label-secondary/button-icon-label-secondary.component';
 import { MyCompaniesCardComponent } from '../../../../components/my-companies-card/my-companies-card.component';
 import { NavItemComponent } from '../../../../components/nav-item/nav-item.component';
+import { ButtonIconLabelCloseComponent } from '../../../../components/button-icon-label-close/button-icon-label-close.component';
 
 @Component({
   selector: 'app-menu-principal-layout',
@@ -22,7 +23,8 @@ import { NavItemComponent } from '../../../../components/nav-item/nav-item.compo
     MyUserAccountCardComponent,
     ButtonIconLabelSecondaryComponent,
     MyCompaniesCardComponent,
-    NavItemComponent
+    NavItemComponent,
+    ButtonIconLabelCloseComponent
   ],
   templateUrl: './menu-principal-layout.component.html',
   styleUrl: './menu-principal-layout.component.css',

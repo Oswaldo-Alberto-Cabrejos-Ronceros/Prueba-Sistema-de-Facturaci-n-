@@ -14,7 +14,12 @@
     <app-nav-item *ngFor="let item of menuItems" [to]="item.to" [title]="item.title" [iconName]="item.iconName" [isDisplayed]="isDisplayedMenu()"></app-nav-item>
   </nav>
   <!-- footer -->
-  <div class="w-full flex flex-col px-2" >
+  <div class="w-full flex flex-col px-2 gap-2" >
+    <!-- cuando esta desplegado -->
+    <app-button-icon-label-close [hidden]="!isDisplayedMenu()" iconName="arrow_circle_right" name="Iniciar conexión con Sunat"></app-button-icon-label-close>
+    <!-- cuando no esta desplegado -->
+     <div [hidden]="isDisplayedMenu()" class="h-12 fixed bottom-0 right-0 mr-4 mb-4"> <app-button-icon-label-close  iconName="arrow_circle_right" name="Iniciar conexión con Sunat"></app-button-icon-label-close></div>
+
     <div class="w-full flex justify-between items-center" [ngClass]="isDisplayedMenu()?'flex-row':'flex-col'" >
       <div class="flex-1 relative">
         <!-- carta de usuario -->
