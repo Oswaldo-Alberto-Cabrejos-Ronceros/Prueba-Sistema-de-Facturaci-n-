@@ -3,12 +3,12 @@ import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-t
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
 import { ButtonSecondaryComponent } from "../../components/button-secondary/button-secondary.component";
 import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
-import { ButtonSortComponent } from "../../components/button-sort/button-sort.component";
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sales-page',
-  imports: [TableFilterComponent,ButtonIconLabelTerciaryComponent, ButtonSecondaryComponent, DatePickerSetComponent, ButtonSortComponent],
+  imports: [TableFilterComponent,ButtonIconLabelTerciaryComponent, ButtonSecondaryComponent, DatePickerSetComponent,CommonModule],
   templateUrl: './sales-page.component.html',
   styleUrl: './sales-page.component.css'
 })
@@ -67,5 +67,11 @@ columns:{
   }
 ]
 
+//para la activacion de la tabla
+isTableEnabled=false;
 
+//para manejar la activacion de la tabla
+handleEnabledTable=()=>{
+  this.isTableEnabled=!this.isTableEnabled
+}
 }

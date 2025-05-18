@@ -8,7 +8,7 @@
 
           <!-- Boton para activar filtros -->
 
-          <button *ngIf="!filtersEnabled" class="group p-2 min-w-20 w-full flex items-center gap-2 cursor-pointer"
+          <button *ngIf="!filtersEnabled" class="group p-2 min-w-20 w-full flex items-center border-b-2 border-transparent gap-2 cursor-pointer"
             (click)="enableFilters()">
             <span>{{column.label}}</span>
             <span *ngIf="column.typeFilter==='input'&&column.disable===undefined" aria-label="Buscar"

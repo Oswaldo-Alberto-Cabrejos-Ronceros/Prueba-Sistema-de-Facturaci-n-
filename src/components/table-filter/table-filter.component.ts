@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonSortComponent } from '../button-sort/button-sort.component';
 import { IconComponent } from '../icon/icon.component';
@@ -24,11 +24,14 @@ export class TableFilterComponent {
   //bandera que habilita los filtros
   @Input() filtersEnabled:boolean=false
   @Input() title:string='datos'
+  //para informar al padre la activacion de los filtros
+  @Output() enabled=new EventEmitter<void>()
 
   //funcion que habilita los filtros
-
   enableFilters=()=>{
     this.filtersEnabled=true
+    //emitimos evento
+    this.enabled.emit()
   }
 
 }
