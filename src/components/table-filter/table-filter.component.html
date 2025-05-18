@@ -8,7 +8,8 @@
 
           <!-- Boton para activar filtros -->
 
-          <button *ngIf="!filtersEnabled" class="group p-2 min-w-20 w-full flex items-center gap-2 cursor-pointer" (click)="enableFilters()">
+          <button *ngIf="!filtersEnabled" class="group p-2 min-w-20 w-full flex items-center gap-2 cursor-pointer"
+            (click)="enableFilters()">
             <span>{{column.label}}</span>
             <span *ngIf="column.typeFilter==='input'&&column.disable===undefined" aria-label="Buscar"
               class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900">
@@ -56,4 +57,11 @@
       </th>
     </tr>
   </thead>
+  <tbody>
+    <tr *ngIf="!data.length">
+      <td [attr.colspan]="columns.length + 1" class="text-center py-8">
+        <p class="font-semibold text-lg">No hay {{ title.toLowerCase() }} disponibles</p>
+      </td>
+    </tr>
+  </tbody>
 </table>

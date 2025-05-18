@@ -20,8 +20,10 @@ export class TableFilterComponent {
     options?: string[];
     ordenable?: boolean;
   }[] = [];
+  @Input() data:any[]=[]
   //bandera que habilita los filtros
   @Input() filtersEnabled:boolean=false
+  @Input() title:string='datos'
 
   //funcion que habilita los filtros
 
