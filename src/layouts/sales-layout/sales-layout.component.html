@@ -1,7 +1,8 @@
 <!-- barra de navegacion de usuario dentro de una vista -->
 <app-nav-bar-user>
   <ng-template #leftTemplate>
-    <app-tab-bar [options]="menuItems"></app-tab-bar>
+
+    <app-nav-bar-drop-down [options]="menuItems"></app-nav-bar-drop-down>
   </ng-template>
 </app-nav-bar-user>
 <div class="flex-1 flex px-10 py-5">

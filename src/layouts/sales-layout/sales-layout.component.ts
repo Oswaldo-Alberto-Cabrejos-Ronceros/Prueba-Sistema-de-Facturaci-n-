@@ -2,10 +2,11 @@ import { Component, HostBinding } from '@angular/core';
 import { TabBarComponent } from '../../components/tab-bar/tab-bar.component';
 import { NavBarUserComponent } from '../../components/nav-bar-user/nav-bar-user.component';
 import { RouterOutlet } from '@angular/router';
+import { NavBarDropDownComponent } from "../../components/nav-bar-drop-down/nav-bar-drop-down.component";
 
 @Component({
   selector: 'app-sales-layout',
-  imports: [TabBarComponent, NavBarUserComponent,RouterOutlet],
+  imports: [TabBarComponent, NavBarUserComponent, RouterOutlet, NavBarDropDownComponent],
   templateUrl: './sales-layout.component.html',
   styleUrl: './sales-layout.component.css',
 })
