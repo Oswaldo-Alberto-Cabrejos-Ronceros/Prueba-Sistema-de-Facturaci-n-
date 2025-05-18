@@ -1,0 +1,9 @@
+<button
+  class="h-10 min-w-max rounded-xl flex items-center justify-center transition-colors duration-300 bg-red-600 hover:bg-red-700 py-2 px-3 cursor-pointer">
+  <span class="material-symbols-rounded text-neutral-50 p-0 size-min" aria-label="ariaLabel">
+    {{iconName}}
+  </span>
+  <span *ngIf="label" class="text-base font-bold text-left px-2 text-neutral-50">
+    {{label}}
+  </span>
+</button>

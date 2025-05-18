@@ -1,5 +1,7 @@
 <ng-template #customRightTemplate>
-  <app-button-secondary label="Nueva Venta"></app-button-secondary>
+
+   <app-button-icon-label-quaternary ariaLabel="Nueva Venta" iconName="add"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary label="Nueva Venta"></app-button-icon-label-quaternary>
   <!-- para notificaciones -->
   <app-button-icon-label-terciary (click)="handlePopUpNotifications()" #triggerNotifications ariaLabel="Notificaciones" iconName="notifications"></app-button-icon-label-terciary>
   <!-- pop up de notificaciones -->

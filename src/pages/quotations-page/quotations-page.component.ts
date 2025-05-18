@@ -1,15 +1,15 @@
 import { Component, ElementRef, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
-import { ButtonSecondaryComponent } from '../../components/button-secondary/button-secondary.component';
 import { CommonModule } from '@angular/common';
 import { DatePickerSetComponent } from "../../components/date-picker-set/date-picker-set.component";
 import { TableFilterComponent } from "../../components/table-filter/table-filter.component";
 import { PopUpOptionsComponent } from "../../components/pop-up-options/pop-up-options.component";
+import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
 
 @Component({
   selector: 'app-quotations-page',
-  imports: [CommonModule, ButtonIconLabelTerciaryComponent, ButtonSecondaryComponent, DatePickerSetComponent, TableFilterComponent, PopUpOptionsComponent],
+  imports: [CommonModule, ButtonIconLabelTerciaryComponent, DatePickerSetComponent, TableFilterComponent, PopUpOptionsComponent, ButtonIconLabelQuaternaryComponent],
   templateUrl: './quotations-page.component.html',
   styleUrl: './quotations-page.component.css',
 })
