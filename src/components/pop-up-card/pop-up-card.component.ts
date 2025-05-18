@@ -73,7 +73,7 @@ export class PopUpCardComponent implements OnChanges {
     const rect = this.trigger.nativeElement.getBoundingClientRect();
     const reactPopUp = this.popupRef.nativeElement.getBoundingClientRect();
     //cambiamos el estilo segun las referencias
-    this.popupStyles.top = `${rect.bottom + window.scrollY}px`;
+    this.popupStyles.top = `${rect.bottom + window.scrollY + 8}px`;
     this.popupStyles.left = `${
       rect.left - reactPopUp.width + rect.width + window.scrollX
     }px`;
