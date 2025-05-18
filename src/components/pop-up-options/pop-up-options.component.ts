@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input } from '@angular/core';
 import { PopUpCardComponent } from "../pop-up-card/pop-up-card.component";
 import { CommonModule } from '@angular/common';
 import { EmptyCardComponent } from '../empty-card/empty-card.component';
@@ -10,6 +10,8 @@ import { EmptyCardComponent } from '../empty-card/empty-card.component';
   styleUrl: './pop-up-options.component.css'
 })
 export class PopUpOptionsComponent {
+      @HostBinding('class') class =
+    ' absolute top-0 left-0';
   //necesarios para pop-up-card
   @Input() visible = false;
   @Input() trigger!: ElementRef;
