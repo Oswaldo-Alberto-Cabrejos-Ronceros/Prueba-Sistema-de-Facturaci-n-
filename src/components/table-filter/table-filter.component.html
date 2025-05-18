@@ -12,17 +12,17 @@
             (click)="enableFilters()">
             <span>{{column.label}}</span>
             <span *ngIf="column.typeFilter==='input'&&column.disable===undefined" aria-label="Buscar"
-              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900">
+              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50">
               search
             </span>
 
             <span *ngIf="column.typeFilter==='select'" aria-label="Buscar"
-              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900">
+              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50">
               filter_alt
             </span>
 
             <span *ngIf="column.typeFilter==='input'&&column.disable" aria-label="Buscar"
-              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900">
+              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50">
               height
             </span>
 
@@ -30,18 +30,18 @@
 
           <!-- si es input y no se envia disable -->
           <input
-            class="p-2 min-w-20 w-full hover:placeholder:text-neutral-800 focus:outline-none text-neutral-300 duration-150 focus:text-neutral-900 border-b-2 border-transparent focus:border-neutral-900"
+            class="p-2 min-w-20 w-full hover:placeholder:text-neutral-800 dark:hover:placeholder:text-neutral-100 focus:outline-none text-neutral-300 duration-150 focus:text-neutral-900 dark:focus:text-neutral-200 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50"
             *ngIf="filtersEnabled && column.typeFilter==='input'&&column.disable===undefined" type="text"
             [placeholder]="column.label">
 
           <!-- si es input y se envia disable false -->
           <div tabindex="0" *ngIf="filtersEnabled && column.typeFilter==='input'&&column.disable"
-            class="p-2 min-w-20 w-full hover:text-neutral-800  text-left text-neutral-300 transition-colors duration-150 focus:text-neutral-700 border-b-2 border-transparent focus:border-neutral-900 cursor-default">
+            class="p-2 min-w-20 w-full hover:text-neutral-800 dark:hover:text-neutral-100 text-left text-neutral-300 transition-colors duration-150 focus:text-neutral-700 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50 dark:focus:text-neutral-200 cursor-default">
             {{column.label}}
           </div>
           <!-- si es select -->
           <select
-            class="p-2 min-w-20 group w-full hover:text-neutral-800  focus:outline-none text-neutral-300 transition-colors duration-150 focus:text-neutral-900 border-b-2 border-transparent focus:border-neutral-900 cursor-pointer"
+            class="p-2 min-w-20 group w-full hover:text-neutral-800 dark:hover:text-neutral-100  focus:outline-none text-neutral-300 transition-colors duration-150 focus:text-neutral-900 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50 dark:focus:text-neutral-200 cursor-pointer"
             *ngIf="filtersEnabled && column.typeFilter==='select'" name="" id="">
             <option *ngFor="let option of column.options" [value]="option
         ">{{option}}</option>
