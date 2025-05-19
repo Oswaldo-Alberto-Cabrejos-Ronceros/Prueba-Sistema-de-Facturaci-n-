@@ -1,20 +1,34 @@
-import { Component, ElementRef, HostBinding, TemplateRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostBinding,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
-import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
-import { ButtonIconLabelTerciaryComponent } from "../../components/button-icon-label-terciary/button-icon-label-terciary.component";
-import { PopUpOptionsComponent } from "../../components/pop-up-options/pop-up-options.component";
-import { DatePickerSetComponent } from "../../components/date-picker-set/date-picker-set.component";
-import { TableFilterComponent } from "../../components/table-filter/table-filter.component";
+import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
+import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
+import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
+import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
+import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-purchases-page',
-  imports: [ButtonIconLabelQuaternaryComponent, ButtonIconLabelTerciaryComponent, PopUpOptionsComponent, DatePickerSetComponent, TableFilterComponent],
+  imports: [
+    ButtonIconLabelQuaternaryComponent,
+    ButtonIconLabelTerciaryComponent,
+    PopUpOptionsComponent,
+    DatePickerSetComponent,
+    TableFilterComponent,
+    CommonModule,
+  ],
   templateUrl: './purchases-page.component.html',
-  styleUrl: './purchases-page.component.css'
+  styleUrl: './purchases-page.component.css',
 })
 export class PurchasesPageComponent {
- @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
-   //referencia al rightTemplatePersonalizado
+  @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
+  //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate') customRightTemplate!: TemplateRef<any>;
   //referencia del elemento que activa opciones de exportar
   @ViewChild('triggerExport', { read: ElementRef })
@@ -23,15 +37,14 @@ export class PurchasesPageComponent {
   @ViewChild('triggerNotifications', { read: ElementRef })
   triggerNotificationsRef!: ElementRef;
 
-    //inyectamos servicio template-injector
-    constructor(
-      private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
-    ) {}
-    ngAfterViewInit(): void {
-      this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
-    }
+  //inyectamos servicio template-injector
+  constructor(
+    private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
+  ) {}
+  ngAfterViewInit(): void {
+    this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
+  }
 
-    
   //sobre exportar
 
   optionsExport: { title: string }[] = [
@@ -56,7 +69,6 @@ export class PurchasesPageComponent {
     this.showPopUpNotifications = !this.showPopUpNotifications;
   }
 
-
   //sobre tabla
   columns: {
     key: string;
@@ -76,7 +88,7 @@ export class PurchasesPageComponent {
       label: 'Documento',
       typeFilter: 'input',
     },
-        {
+    {
       key: 'provider',
       label: 'Provedor',
       typeFilter: 'input',
@@ -98,7 +110,7 @@ export class PurchasesPageComponent {
       key: 'users',
       label: 'Usuario',
       typeFilter: 'input',
-    }
+    },
   ];
 
   //para la activacion de la tabla
@@ -108,5 +120,4 @@ export class PurchasesPageComponent {
   handleEnabledTable = () => {
     this.isTableEnabled = !this.isTableEnabled;
   };
-
 }
