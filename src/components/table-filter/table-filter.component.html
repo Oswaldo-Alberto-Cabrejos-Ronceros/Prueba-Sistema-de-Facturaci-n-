@@ -1,0 +1,67 @@
+<table class="min-w-4xl w-full table-fixed">
+  <thead>
+    <tr class="ring ring-neutral-300 ">
+
+      <th *ngFor="let column of columns"
+        class="group relative border-b-2 border-transparent group-focus-within:border-neutral-900">
+        <div class="flex">
+
+          <!-- Boton para activar filtros -->
+
+          <button *ngIf="!filtersEnabled" class="group p-2 min-w-20 w-full flex items-center border-b-2 border-transparent gap-2 cursor-pointer"
+            (click)="enableFilters()">
+            <span>{{column.label}}</span>
+            <span *ngIf="column.typeFilter==='input'&&column.disable===undefined" aria-label="Buscar"
+              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50">
+              search
+            </span>
+
+            <span *ngIf="column.typeFilter==='select'" aria-label="Buscar"
+              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50">
+              filter_alt
+            </span>
+
+            <span *ngIf="column.typeFilter==='input'&&column.disable" aria-label="Buscar"
+              class="material-symbols-rounded transition-colors duration-150 text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-50">
+              height
+            </span>
+
+          </button>
+
+          <!-- si es input y no se envia disable -->
+          <input
+            class="p-2 min-w-20 w-full hover:placeholder:text-neutral-800 dark:hover:placeholder:text-neutral-100 focus:outline-none text-neutral-300 duration-150 focus:text-neutral-900 dark:focus:text-neutral-200 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50"
+            *ngIf="filtersEnabled && column.typeFilter==='input'&&column.disable===undefined" type="text"
+            [placeholder]="column.label">
+
+          <!-- si es input y se envia disable false -->
+          <div tabindex="0" *ngIf="filtersEnabled && column.typeFilter==='input'&&column.disable"
+            class="p-2 min-w-20 w-full hover:text-neutral-800 dark:hover:text-neutral-100 text-left text-neutral-300 transition-colors duration-150 focus:text-neutral-700 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50 dark:focus:text-neutral-200 cursor-default">
+            {{column.label}}
+          </div>
+          <!-- si es select -->
+          <select
+            class="p-2 min-w-20 group w-full hover:text-neutral-800 dark:hover:text-neutral-100  focus:outline-none text-neutral-300 transition-colors duration-150 focus:text-neutral-900 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50 dark:focus:text-neutral-200 cursor-pointer"
+            *ngIf="filtersEnabled && column.typeFilter==='select'" name="" id="">
+            <option *ngFor="let option of column.options" [value]="option
+        ">{{option}}</option>
+          </select>
+          <!-- boton de sorteo -->
+          <app-button-sort class="z-50 absolute top-0 right-0 mt-2 invisible group-focus-within:visible"
+            [ngClass]="column.typeFilter==='select'||column.disable?'relative':''"
+            *ngIf=" filtersEnabled&& column.ordenable===undefined"></app-button-sort>
+        </div>
+      </th>
+      <th class="w-10">
+        <app-icon ariaLabel="Table" iconName="format_align_left"></app-icon>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="!data.length">
+      <td [attr.colspan]="columns.length + 1" class="text-center py-8">
+        <p class="font-semibold text-lg">No hay {{ title.toLowerCase() }} disponibles</p>
+      </td>
+    </tr>
+  </tbody>
+</table>

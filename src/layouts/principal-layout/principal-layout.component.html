@@ -1,18 +1,20 @@
-<app-menu-principal-layout
-  [hidden]="!isSmallMenuOpen()"
-  class="fixed z-40 bg-white lg:hidden">
+<app-menu-principal-layout [hidden]="!isSmallMenuOpen()" class="fixed z-40 bg-white lg:hidden">
 </app-menu-principal-layout>
 
 <!-- menu principal permanente en pantallas grandes -->
-<app-menu-principal-layout
-  class="hidden lg:block z-50">
+<app-menu-principal-layout class="hidden lg:block z-50">
 </app-menu-principal-layout>
-<div class="flex-1 flex flex-col">
+<div class="flex-1 flex flex-col min-w-0">
+  <!-- menu superios para pantallas pequeñas -->
   <app-menu-header (open)="handleSmallMenu()" class="block lg:hidden"></app-menu-header>
+  <!-- carta de mes de prueba -->
   <app-trial-month-card></app-trial-month-card>
-  <div
-  class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden"
-  [hidden]="!isSmallMenuOpen()"
-  (click)="handleSmallMenu()">
-</div>
+
+  <!-- router-oulet -->
+
+  <router-outlet></router-outlet>
+
+  <div class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden" [hidden]="!isSmallMenuOpen()"
+    (click)="handleSmallMenu()">
+  </div>
 </div>

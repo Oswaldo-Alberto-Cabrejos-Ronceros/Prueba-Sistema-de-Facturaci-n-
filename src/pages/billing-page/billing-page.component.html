@@ -1,0 +1,25 @@
+<!-- contenido inyectado a nav-bar-menu -->
+<ng-template #customRightTemplate>
+  <!-- para opciones -->
+  <app-button-icon-label-terciary (click)="handlePopUpOptions()" #triggerOptions ariaLabel="Opciones"
+    iconName="more_vert"></app-button-icon-label-terciary>
+  <!-- pop up de opciones -->
+  <app-pop-up-options [trigger]="triggerOptionsRef" [visible]="showPopUpOptions"></app-pop-up-options>
+  <!-- para exportar -->
+  <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
+    iconName="download"></app-button-icon-label-terciary>
+  <!-- pop up de opciones de exportar -->
+  <app-pop-up-options [options]="optionsExport" [trigger]="triggerExportRef"
+    [visible]="showPopUpExport"></app-pop-up-options>
+</ng-template>
+
+
+<div class="w-full flex gap-2 items-center">
+  <app-button-icon-label-terciary *ngIf="isTableEnabled" ariaLabel="Cerrar filtros" label="Cerrar filtros"
+    iconName="close" class="font-medium!" (click)="handleEnabledTable()"></app-button-icon-label-terciary>
+  <app-date-picker-set></app-date-picker-set>
+</div>
+
+
+<app-table-filter [columns]="columns" title="Facturación" (enabled)="handleEnabledTable()"
+  [filtersEnabled]="isTableEnabled"></app-table-filter>
