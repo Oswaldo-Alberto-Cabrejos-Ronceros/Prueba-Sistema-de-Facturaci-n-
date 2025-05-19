@@ -109,7 +109,7 @@ export class MenuPrincipalLayoutComponent {
       iconName: 'credit_card',
     },
     {
-      to: '/app/restore-password',
+      to: '/app/purchases',
       title: 'Compras',
       iconName: 'shopping_bag',
     },

@@ -9,6 +9,10 @@ import { SalesLayoutComponent } from '../layouts/sales-layout/sales-layout.compo
 import { SalesPageComponent } from '../pages/sales-page/sales-page.component';
 import { BillingPageComponent } from '../pages/billing-page/billing-page.component';
 import { QuotationsPageComponent } from '../pages/quotations-page/quotations-page.component';
+//compras
+import { PurchasesLayoutComponent } from '../layouts/purchases-layout/purchases-layout.component';
+import { PurchasesPageComponent } from '../pages/purchases-page/purchases-page.component';
+import { WarehousePageComponent } from '../pages/warehouse-page/warehouse-page.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/auth/login',pathMatch:'full'},
@@ -51,13 +55,20 @@ export const routes: Routes = [
           }
         ]
       },
-                  {
-        path: 'registro',
-        component: RegisterPageComponent,
-      }, {
-        path: 'restore-password',
-        component: RestorePasswordPageComponent,
-      },
+      {
+        path:'purchases',
+        component:PurchasesLayoutComponent,
+        children:[
+          {
+            path:'',
+            component:PurchasesPageComponent
+          },
+          {
+            path:'warehouse',
+            component:WarehousePageComponent
+          }
+        ]
+      }
     ]
-  }
+  },
 ];
