@@ -1,13 +1,13 @@
-<nav class="w-full flex justify-between border-b border-neutral-300 dark:border-neutral-50">
+<nav class="w-full flex justify-between border-b border-neutral-300 dark:border-neutral-50 px-2 xs:px-5 lg:pl-0 lg:pr-10">
   <!-- para contenido de izquierda -->
   <div *ngIf="leftTemplate">
     <ng-container *ngTemplateOutlet="leftTemplate"></ng-container>
   </div>
   <!-- contiene el boton de usuario y contenido de izquierda -->
-  <div class="py-2 pr-6 flex gap-4 items-center justify-end">
+  <div class="py-2 flex gap-2 xs:gap-4 items-center justify-end">
     <!--  -->
     <!-- contenido de derecha -->
-    <div *ngIf="rightTemplate" class="flex items-center justify-end gap-4">
+    <div *ngIf="rightTemplate" class="flex items-center justify-end gap-2 xs:gap-4">
       <ng-container *ngTemplateOutlet="rightTemplate"></ng-container>
     </div>
     <app-button-icon-label-terciary (click)="handlePopup()"  #triggerMyUser ariaLabel="usuario" iconName="person"></app-button-icon-label-terciary>

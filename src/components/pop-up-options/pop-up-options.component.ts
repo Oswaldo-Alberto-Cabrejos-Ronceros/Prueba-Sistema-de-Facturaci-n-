@@ -11,7 +11,7 @@ import { EmptyCardComponent } from '../empty-card/empty-card.component';
 })
 export class PopUpOptionsComponent {
       @HostBinding('class') class =
-    ' absolute top-0 left-0';
+    'absolute top-0 left-0';
   //necesarios para pop-up-card
   @Input() visible = false;
   @Input() trigger!: ElementRef;

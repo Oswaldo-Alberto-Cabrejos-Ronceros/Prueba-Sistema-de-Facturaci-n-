@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input } from '@angular/core';
 import { PopUpCardComponent } from '../pop-up-card/pop-up-card.component';
 import { RouterLink } from '@angular/router';
 import { ButtonIconLabelUnderlineComponent } from '../button-icon-label-underline/button-icon-label-underline.component';
@@ -16,10 +16,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './pop-up-my-user-acount.component.css',
 })
 export class PopUpMyUserAcountComponent {
+  @HostBinding('class') class = 'absolute top-0 left-0';
   //necesarios para pop-up-card
   @Input() visible = false;
   @Input() trigger!: ElementRef;
-
 
   options: { title: string; to: string }[] = [
     {
