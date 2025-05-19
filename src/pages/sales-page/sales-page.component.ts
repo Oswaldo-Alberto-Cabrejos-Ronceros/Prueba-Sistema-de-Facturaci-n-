@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
@@ -12,7 +13,7 @@ import { DatePickerSetComponent } from '../../components/date-picker-set/date-pi
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
 import { CommonModule } from '@angular/common';
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
-import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
+import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
 
 @Component({
   selector: 'app-sales-page',
@@ -22,8 +23,8 @@ import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon
     DatePickerSetComponent,
     PopUpOptionsComponent,
     CommonModule,
-    ButtonIconLabelQuaternaryComponent
-],
+    ButtonIconLabelQuaternaryComponent,
+  ],
   templateUrl: './sales-page.component.html',
   styleUrl: './sales-page.component.css',
 })
@@ -39,12 +40,18 @@ export class SalesPageComponent implements AfterViewInit {
   @ViewChild('triggerNotifications', { read: ElementRef })
   triggerNotificationsRef!: ElementRef;
 
+  //bandera para el template
+templateReady = false;
   //inyectamos servicio template-injector
   constructor(
-    private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
+    private navBarUserTemplateInjector: NavBarUserTemplateInjectorService,
+    private cdRef: ChangeDetectorRef
   ) {}
   ngAfterViewInit(): void {
+    setTimeout(()=>{
     this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
+    this.templateReady = true;
+    })
   }
 
   columns: {
