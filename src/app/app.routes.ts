@@ -13,9 +13,14 @@ import { QuotationsPageComponent } from '../pages/quotations-page/quotations-pag
 import { PurchasesLayoutComponent } from '../layouts/purchases-layout/purchases-layout.component';
 import { PurchasesPageComponent } from '../pages/purchases-page/purchases-page.component';
 import { WarehousePageComponent } from '../pages/warehouse-page/warehouse-page.component';
+//productos
+import { ProductsLayoutComponent } from '../layouts/products-layout/products-layout.component';
+import { ProductsPageComponent } from '../pages/products-page/products-page.component';
+import { PackagesPageComponent } from '../pages/packages-page/packages-page.component';
+import { ProductCategoriesPageComponent } from '../pages/product-categories-page/product-categories-page.component';
 
 export const routes: Routes = [
-    {path:'',redirectTo:'/auth/login',pathMatch:'full'},
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
   {
     path: 'auth',
     component: AuthLayoutComponent,
@@ -25,50 +30,70 @@ export const routes: Routes = [
         path: 'login',
         component: LoginPageComponent,
       },
-            {
+      {
         path: 'registro',
         component: RegisterPageComponent,
-      }, {
+      },
+      {
         path: 'restore-password',
         component: RestorePasswordPageComponent,
       },
     ],
   },
   {
-    path:'app',
-    component:PrincipalLayoutComponent,
-    children:[      {
+    path: 'app',
+    component: PrincipalLayoutComponent,
+    children: [
+      {
         path: 'sales',
         component: SalesLayoutComponent,
-        children:[
+        children: [
           {
-            path:'',
-            component:SalesPageComponent
+            path: '',
+            component: SalesPageComponent,
           },
-                    {
-            path:'billing',
-            component:BillingPageComponent
+          {
+            path: 'billing',
+            component: BillingPageComponent,
           },
-                              {
-            path:'quotations',
-            component:QuotationsPageComponent
-          }
-        ]
+          {
+            path: 'quotations',
+            component: QuotationsPageComponent,
+          },
+        ],
       },
       {
-        path:'purchases',
-        component:PurchasesLayoutComponent,
-        children:[
+        path: 'purchases',
+        component: PurchasesLayoutComponent,
+        children: [
           {
-            path:'',
-            component:PurchasesPageComponent
+            path: '',
+            component: PurchasesPageComponent,
           },
           {
-            path:'warehouse',
-            component:WarehousePageComponent
-          }
-        ]
-      }
-    ]
+            path: 'warehouse',
+            component: WarehousePageComponent,
+          },
+        ],
+      },
+      {
+        path: 'products',
+        component: ProductsLayoutComponent,
+        children: [
+          {
+            path: '',
+            component: ProductsPageComponent,
+          },
+          {
+            path: 'packages',
+            component: PackagesPageComponent,
+          },
+          {
+            path: 'categories',
+            component: ProductCategoriesPageComponent,
+          },
+        ],
+      },
+    ],
   },
 ];

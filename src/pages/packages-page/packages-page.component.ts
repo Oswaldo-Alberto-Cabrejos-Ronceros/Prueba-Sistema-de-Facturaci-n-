@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   HostBinding,
@@ -7,46 +6,53 @@ import {
   ViewChild,
 } from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
+import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
-import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
+import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
 import { CommonModule } from '@angular/common';
-import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
-import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
 
 @Component({
-  selector: 'app-sales-page',
+  selector: 'app-packages-page',
   imports: [
-    TableFilterComponent,
-    ButtonIconLabelTerciaryComponent,
-    DatePickerSetComponent,
-    PopUpOptionsComponent,
-    CommonModule,
     ButtonIconLabelQuaternaryComponent,
+    ButtonIconLabelTerciaryComponent,
+    PopUpOptionsComponent,
+    TableFilterComponent,
+    CommonModule
   ],
-  templateUrl: './sales-page.component.html',
-  styleUrl: './sales-page.component.css',
+  templateUrl: './packages-page.component.html',
+  styleUrl: './packages-page.component.css',
 })
-export class SalesPageComponent implements AfterViewInit {
+export class PackagesPageComponent {
   @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
-
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
   //referencia del elemento que activa opciones de exportar
   @ViewChild('triggerExport', { read: ElementRef })
   triggerExportRef!: ElementRef;
-  //referencia del elemento que activa carta de notificaciones
-  @ViewChild('triggerNotifications', { read: ElementRef})
-  triggerNotificationsRef!: ElementRef;
-
-
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
   ) {}
   ngAfterViewInit(): void {
     this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
+  }
+
+  //sobre exportar
+
+  optionsExport: { title: string }[] = [
+    {
+      title: 'Exportar paquetes',
+    },
+  ];
+
+  //para mostrar opciones de exportacion
+  showPopUpExport = false;
+  //para variar showPopUpExport
+  handlePopUpExport() {
+    this.showPopUpExport = !this.showPopUpExport;
   }
 
   columns: {
@@ -58,36 +64,29 @@ export class SalesPageComponent implements AfterViewInit {
     ordenable?: boolean;
   }[] = [
     {
-      key: 'sales',
-      label: 'Venta',
+      key: 'package',
+      label: 'Paquete',
       typeFilter: 'input',
     },
     {
-      key: 'clients',
-      label: 'Cliente',
+      key: 'name',
+      label: 'Nombre',
       typeFilter: 'input',
     },
     {
       key: 'state',
-      label: 'Total',
+      label: 'Unidad',
       typeFilter: 'select',
       options: ['Todos', 'Pagado', 'Deuda'],
     },
     {
-      key: 'date',
-      label: 'Fecha',
+      key: 'price',
+      label: 'Precio',
       typeFilter: 'input',
-      disable: true,
     },
     {
-      key: 'docs',
-      label: 'Docs',
-      typeFilter: 'input',
-      ordenable: true,
-    },
-    {
-      key: 'users',
-      label: 'Usuarios',
+      key: 'elements',
+      label: 'Elementos',
       typeFilter: 'input',
     },
   ];
@@ -99,28 +98,4 @@ export class SalesPageComponent implements AfterViewInit {
   handleEnabledTable = () => {
     this.isTableEnabled = !this.isTableEnabled;
   };
-
-  //sobre exportar
-
-  optionsExport: { title: string }[] = [
-    {
-      title: 'Exportar ventas',
-    },
-    {
-      title: 'Exportar pagos',
-    },
-  ];
-
-  //para mostrar opciones de exportacion
-  showPopUpExport = false;
-  //para variar showPopUpExport
-  handlePopUpExport() {
-    this.showPopUpExport = !this.showPopUpExport;
-  }
-
-  //para mostrar carta de notificaciones
-  showPopUpNotifications = false;
-  handlePopUpNotifications() {
-    this.showPopUpNotifications = !this.showPopUpNotifications;
-  }
 }
