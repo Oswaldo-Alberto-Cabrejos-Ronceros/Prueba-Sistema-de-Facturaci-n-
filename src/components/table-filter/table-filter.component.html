@@ -8,7 +8,8 @@
 
           <!-- Boton para activar filtros -->
 
-          <button *ngIf="!filtersEnabled" class="group p-2 min-w-20 w-full flex items-center border-b-2 border-transparent gap-2 cursor-pointer"
+          <button *ngIf="!filtersEnabled"
+            class="group p-2 min-w-20 w-full flex items-center border-b-2 border-transparent gap-2 cursor-pointer"
             (click)="enableFilters()">
             <span>{{column.label}}</span>
             <span *ngIf="column.typeFilter==='input'&&column.disable===undefined" aria-label="Buscar"
@@ -60,7 +61,7 @@
   <tbody>
     <tr *ngIf="!data.length">
       <td [attr.colspan]="columns.length + 1" class="text-center py-8">
-        <p class="font-semibold text-lg">No hay {{ title.toLowerCase() }} disponibles</p>
+        <app-empty-card [large]="true" [message]="`No hay ${ title.toLowerCase() }`"></app-empty-card>
       </td>
     </tr>
   </tbody>

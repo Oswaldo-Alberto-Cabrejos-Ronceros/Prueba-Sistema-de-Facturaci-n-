@@ -6,37 +6,37 @@ import {
   ViewChild,
 } from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
+import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
-import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
-import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
+import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
+import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-billing-page',
+  selector: 'app-purchases-page',
   imports: [
-    CommonModule,
+    ButtonIconLabelQuaternaryComponent,
     ButtonIconLabelTerciaryComponent,
     PopUpOptionsComponent,
-    TableFilterComponent,
     DatePickerSetComponent,
+    TableFilterComponent,
+    CommonModule,
   ],
-  templateUrl: './billing-page.component.html',
-  styleUrl: './billing-page.component.css',
+  templateUrl: './purchases-page.component.html',
+  styleUrl: './purchases-page.component.css',
 })
-export class BillingPageComponent {
+export class PurchasesPageComponent {
   @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
-
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
-
   //referencia del elemento que activa opciones de exportar
   @ViewChild('triggerExport', { read: ElementRef })
   triggerExportRef!: ElementRef;
-  //referencia del elemtno qeu activa carta opciones
-  @ViewChild('triggerOptions', { read: ElementRef })
-  triggerOptionsRef!: ElementRef;
+  //referencia del elemento que activa carta de notificaciones
+  @ViewChild('triggerNotifications', { read: ElementRef })
+  triggerNotificationsRef!: ElementRef;
 
   //inyectamos servicio template-injector
   constructor(
@@ -46,77 +46,14 @@ export class BillingPageComponent {
     this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
   }
 
-  //columnas de tabla
-
-  columns: {
-    key: string;
-    label: string;
-    typeFilter: string;
-    disable?: boolean;
-    options?: string[];
-    ordenable?: boolean;
-  }[] = [
-    {
-      key: 'billing',
-      label: 'Facturación',
-      typeFilter: 'input',
-    },
-    {
-      key: 'state',
-      label: 'Tipo',
-      typeFilter: 'select',
-      options: ['Todos', 'Pagado', 'Deuda'],
-    },
-    {
-      key: 'date',
-      label: 'Fecha',
-      typeFilter: 'input',
-      disable: true,
-    },
-    {
-      key: 'date',
-      label: 'Fecha',
-      typeFilter: 'input',
-      disable: true,
-      ordenable: true,
-    },
-    {
-      key: 'clients',
-      label: 'Cliente',
-      typeFilter: 'input',
-    },
-    {
-      key: 'total',
-      label: 'Total',
-      typeFilter: 'input',
-    },
-    {
-      key: 'state',
-      label: 'Todos',
-      typeFilter: 'select',
-      options: ['Todos', 'Pagado', 'Deuda'],
-    },
-  ];
-
-  //para la activacion de la tabla
-  isTableEnabled = false;
-
-  //para manejar la activacion de la tabla
-  handleEnabledTable = () => {
-    this.isTableEnabled = !this.isTableEnabled;
-  };
-
   //sobre exportar
 
   optionsExport: { title: string }[] = [
     {
-      title: 'Exportar documentos',
+      title: 'Exportar compras',
     },
     {
-      title: 'Archivos documentos PDF',
-    },
-    {
-      title: 'Archivos documentos XML',
+      title: 'Exportar pagos detallados',
     },
   ];
 
@@ -127,23 +64,61 @@ export class BillingPageComponent {
     this.showPopUpExport = !this.showPopUpExport;
   }
 
-  //sobre opciones
+  //para mostrar carta de notificaciones
+  showPopUpNotifications = false;
+  handlePopUpNotifications() {
+    this.showPopUpNotifications = !this.showPopUpNotifications;
+  }
 
-  optionsOptions: { title: string }[] = [
+  //sobre tabla
+  columns: {
+    key: string;
+    label: string;
+    typeFilter: string;
+    disable?: boolean;
+    options?: string[];
+    ordenable?: boolean;
+  }[] = [
     {
-      title: 'Resúmenes',
+      key: 'purchases',
+      label: 'Compra',
+      typeFilter: 'input',
     },
     {
-      title: 'Bajas',
+      key: 'document',
+      label: 'Documento',
+      typeFilter: 'input',
     },
     {
-      title: 'Anticipo',
+      key: 'provider',
+      label: 'Provedor',
+      typeFilter: 'input',
+    },
+    {
+      key: 'state',
+      label: 'Total',
+      typeFilter: 'select',
+      options: ['Todos', 'Pagado', 'Deuda'],
+    },
+    {
+      key: 'date',
+      label: 'Fecha',
+      typeFilter: 'input',
+      disable: true,
+    },
+
+    {
+      key: 'users',
+      label: 'Usuario',
+      typeFilter: 'input',
     },
   ];
 
-  //para mostrar carta de opciones
-  showPopUpOptions = false;
-  handlePopUpOptions() {
-    this.showPopUpOptions = !this.showPopUpOptions;
-  }
+  //para la activacion de la tabla
+  isTableEnabled = false;
+
+  //para manejar la activacion de la tabla
+  handleEnabledTable = () => {
+    this.isTableEnabled = !this.isTableEnabled;
+  };
 }

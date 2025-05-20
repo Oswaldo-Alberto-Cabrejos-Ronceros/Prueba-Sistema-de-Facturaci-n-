@@ -1,13 +1,14 @@
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva Cotización" iconName="add"
+  <app-button-icon-label-quaternary ariaLabel="Nueva entrada / salida de almacén" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva Cotización" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary label="Nueva entrada / salida de almacén"
+    class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para exportar -->
   <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
     iconName="download"></app-button-icon-label-terciary>
   <!-- pop up de opciones de exportar -->
-  <app-pop-up-options [options]="optionsExport" *ngIf=" showPopUpExport && triggerExportRef"
-    [trigger]="triggerExportRef" [visible]="showPopUpExport"></app-pop-up-options>
+  <app-pop-up-options [options]="optionsExport" *ngIf="showPopUpExport&& triggerExportRef" [trigger]="triggerExportRef"
+    [visible]="showPopUpExport"></app-pop-up-options>
 </ng-template>
 
 <div class="w-full flex gap-2 items-center">
@@ -16,6 +17,5 @@
   <app-date-picker-set></app-date-picker-set>
 </div>
 
-
-<app-table-filter [columns]="columns" title="Facturación" (enabled)="handleEnabledTable()"
+<app-table-filter [columns]="columns" title="Almacén" (enabled)="handleEnabledTable()"
   [filtersEnabled]="isTableEnabled"></app-table-filter>
