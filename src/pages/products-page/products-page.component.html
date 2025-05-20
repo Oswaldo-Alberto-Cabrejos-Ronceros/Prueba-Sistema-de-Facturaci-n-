@@ -1,12 +1,12 @@
 <!-- contenido inyectado -->
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva Venta" iconName="add"
+  <app-button-icon-label-quaternary ariaLabel="Nueva producto" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva Venta" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary label="Nueva produto" class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- boton de importar -->
   <app-button-icon-label-terciary label="Importar productos" class="hidden xl:block"></app-button-icon-label-terciary>
   <!-- boton de importar pequeño para diseño responsivo -->
-  <app-button-icon-label-terciary ariaLabel="Notificaciones" iconName="more_vert"
+  <app-button-icon-label-terciary ariaLabel="Importar productos" iconName="more_vert"
     class="block xl:hidden"></app-button-icon-label-terciary>
   <!-- boton exportar -->
   <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
@@ -22,5 +22,5 @@
 </div>
 
 
-<app-table-filter [columns]="columns" title="Ventas" (enabled)="handleEnabledTable()"
+<app-table-filter [columns]="columns" title="Productos" (enabled)="handleEnabledTable()"
   [filtersEnabled]="isTableEnabled"></app-table-filter>
