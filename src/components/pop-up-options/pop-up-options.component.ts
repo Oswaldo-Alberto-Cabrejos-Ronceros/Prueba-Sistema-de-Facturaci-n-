@@ -17,6 +17,5 @@ export class PopUpOptionsComponent {
   @Input() trigger!: ElementRef;
   //opciones
   @Input() options:{title:string}[]=[
-
   ]
 }
