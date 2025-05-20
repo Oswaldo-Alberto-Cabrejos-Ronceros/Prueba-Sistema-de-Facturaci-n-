@@ -26,6 +26,10 @@ import { UsersPageComponent } from '../pages/users-page/users-page.component';
 // montos
 import { ExpensesLayoutComponent } from '../layouts/expenses-layout/expenses-layout.component';
 import { ExpensesPageComponent } from '../pages/expenses-page/expenses-page.component';
+// transacciones
+import { TransactionsLayoutComponent } from '../layouts/transactions-layout/transactions-layout.component';
+import { TransactionsPageComponent } from '../pages/transactions-page/transactions-page.component';
+import { TransactionsAccountsPageComponent } from '../pages/transactions-accounts-page/transactions-accounts-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -134,6 +138,20 @@ export const routes: Routes = [
           {
             path:'',
             component:ExpensesPageComponent
+          }
+        ]
+      },
+      {
+        path:'transactions',
+        component:TransactionsLayoutComponent,
+        children:[
+          {
+            path:'',
+            component:TransactionsPageComponent
+          },
+          {
+            path:'accounts',
+            component:TransactionsAccountsPageComponent
           }
         ]
       }
