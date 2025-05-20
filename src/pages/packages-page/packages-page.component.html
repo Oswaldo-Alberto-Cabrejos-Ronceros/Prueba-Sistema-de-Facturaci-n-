@@ -1,1 +1,26 @@
-<p>packages-page works!</p>
+<!-- contenido inyectado -->
+<ng-template #customRightTemplate>
+  <app-button-icon-label-quaternary ariaLabel="Nueva paquete" iconName="add"
+    class="block xl:hidden"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary label="Nueva paquete" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <!-- boton de importar -->
+  <app-button-icon-label-terciary label="Importar paquetes" class="hidden xl:block"></app-button-icon-label-terciary>
+  <!-- boton de importar pequeño para diseño responsivo -->
+  <app-button-icon-label-terciary ariaLabel="Importar paquetes" iconName="more_vert"
+    class="block xl:hidden"></app-button-icon-label-terciary>
+  <!-- boton exportar -->
+  <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
+    iconName="download"></app-button-icon-label-terciary>
+  <!-- pop up de opciones de exportar -->
+  <app-pop-up-options [options]="optionsExport" *ngIf=" showPopUpExport && triggerExportRef"
+    [trigger]="triggerExportRef" [visible]="showPopUpExport"></app-pop-up-options>
+</ng-template>
+
+<div class="w-full flex gap-2 items-center">
+  <app-button-icon-label-terciary *ngIf="isTableEnabled" ariaLabel="Cerrar filtros" label="Cerrar filtros"
+    iconName="close" class="font-medium!" (click)="handleEnabledTable()"></app-button-icon-label-terciary>
+</div>
+
+
+<app-table-filter [columns]="columns" title="Paquetes" (enabled)="handleEnabledTable()"
+  [filtersEnabled]="isTableEnabled"></app-table-filter>

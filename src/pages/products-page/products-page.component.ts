@@ -10,7 +10,6 @@ import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon
 import { ButtonIconLabelTerciaryComponent } from "../../components/button-icon-label-terciary/button-icon-label-terciary.component";
 import { PopUpOptionsComponent } from "../../components/pop-up-options/pop-up-options.component";
 import { CommonModule } from '@angular/common';
-import { DatePickerSetComponent } from "../../components/date-picker-set/date-picker-set.component";
 import { TableFilterComponent } from "../../components/table-filter/table-filter.component";
 
 @Component({
