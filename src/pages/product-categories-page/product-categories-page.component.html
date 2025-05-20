@@ -1,6 +1,10 @@
+<!-- contenido inyectado -->
+<ng-template #customRightTemplate>
+  <app-button-icon-label-quaternary ariaLabel="Nueva categoría" iconName="add"></app-button-icon-label-quaternary>
+</ng-template>
+<div class="max-w-md w-full self-center">
 
-<div class="w-md self-center">
-
-  <app-presentation-card-primary [items]="itemsCard" title="Organiza tus productos" labelButton="Crea tu primera categoría"></app-presentation-card-primary>
+  <app-presentation-card-primary [items]="itemsCard" title="Organiza tus productos"
+    labelButton="Crea tu primera categoría"></app-presentation-card-primary>
 
 </div>
