@@ -48,6 +48,11 @@ export const routes: Routes = [
     component: PrincipalLayoutComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'sales',
+        pathMatch: 'full',
+      },
+      {
         path: 'sales',
         component: SalesLayoutComponent,
         children: [
@@ -96,16 +101,17 @@ export const routes: Routes = [
             component: ProductCategoriesPageComponent,
           },
         ],
-      },{
-        path:'clients',
-        component:ClientsProvidersLayoutComponent,
-        children:[
+      },
+      {
+        path: 'clients',
+        component: ClientsProvidersLayoutComponent,
+        children: [
           {
-            path:'',
-            component:ClientsPageComponent
-          }
-        ]
-      }
+            path: '',
+            component: ClientsPageComponent,
+          },
+        ],
+      },
     ],
   },
 ];
