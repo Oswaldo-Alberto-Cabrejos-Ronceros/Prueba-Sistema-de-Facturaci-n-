@@ -141,6 +141,10 @@ export class MenuPrincipalLayoutComponent {
       to: '/app/expenses',
       title: 'Gastos',
       iconName: 'payments',
-    }
+    } ,{
+      to: '/app/transactions',
+      title: 'Transacciones',
+      iconName: 'currency_exchange',
+    },
   ];
 }
