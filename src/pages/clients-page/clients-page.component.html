@@ -1,0 +1,45 @@
+<!-- contenido inyectado -->
+<ng-template #customRightTemplate>
+  <app-button-icon-label-quaternary
+    ariaLabel="Nuevo cliente / proveedor"
+    iconName="add"
+    class="block xl:hidden"
+  ></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary
+    label="Nuevo cliente / proveedor"
+    class="hidden xl:block"
+  ></app-button-icon-label-quaternary>
+  <!-- boton de importar -->
+  <app-button-icon-label-terciary
+    label="Importar clientes"
+    class="hidden xl:block"
+  ></app-button-icon-label-terciary>
+  <!-- boton de importar pequeño para diseño responsivo -->
+  <app-button-icon-label-terciary
+    ariaLabel="Importar clientes"
+    iconName="more_vert"
+    class="block xl:hidden"
+  ></app-button-icon-label-terciary>
+  <!-- boton exportar -->
+  <app-button-icon-label-terciary
+    (click)="handlePopUpExport()"
+    #triggerExport
+    ariaLabel="Exportar"
+    iconName="download"
+  ></app-button-icon-label-terciary>
+  <!-- pop up de opciones de exportar -->
+  <app-pop-up-options
+    [options]="optionsExport"
+    *ngIf="showPopUpExport && triggerExportRef"
+    [trigger]="triggerExportRef"
+    [visible]="showPopUpExport"
+  ></app-pop-up-options>
+</ng-template>
+
+<div class="max-w-md w-full self-center">
+  <app-presentation-card-primary
+    [items]="itemsCard"
+    title="Bienvenido al directorio de clientes"
+    labelButton="Empezar"
+  ></app-presentation-card-primary>
+</div>

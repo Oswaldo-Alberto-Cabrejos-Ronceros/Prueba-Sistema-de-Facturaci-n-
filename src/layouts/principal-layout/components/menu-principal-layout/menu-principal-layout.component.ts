@@ -127,5 +127,10 @@ export class MenuPrincipalLayoutComponent {
       title: 'Productos',
       iconName: 'inventory_2',
     },
+        {
+      to: '/app/clients',
+      title: 'Clientes',
+      iconName: 'perm_contact_calendar',
+    }
   ];
 }
