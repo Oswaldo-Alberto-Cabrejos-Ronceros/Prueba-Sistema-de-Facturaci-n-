@@ -123,7 +123,7 @@ export class MenuPrincipalLayoutComponent {
       iconName: 'shopping_bag',
     },
     {
-      to: '/app/login',
+      to: '/app/products',
       title: 'Productos',
       iconName: 'inventory_2',
     },
