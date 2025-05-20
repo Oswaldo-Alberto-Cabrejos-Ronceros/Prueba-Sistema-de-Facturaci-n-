@@ -1,4 +1,4 @@
-<app-menu-principal-layout [hidden]="!isSmallMenuOpen()" class="fixed z-40 bg-white lg:hidden">
+<app-menu-principal-layout (close)="handleSmallMenu()" *ngIf="isSmallMenuOpen()" class="fixed z-40 bg-white lg:hidden">
 </app-menu-principal-layout>
 
 <!-- menu principal permanente en pantallas grandes -->

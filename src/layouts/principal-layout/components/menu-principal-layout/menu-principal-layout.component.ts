@@ -1,7 +1,9 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
+  Output,
   signal,
   ViewChild,
 } from '@angular/core';
@@ -24,12 +26,14 @@ import { ButtonIconLabelCloseComponent } from '../../../../components/button-ico
     ButtonIconLabelSecondaryComponent,
     MyCompaniesCardComponent,
     NavItemComponent,
-    ButtonIconLabelCloseComponent
+    ButtonIconLabelCloseComponent,
   ],
   templateUrl: './menu-principal-layout.component.html',
   styleUrl: './menu-principal-layout.component.css',
 })
 export class MenuPrincipalLayoutComponent {
+  @Output() close = new EventEmitter();
+
   //para desplegar menu
   isDisplayedMenu = signal<boolean>(true);
 
@@ -55,6 +59,11 @@ export class MenuPrincipalLayoutComponent {
   handleShowMyCampaniesCard = () => {
     this.showMyCompaniesCard.update((value) => !value);
   };
+
+  //para emitir cerrar
+  emitClose(){
+    this.close.emit()
+  }
 
   //referencia para carduser
   @ViewChild('cardRef', { read: ElementRef }) cardRef!: ElementRef;
