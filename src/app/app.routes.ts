@@ -18,6 +18,9 @@ import { ProductsLayoutComponent } from '../layouts/products-layout/products-lay
 import { ProductsPageComponent } from '../pages/products-page/products-page.component';
 import { PackagesPageComponent } from '../pages/packages-page/packages-page.component';
 import { ProductCategoriesPageComponent } from '../pages/product-categories-page/product-categories-page.component';
+//clientes/ provedores
+import { ClientsProvidersLayoutComponent } from '../layouts/clients-providers-layout/clients-providers-layout.component';
+import { ClientsPageComponent } from '../pages/clients-page/clients-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -93,7 +96,16 @@ export const routes: Routes = [
             component: ProductCategoriesPageComponent,
           },
         ],
-      },
+      },{
+        path:'clients',
+        component:ClientsProvidersLayoutComponent,
+        children:[
+          {
+            path:'',
+            component:ClientsPageComponent
+          }
+        ]
+      }
     ],
   },
 ];
