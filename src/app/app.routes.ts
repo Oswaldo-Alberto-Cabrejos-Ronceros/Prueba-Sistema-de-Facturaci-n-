@@ -23,6 +23,9 @@ import { ClientsProvidersLayoutComponent } from '../layouts/clients-providers-la
 import { ClientsPageComponent } from '../pages/clients-page/clients-page.component';
 import { UsersLayoutComponent } from '../layouts/users-layout/users-layout.component';
 import { UsersPageComponent } from '../pages/users-page/users-page.component';
+// montos
+import { ExpensesLayoutComponent } from '../layouts/expenses-layout/expenses-layout.component';
+import { ExpensesPageComponent } from '../pages/expenses-page/expenses-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -121,6 +124,16 @@ export const routes: Routes = [
           {
             path:'',
             component:UsersPageComponent
+          }
+        ]
+      },
+      {
+        path:'expenses',
+        component:ExpensesLayoutComponent,
+        children:[
+          {
+            path:'',
+            component:ExpensesPageComponent
           }
         ]
       }

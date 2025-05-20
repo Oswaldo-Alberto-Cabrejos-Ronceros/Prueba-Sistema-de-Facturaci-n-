@@ -136,6 +136,11 @@ export class MenuPrincipalLayoutComponent {
       to: '/app/users',
       title: 'Usuarios',
       iconName: 'person',
+    },
+         {
+      to: '/app/expenses',
+      title: 'Gastos',
+      iconName: 'payments',
     }
   ];
 }
