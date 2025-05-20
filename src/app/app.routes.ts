@@ -21,6 +21,8 @@ import { ProductCategoriesPageComponent } from '../pages/product-categories-page
 //clientes/ provedores
 import { ClientsProvidersLayoutComponent } from '../layouts/clients-providers-layout/clients-providers-layout.component';
 import { ClientsPageComponent } from '../pages/clients-page/clients-page.component';
+import { UsersLayoutComponent } from '../layouts/users-layout/users-layout.component';
+import { UsersPageComponent } from '../pages/users-page/users-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -112,6 +114,16 @@ export const routes: Routes = [
           },
         ],
       },
+      {
+        path:'users',
+        component:UsersLayoutComponent,
+        children:[
+          {
+            path:'',
+            component:UsersPageComponent
+          }
+        ]
+      }
     ],
   },
 ];

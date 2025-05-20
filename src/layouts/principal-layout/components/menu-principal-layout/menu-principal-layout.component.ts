@@ -131,6 +131,11 @@ export class MenuPrincipalLayoutComponent {
       to: '/app/clients',
       title: 'Clientes',
       iconName: 'perm_contact_calendar',
+    },
+            {
+      to: '/app/users',
+      title: 'Usuarios',
+      iconName: 'person',
     }
   ];
 }
