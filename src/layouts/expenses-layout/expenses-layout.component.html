@@ -1,0 +1,10 @@
+<!-- barra de navegacion de usuario dentro de una vista -->
+<app-nav-bar-user>
+  <ng-template #leftTemplate>
+    <app-tab-bar [options]="menuItems" class="hidden md:block"></app-tab-bar>
+    <app-nav-bar-drop-down [options]="menuItems" class="block md:hidden"></app-nav-bar-drop-down>
+  </ng-template>
+</app-nav-bar-user>
+<div class="flex-1 flex p-2 xs:px-5 lg:px-10 py-5">
+  <router-outlet></router-outlet>
+</div>
