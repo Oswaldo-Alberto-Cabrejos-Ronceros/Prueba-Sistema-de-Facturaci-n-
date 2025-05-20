@@ -30,7 +30,7 @@ export class QuotationsPageComponent {
   @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
 
   //referencia del elemento que activa opciones de exportar
-  @ViewChild('triggerExport', { read: ElementRef, static: true })
+  @ViewChild('triggerExport', { read: ElementRef })
   triggerExportRef!: ElementRef;
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })

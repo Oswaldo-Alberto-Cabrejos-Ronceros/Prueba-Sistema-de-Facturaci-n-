@@ -6,8 +6,8 @@
   <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
     iconName="download"></app-button-icon-label-terciary>
   <!-- pop up de opciones de exportar -->
-  <app-pop-up-options [options]="optionsExport" [trigger]="triggerExportRef"
-    [visible]="showPopUpExport"></app-pop-up-options>
+  <app-pop-up-options [options]="optionsExport" *ngIf=" showPopUpExport && triggerExportRef"
+    [trigger]="triggerExportRef" [visible]="showPopUpExport"></app-pop-up-options>
 </ng-template>
 
 <div class="w-full flex gap-2 items-center">

@@ -1,16 +1,20 @@
 <ng-template #customRightTemplate>
 
-   <app-button-icon-label-quaternary ariaLabel="Nueva compra" iconName="add" class="block xl:hidden"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary ariaLabel="Nueva compra" iconName="add"
+    class="block xl:hidden"></app-button-icon-label-quaternary>
   <app-button-icon-label-quaternary label="Nueva compra" class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para notificaciones -->
-  <app-button-icon-label-terciary (click)="handlePopUpNotifications()" #triggerNotifications ariaLabel="Notificaciones" iconName="notifications"></app-button-icon-label-terciary>
+  <app-button-icon-label-terciary (click)="handlePopUpNotifications()" #triggerNotifications ariaLabel="Notificaciones"
+    iconName="notifications"></app-button-icon-label-terciary>
   <!-- pop up de notificaciones -->
-   <app-pop-up-options [trigger]="triggerNotificationsRef" [visible]="showPopUpNotifications"></app-pop-up-options>
+  <app-pop-up-options [trigger]="triggerNotificationsRef" *ngIf="showPopUpNotifications && triggerNotificationsRef"
+    [visible]="showPopUpNotifications"></app-pop-up-options>
   <!-- boton exportar -->
   <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
     iconName="download"></app-button-icon-label-terciary>
   <!-- pop up de opciones de exportar -->
-  <app-pop-up-options  [options]="optionsExport" [trigger]="triggerExportRef" [visible]="showPopUpExport"></app-pop-up-options>
+  <app-pop-up-options [options]="optionsExport" *ngIf="showPopUpExport && triggerExportRef" [trigger]="triggerExportRef"
+    [visible]="showPopUpExport"></app-pop-up-options>
 </ng-template>
 
 <div class="w-full flex gap-2 items-center">

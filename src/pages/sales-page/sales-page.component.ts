@@ -34,10 +34,10 @@ export class SalesPageComponent implements AfterViewInit {
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
   //referencia del elemento que activa opciones de exportar
-  @ViewChild('triggerExport', { read: ElementRef, static: true })
+  @ViewChild('triggerExport', { read: ElementRef })
   triggerExportRef!: ElementRef;
   //referencia del elemento que activa carta de notificaciones
-  @ViewChild('triggerNotifications', { read: ElementRef, static: true })
+  @ViewChild('triggerNotifications', { read: ElementRef})
   triggerNotificationsRef!: ElementRef;
 
   //bandera para el template

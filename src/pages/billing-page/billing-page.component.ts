@@ -32,10 +32,10 @@ export class BillingPageComponent {
   customRightTemplate!: TemplateRef<any>;
 
   //referencia del elemento que activa opciones de exportar
-  @ViewChild('triggerExport', { read: ElementRef, static: true })
+  @ViewChild('triggerExport', { read: ElementRef })
   triggerExportRef!: ElementRef;
   //referencia del elemtno qeu activa carta opciones
-  @ViewChild('triggerOptions', { read: ElementRef, static: true })
+  @ViewChild('triggerOptions', { read: ElementRef })
   triggerOptionsRef!: ElementRef;
 
   //inyectamos servicio template-injector
