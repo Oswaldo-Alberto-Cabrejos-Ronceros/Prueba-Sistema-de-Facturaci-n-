@@ -40,8 +40,7 @@ export class SalesPageComponent implements AfterViewInit {
   @ViewChild('triggerNotifications', { read: ElementRef})
   triggerNotificationsRef!: ElementRef;
 
-  //bandera para el template
-  templateReady = false;
+
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
