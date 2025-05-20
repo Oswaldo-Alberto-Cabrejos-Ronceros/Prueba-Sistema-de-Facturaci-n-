@@ -2,10 +2,10 @@ import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/co
 import { CommonModule } from '@angular/common';
 import { ButtonSortComponent } from '../button-sort/button-sort.component';
 import { IconComponent } from '../icon/icon.component';
-
+import { EmptyCardComponent } from '../empty-card/empty-card.component';
 @Component({
   selector: 'app-table-filter',
-  imports: [CommonModule,ButtonSortComponent,IconComponent],
+  imports: [CommonModule,EmptyCardComponent,ButtonSortComponent,IconComponent],
   templateUrl: './table-filter.component.html',
   styleUrl: './table-filter.component.css',
 })
