@@ -15,6 +15,9 @@ import { PurchasesPageComponent } from '../pages/purchases-page/purchases-page.c
 import { WarehousePageComponent } from '../pages/warehouse-page/warehouse-page.component';
 //productos
 import { ProductsLayoutComponent } from '../layouts/products-layout/products-layout.component';
+import { ProductsPageComponent } from '../pages/products-page/products-page.component';
+import { PackagesPageComponent } from '../pages/packages-page/packages-page.component';
+import { ProductCategoriesPageComponent } from '../pages/product-categories-page/product-categories-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -74,12 +77,23 @@ export const routes: Routes = [
         ],
       },
       {
-        path:'products',
-        component:ProductsLayoutComponent,
-        children:[
-          
-        ]
-      }
+        path: 'products',
+        component: ProductsLayoutComponent,
+        children: [
+          {
+            path: '',
+            component: ProductsPageComponent,
+          },
+          {
+            path: 'packages',
+            component: PackagesPageComponent,
+          },
+          {
+            path: 'categories',
+            component: ProductCategoriesPageComponent,
+          },
+        ],
+      },
     ],
   },
 ];
