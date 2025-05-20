@@ -1,1 +1,44 @@
-<p>expenses-page works!</p>
+<ng-template #customRightTemplate>
+  <app-button-icon-label-quaternary
+    ariaLabel="Nueva gasto"
+    iconName="add"
+    class="block xl:hidden"
+  ></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary
+    label="Nueva gasto"
+    class="hidden xl:block"
+  ></app-button-icon-label-quaternary>
+  <!-- para exportar -->
+  <app-button-icon-label-terciary
+    (click)="handlePopUpExport()"
+    #triggerExport
+    ariaLabel="Exportar"
+    iconName="download"
+  ></app-button-icon-label-terciary>
+  <!-- pop up de opciones de exportar -->
+  <app-pop-up-options
+    [options]="optionsExport"
+    *ngIf="showPopUpExport && triggerExportRef"
+    [trigger]="triggerExportRef"
+    [visible]="showPopUpExport"
+  ></app-pop-up-options>
+</ng-template>
+
+<div class="w-full flex gap-2 items-center">
+  <app-button-icon-label-terciary
+    *ngIf="isTableEnabled"
+    ariaLabel="Cerrar filtros"
+    label="Cerrar filtros"
+    iconName="close"
+    class="font-medium!"
+    (click)="handleEnabledTable()"
+  ></app-button-icon-label-terciary>
+  <app-date-picker-set></app-date-picker-set>
+</div>
+
+<app-table-filter
+  [columns]="columns"
+  title="Gastos"
+  (enabled)="handleEnabledTable()"
+  [filtersEnabled]="isTableEnabled"
+></app-table-filter>
