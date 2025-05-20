@@ -1,6 +1,5 @@
 import {
   AfterViewInit,
-  ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
@@ -32,26 +31,23 @@ export class SalesPageComponent implements AfterViewInit {
   @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
 
   //referencia al rightTemplatePersonalizado
-  @ViewChild('customRightTemplate') customRightTemplate!: TemplateRef<any>;
+  @ViewChild('customRightTemplate', { static: true })
+  customRightTemplate!: TemplateRef<any>;
   //referencia del elemento que activa opciones de exportar
-  @ViewChild('triggerExport', { read: ElementRef })
+  @ViewChild('triggerExport', { read: ElementRef, static: true })
   triggerExportRef!: ElementRef;
   //referencia del elemento que activa carta de notificaciones
-  @ViewChild('triggerNotifications', { read: ElementRef })
+  @ViewChild('triggerNotifications', { read: ElementRef, static: true })
   triggerNotificationsRef!: ElementRef;
 
   //bandera para el template
-templateReady = false;
+  templateReady = false;
   //inyectamos servicio template-injector
   constructor(
-    private navBarUserTemplateInjector: NavBarUserTemplateInjectorService,
-    private cdRef: ChangeDetectorRef
+    private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
   ) {}
   ngAfterViewInit(): void {
-    setTimeout(()=>{
     this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
-    this.templateReady = true;
-    })
   }
 
   columns: {
