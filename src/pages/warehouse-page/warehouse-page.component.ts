@@ -9,8 +9,8 @@ import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-t
 import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
-import { DatePickerSetComponent } from "../../components/date-picker-set/date-picker-set.component";
-import { TableFilterComponent } from "../../components/table-filter/table-filter.component";
+import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
+import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -21,8 +21,8 @@ import { CommonModule } from '@angular/common';
     PopUpOptionsComponent,
     DatePickerSetComponent,
     TableFilterComponent,
-    CommonModule
-],
+    CommonModule,
+  ],
   templateUrl: './warehouse-page.component.html',
   styleUrl: './warehouse-page.component.css',
 })
@@ -30,10 +30,11 @@ export class WarehousePageComponent {
   @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
 
   //referencia del elemento que activa opciones de exportar
-  @ViewChild('triggerExport', { read: ElementRef })
+  @ViewChild('triggerExport', { read: ElementRef, static: true })
   triggerExportRef!: ElementRef;
   //referencia al rightTemplatePersonalizado
-  @ViewChild('customRightTemplate') customRightTemplate!: TemplateRef<any>;
+  @ViewChild('customRightTemplate', { static: true })
+  customRightTemplate!: TemplateRef<any>;
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
@@ -47,7 +48,7 @@ export class WarehousePageComponent {
   optionsExport: { title: string }[] = [
     {
       title: 'Exportar movimientos',
-    }
+    },
   ];
 
   //para mostrar opciones de exportacion
@@ -81,24 +82,24 @@ export class WarehousePageComponent {
       options: ['Todos', 'Pagado', 'Deuda'],
     },
 
-        {
+    {
       key: 'date',
       label: 'Fecha',
       typeFilter: 'input',
       disable: true,
     },
-   {
+    {
       key: 'users',
       label: 'Usuario',
       typeFilter: 'input',
     },
 
-        {
+    {
       key: 'origin',
       label: 'Origen',
       typeFilter: 'select',
       options: ['Todos', 'Ajuste', 'Venta'],
-    }
+    },
   ];
 
   //para la activacion de la tabla
