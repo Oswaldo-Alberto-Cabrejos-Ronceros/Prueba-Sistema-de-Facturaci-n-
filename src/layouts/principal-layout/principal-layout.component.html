@@ -1,11 +1,11 @@
-<app-menu-principal-layout (close)="handleSmallMenu()" *ngIf="isSmallMenuOpen()" class="fixed z-40 bg-white lg:hidden">
+<app-menu-principal-layout (close)="handleSmallMenu()" *ngIf="isSmallMenuOpen()" class="fixed z-50 bg-white lg:hidden">
 </app-menu-principal-layout>
 
 <!-- menu principal permanente en pantallas grandes -->
 <app-menu-principal-layout class="hidden sticky left-0 lg:block z-50">
 </app-menu-principal-layout>
 <div class="flex-1 flex flex-col min-w-0">
-    <app-trial-month-card class="sticky top-0 z-50"></app-trial-month-card>
+    <app-trial-month-card class="sticky top-0 z-30"></app-trial-month-card>
   <!-- menu superios para pantallas pequeñas -->
   <app-menu-header (open)="handleSmallMenu()" class="block lg:hidden"></app-menu-header>
   <!-- carta de mes de prueba -->
@@ -15,7 +15,7 @@
 
   <router-outlet></router-outlet>
 
-  <div class="fixed h-screen w-screen z-30 bg-black/40 lg:hidden" [hidden]="!isSmallMenuOpen()"
+  <div class="fixed h-screen w-screen z-40 bg-black/40 lg:hidden" [hidden]="!isSmallMenuOpen()"
     (click)="handleSmallMenu()">
   </div>
 </div>
