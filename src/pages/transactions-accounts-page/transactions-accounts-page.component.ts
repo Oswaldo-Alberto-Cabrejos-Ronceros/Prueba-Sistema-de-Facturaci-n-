@@ -1,10 +1,11 @@
 import { Component, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
+import { InputSecondaryComponent } from "../../components/input-secondary/input-secondary.component";
 
 @Component({
   selector: 'app-transactions-accounts-page',
-  imports: [ButtonIconLabelQuaternaryComponent],
+  imports: [ButtonIconLabelQuaternaryComponent, InputSecondaryComponent],
   templateUrl: './transactions-accounts-page.component.html',
   styleUrl: './transactions-accounts-page.component.css'
 })
