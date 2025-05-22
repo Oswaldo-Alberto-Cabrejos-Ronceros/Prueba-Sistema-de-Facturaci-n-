@@ -2,11 +2,10 @@
   <div routerLinkActive="font-bold! text-red-600 dark:text-red-500"
     class="flex  items-center justify-center gap-2 px-4 py-2 w-min rounded-2xl transition-colors duration-150 group-hover:bg-red-100 dark:group-hover:bg-red-200 group-hover:text-red-500 font-semibold relative">
     <span class="material-symbols-rounded"> {{iconName}}</span>
-    <!-- expandido siempre se muestra -->
-    <!-- Si está expandido, siempre se muestra -->
+    <!-- si esta expandido siempre se muestra -->
     <p *ngIf="isDisplayed">{{ title }}</p>
 
-    <!-- Si NO está expandido, se muestra al hacer hover con posición absoluta -->
+<!-- si no esta expandio se muestra en hover del group -->
     <p
       *ngIf="!isDisplayed"
       class=" hidden group-hover:block"

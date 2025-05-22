@@ -3,6 +3,7 @@ import {
   ElementRef,
   EventEmitter,
   HostListener,
+  Input,
   Output,
   signal,
   ViewChild,
@@ -33,9 +34,10 @@ import { ButtonIconLabelCloseComponent } from '../../../../components/button-ico
 })
 export class MenuPrincipalLayoutComponent {
   @Output() close = new EventEmitter();
-
-  //para desplegar menu
-  isDisplayedMenu = signal<boolean>(true);
+  //para informar a padre de despliegues
+  @Output() isChangeDisplayedMenu = new EventEmitter();
+  //para pasar al menu
+  @Input() isDisplayedMenu: boolean = true;
 
   //para mostrar carta de usuario
   showCardUser = signal<boolean>(false);
@@ -46,7 +48,9 @@ export class MenuPrincipalLayoutComponent {
 
   //para cambiar el depliegue del menu
   changeDisplayedMenu = () => {
-    this.isDisplayedMenu.update((value) => (value = !value));
+    this.isDisplayedMenu = !this.isDisplayedMenu;
+    //informamos del cambio al padre
+    this.isChangeDisplayedMenu.emit();
   };
 
   //para manejar mostrar carta de usuario
@@ -61,8 +65,8 @@ export class MenuPrincipalLayoutComponent {
   };
 
   //para emitir cerrar
-  emitClose(){
-    this.close.emit()
+  emitClose() {
+    this.close.emit();
   }
 
   //referencia para carduser
@@ -127,21 +131,22 @@ export class MenuPrincipalLayoutComponent {
       title: 'Productos',
       iconName: 'inventory_2',
     },
-        {
+    {
       to: '/app/clients',
       title: 'Clientes',
       iconName: 'perm_contact_calendar',
     },
-            {
+    {
       to: '/app/users',
       title: 'Usuarios',
       iconName: 'person',
     },
-         {
+    {
       to: '/app/expenses',
       title: 'Gastos',
       iconName: 'payments',
-    } ,{
+    },
+    {
       to: '/app/transactions',
       title: 'Transacciones',
       iconName: 'currency_exchange',

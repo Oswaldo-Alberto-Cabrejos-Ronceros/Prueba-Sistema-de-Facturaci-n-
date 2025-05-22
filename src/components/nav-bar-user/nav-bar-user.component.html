@@ -10,8 +10,8 @@
     <div *ngIf="rightTemplate" class="flex items-center justify-end gap-2 xs:gap-4">
       <ng-container *ngTemplateOutlet="rightTemplate"></ng-container>
     </div>
-    <app-button-icon-label-terciary (click)="handlePopup()"  #triggerMyUser ariaLabel="usuario" iconName="person"></app-button-icon-label-terciary>
-    <app-pop-up-my-user-acount [trigger]="triggerMyUserRef " [visible]="showPopup"></app-pop-up-my-user-acount>
+    <app-button-icon-label-terciary class="hidden lg:block" (click)="handlePopup()"  #triggerMyUser ariaLabel="usuario" iconName="person"></app-button-icon-label-terciary>
+    <app-pop-up-my-user-acount class="hidden lg:block" [trigger]="triggerMyUserRef " [visible]="showPopup"></app-pop-up-my-user-acount>
   </div>
 
 </nav>
