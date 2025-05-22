@@ -12,9 +12,8 @@ import { RouterOutlet } from '@angular/router';
     TrialMonthCardComponent,
     MenuHeaderComponent,
     CommonModule,
-    RouterOutlet
-
-],
+    RouterOutlet,
+  ],
   templateUrl: './principal-layout.component.html',
   styleUrl: './principal-layout.component.css',
 })
@@ -25,10 +24,15 @@ export class PrincipalLayoutComponent {
   //para ver o no el menu en pantallas pequeñas
   isSmallMenuOpen = signal<boolean>(false);
 
+  //bandera de menu desplegado
+  isDisplayedMenu: boolean = true;
+  //para cambiar displayedMenu
+  changeDisplayedMenu = () => {
+    this.isDisplayedMenu = !this.isDisplayedMenu;
+  };
+
   //para manejo de menu en pantallas pequeñas
   handleSmallMenu() {
     this.isSmallMenuOpen.update((value) => (value = !value));
   }
-
-
 }

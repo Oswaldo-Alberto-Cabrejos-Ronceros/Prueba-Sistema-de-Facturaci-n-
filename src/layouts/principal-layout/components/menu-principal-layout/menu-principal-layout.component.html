@@ -1,15 +1,15 @@
 <!-- principal -->
 <div
   class="py-4  flex flex-col h-screen border-r-1 bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-50 transition-all duration-300"
-  [ngClass]="isDisplayedMenu() ? 'w-64' : 'w-20 justify-center'">
+  [ngClass]="isDisplayedMenu ? 'w-64' : 'w-20 justify-center'">
 
   <!-- contenido principal -->
-  <div class="w-full flex flex-col px-2" [ngClass]="isDisplayedMenu()?'items-start':'items-center'"><app-button-icon
+  <div class="w-full flex flex-col px-2" [ngClass]="isDisplayedMenu?'items-start':'items-center'"><app-button-icon
       ariaLabel="Logo" iconName="public"></app-button-icon></div>
   <!-- buton de mis empresas -->
   <app-button-icon-label-secondary class="px-2 overflow-hidden" #buttonCompaniesCardRef
     (click)="handleShowMyCampaniesCard()" name="EXPORTACIONES EL CHINO" iconName="expand_all"
-    [isDisplayed]="isDisplayedMenu()"></app-button-icon-label-secondary>
+    [isDisplayed]="isDisplayedMenu"></app-button-icon-label-secondary>
   <!-- carta mis empresas -->
   <app-my-companies-card #myCompaniesCardRef (close)="handleShowMyCampaniesCard()"
     class="fixed top-0 left-0 ml-6 mt-16 z-10" [hidden]="!showMyCompaniesCard()"></app-my-companies-card>
@@ -17,26 +17,26 @@
   <div class=" flex-1 flex flex-col overflow-y-auto min-w-full w-fit">
     <nav class=" flex flex-col gap-4 py-4">
       <app-nav-item (click)="emitClose()" *ngFor="let item of menuItems" [to]="item.to" [title]="item.title"
-        [iconName]="item.iconName" [isDisplayed]="isDisplayedMenu()"></app-nav-item>
+        [iconName]="item.iconName" [isDisplayed]="isDisplayedMenu"></app-nav-item>
     </nav>
   </div>
 
   <!-- footer -->
   <div class="w-full flex flex-col px-2 gap-2">
     <!-- cuando esta desplegado -->
-    <app-button-icon-label-close [hidden]="!isDisplayedMenu()" iconName="arrow_circle_right"
+    <app-button-icon-label-close [hidden]="!isDisplayedMenu" iconName="arrow_circle_right"
       name="Iniciar conexión con Sunat"></app-button-icon-label-close>
     <!-- cuando no esta desplegado -->
-    <div [hidden]="isDisplayedMenu()" class="h-12 fixed bottom-0 right-0 mr-4 mb-4"> <app-button-icon-label-close
+    <div [hidden]="isDisplayedMenu" class="h-12 fixed bottom-0 right-0 mr-4 mb-4"> <app-button-icon-label-close
         iconName="arrow_circle_right" name="Iniciar conexión con Sunat"></app-button-icon-label-close></div>
 
-    <div class="w-full flex justify-between items-center" [ngClass]="isDisplayedMenu()?'flex-row':'flex-col'">
+    <div class="w-full flex justify-between items-center" [ngClass]="isDisplayedMenu?'flex-row':'flex-col'">
       <div class="flex-1 relative">
         <!-- carta de usuario -->
         <app-my-user-account-card #cardRef class="fixed bottom-0 left-0 mb-20 ml-6"
           [hidden]="!showCardUser()"></app-my-user-account-card>
         <!-- boton de carta usuario -->
-        <app-button-icon-label #buttonCardUserRef [hidden]="!isDisplayedMenu()" (click)="handleShowCardUser()"
+        <app-button-icon-label #buttonCardUserRef [hidden]="!isDisplayedMenu" (click)="handleShowCardUser()"
           name="Exportaciones" iconName="person"></app-button-icon-label>
       </div>
       <app-button-icon ariaLabel="Maximizar" iconName="chevron_left" (click)="changeDisplayedMenu()"></app-button-icon>
