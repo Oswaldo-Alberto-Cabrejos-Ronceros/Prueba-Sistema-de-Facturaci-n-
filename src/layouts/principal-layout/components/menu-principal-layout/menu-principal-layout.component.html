@@ -14,10 +14,13 @@
   <app-my-companies-card #myCompaniesCardRef (close)="handleShowMyCampaniesCard()"
     class="fixed top-0 left-0 ml-6 mt-16 z-10" [hidden]="!showMyCompaniesCard()"></app-my-companies-card>
   <!-- contiene el menu de opciones -->
-  <nav class="flex-1 flex flex-col gap-4 py-4 overflow-y-auto">
-    <app-nav-item (click)="emitClose()" *ngFor="let item of menuItems" [to]="item.to" [title]="item.title" [iconName]="item.iconName"
-      [isDisplayed]="isDisplayedMenu()"></app-nav-item>
-  </nav>
+  <div class=" flex-1 flex flex-col overflow-y-auto min-w-full w-fit">
+    <nav class=" flex flex-col gap-4 py-4">
+      <app-nav-item (click)="emitClose()" *ngFor="let item of menuItems" [to]="item.to" [title]="item.title"
+        [iconName]="item.iconName" [isDisplayed]="isDisplayedMenu()"></app-nav-item>
+    </nav>
+  </div>
+
   <!-- footer -->
   <div class="w-full flex flex-col px-2 gap-2">
     <!-- cuando esta desplegado -->
