@@ -37,4 +37,5 @@
       <ng-container *ngTemplateOutlet="rowTemplate; context:{$implicit: item,index: i}"></ng-container>
     </tr>
   </tbody>
+  <caption *ngIf="data.length===0" class="text-xs text-neutral-500 caption-bottom pt-3">No hay <strong>registros</strong> para mostrar</caption>
 </table>
