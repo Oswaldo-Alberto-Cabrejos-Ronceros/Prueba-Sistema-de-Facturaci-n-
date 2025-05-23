@@ -1,1 +1,12 @@
-<p>reports-kardex-page works!</p>
+<ng-template #customRightTemplate>
+  <!-- boton exportar -->
+  <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
+    iconName="download"></app-button-icon-label-terciary>
+  <!-- pop up de opciones de exportar -->
+  <app-pop-up-options [options]="optionsExport" *ngIf=" showPopUpExport && triggerExportRef"
+    [trigger]="triggerExportRef" [visible]="showPopUpExport"></app-pop-up-options>
+</ng-template>
+
+<app-date-picker-set></app-date-picker-set>
+
+<app-table-filter-secondary [columns]="columns"></app-table-filter-secondary>
