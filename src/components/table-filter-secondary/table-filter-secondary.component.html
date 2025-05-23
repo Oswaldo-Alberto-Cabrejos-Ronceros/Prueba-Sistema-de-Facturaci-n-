@@ -1,0 +1,38 @@
+<table class="min-w-4xl w-full table-fixed ">
+  <!-- cabezera -->
+  <thead>
+    <tr>
+
+      <th *ngFor="let column of columns"
+      [ngClass]="column.width?column.width:''"
+        class="border-1 border-neutral-300 align-top min-w-fit">
+        <div class="flex flex-col gap-1 items-center justify-center px-2.5 pt-1.5 pb-2">
+          <div class="flex gap-1 items-center justify-center ">
+            <p class="text-xs font-semibold">{{column.label}}</p>
+            <!-- boton de sorteo -->
+            <app-button-sort
+              *ngIf="column.ordenable===undefined"></app-button-sort>
+          </div>
+          <!-- si es input y no se envia disable -->
+          <app-input-secondary  *ngIf="column.typeFilter==='input' &&column.disable===undefined" type="text" [name]="column.key" size="sm"></app-input-secondary>
+
+          <!-- si es select -->
+          <select
+            class="p-2 min-w-20 group w-full hover:text-neutral-800 dark:hover:text-neutral-100  focus:outline-none text-neutral-300 transition-colors duration-150 focus:text-neutral-900 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50 dark:focus:text-neutral-200 cursor-pointer"
+            *ngIf="column.typeFilter==='select'" name="" id="">
+            <option *ngFor="let option of column.options" [value]="option
+        ">{{option}}</option>
+          </select>
+
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <!-- body -->
+   <tbody class="text-sm border-1 border-neutral-300 ">
+    <tr class="transition-colors duration-150 odd:bg-neutral-100 hover:odd:bg-neutral-200 dark:odd:bg-neutral-700 dark:hover:odd:bg-neutral-600 even:bg-transparent hover:even:bg-neutral-200 dark:hover:even:bg-neutral-600" *ngFor="let item of data">
+      <!-- el padre pasara los row con los datos a mostrar -->
+      <ng-container *ngTemplateOutlet="rowTemplate; context:{$implicit: item}"></ng-container>
+    </tr>
+   </tbody>
+</table>

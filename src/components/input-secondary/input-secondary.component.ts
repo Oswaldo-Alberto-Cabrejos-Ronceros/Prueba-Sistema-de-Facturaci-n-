@@ -12,7 +12,7 @@ export class InputSecondaryComponent {
 @Input() type:string="";
 @Input() name:string="";
 @Input() placeholder:string="";
-@Input() size:string="base";
-@HostBinding('class') class='w-full max-w-lg min-w-min'
+@Input() size:string="base"; //sm o se deja vacio para que sea base
+@HostBinding('class') class='w-full min-w-min'
 value: string = '';
 }

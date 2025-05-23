@@ -1,0 +1,32 @@
+import { Component, ContentChild, HostBinding, Input, TemplateRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { InputSecondaryComponent } from "../input-secondary/input-secondary.component";
+import { ButtonSortComponent } from '../button-sort/button-sort.component';
+
+@Component({
+  selector: 'app-table-filter-secondary',
+  imports: [CommonModule, InputSecondaryComponent,ButtonSortComponent],
+  templateUrl: './table-filter-secondary.component.html',
+  styleUrl: './table-filter-secondary.component.css'
+})
+export class TableFilterSecondaryComponent {
+@HostBinding('class') class = 'flex-1 overflow-x-auto';
+//input para los datos
+@Input() data: any[]= []
+
+  @Input() columns: {
+    key: string; //clave
+    label: string; //titulo a mostrar
+    typeFilter: string; //tipo de filtro 'input' o 'select'
+    disable?: boolean // para desabilitar el filtro
+    options?: string[];  //opciones en caso de select
+    ordenable?: boolean;//si permite ordenamiento
+    width?:string //para ancho de las columnas
+  }[] = [];
+
+
+// template para el encabezado
+
+// template para las filas
+@ContentChild('row',{static:true}) rowTemplate!:TemplateRef<any>;
+}
