@@ -74,9 +74,10 @@ export class TransactionsAccountsPageComponent {
 
   //sobre exportar
 
-  optionsExport: { title: string }[] = [
+  optionsExport: { title: string,iconName:string }[] = [
     {
       title: 'Borrar',
+      iconName:'delete'
     },
   ];
 

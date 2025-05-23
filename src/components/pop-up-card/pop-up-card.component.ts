@@ -20,6 +20,8 @@ export class PopUpCardComponent implements OnChanges {
   @Input() visible = false;
   //referencia del elemento de apertura
   @Input() trigger!: ElementRef;
+  //para tamaño
+  @Input() size:string='base'
   //referencia del popup
   @ViewChild('popupRef') popupRef!: ElementRef;
 

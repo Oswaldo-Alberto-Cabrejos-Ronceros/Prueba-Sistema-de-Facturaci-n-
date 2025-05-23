@@ -12,7 +12,7 @@
       <app-button-icon-terciary iconName="edit" ariaLabel="Editar"></app-button-icon-terciary>
       <app-button-icon-terciary (click)="handlePopUpExport(i)" #trigger iconName="more_horiz"
         ariaLabel="Opciones"></app-button-icon-terciary>
-      <app-pop-up-options [options]="optionsExport" *ngIf="activePopUpIndex === i" [trigger]="trigger.elementRef"
+      <app-pop-up-options size="sm" [options]="optionsExport" *ngIf="activePopUpIndex === i" [trigger]="trigger.elementRef"
         [visible]="activePopUpIndex === i">></app-pop-up-options>
     </td>
   </ng-template>

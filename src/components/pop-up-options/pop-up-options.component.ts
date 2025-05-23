@@ -15,7 +15,8 @@ export class PopUpOptionsComponent {
   //necesarios para pop-up-card
   @Input() visible = false;
   @Input() trigger!: ElementRef;
+  @Input() size:string='base'
   //opciones
-  @Input() options:{title:string}[]=[
+  @Input() options:{title:string,iconName?:string}[]=[
   ]
 }
