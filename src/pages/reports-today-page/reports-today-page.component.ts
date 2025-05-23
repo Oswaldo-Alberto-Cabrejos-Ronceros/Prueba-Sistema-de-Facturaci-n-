@@ -1,9 +1,10 @@
 import { Component, HostBinding } from '@angular/core';
 import { CardAmountSolesDolarsSetComponent } from '../../components/card-amount-soles-dolars-set/card-amount-soles-dolars-set.component';
+import { CardExportComponent } from "../../components/card-export/card-export.component";
 
 @Component({
   selector: 'app-reports-today-page',
-  imports: [CardAmountSolesDolarsSetComponent],
+  imports: [CardAmountSolesDolarsSetComponent, CardExportComponent],
   templateUrl: './reports-today-page.component.html',
   styleUrl: './reports-today-page.component.css',
 })
@@ -87,4 +88,7 @@ export class ReportsTodayPageComponent {
     year: 'numeric',
   };
   today = new Date().toLocaleDateString('es-PE', this.optionsDate);
+
+  //para productos mas vendidos
+
 }
