@@ -1,1 +1,8 @@
-<p>card-amount-soles-dolars-set works!</p>
+<div class="p-3.5 border-1 border-neutral-300 w-full rounded-sm">
+  <!-- por cada item -->
+  <div *ngFor="let item of items" class="w-full flex-col">
+    <app-card-amount-soles-dolars-unitary [iconName]="item.iconName" [title]="item.title"
+      [data]="item.data"></app-card-amount-soles-dolars-unitary>
+    <hr class="my-4 border-neutral-300">
+  </div>
+</div>

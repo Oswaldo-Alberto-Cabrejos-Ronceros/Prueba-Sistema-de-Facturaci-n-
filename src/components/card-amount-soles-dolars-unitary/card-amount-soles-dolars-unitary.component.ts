@@ -13,5 +13,5 @@ export class CardAmountSolesDolarsUnitaryComponent {
   @Input() iconName: string = '';
   @Input() title: string = '';
   @Input() emptyMessage: string = '';
-  @Input() data: { subtitle: string; soles: number; dolars: number }[] = [];
+  @Input() data: { subtitle?: string; soles: number; dolars: number }[] = [];
 }

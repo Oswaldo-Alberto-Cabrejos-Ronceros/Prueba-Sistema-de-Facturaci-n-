@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CardAmountSolesDolarsUnitaryComponent } from "../../components/card-amount-soles-dolars-unitary/card-amount-soles-dolars-unitary.component";
+import { CardAmountSolesDolarsSetComponent } from "../../components/card-amount-soles-dolars-set/card-amount-soles-dolars-set.component";
 
 @Component({
   selector: 'app-reports-today-page',
-  imports: [CardAmountSolesDolarsUnitaryComponent],
+  imports: [CardAmountSolesDolarsSetComponent],
   templateUrl: './reports-today-page.component.html',
   styleUrl: './reports-today-page.component.css',
 })
@@ -12,8 +12,8 @@ export class ReportsTodayPageComponent {
     iconName: string;
     title: string;
     emptyMessage?: string;
-    data: { subtitle: string; soles: number; dolars: number }[];
-  } = {
+    data: { subtitle?: string; soles: number; dolars: number }[];
+  } [] = [{
     iconName: 'shopping_basket',
     title: 'Montos totales empleados en compras',
     data: [
@@ -33,5 +33,30 @@ export class ReportsTodayPageComponent {
         dolars: 80.0,
       },
     ],
-  };
+  },{
+    iconName: 'inventory_2',
+    title: 'Montos totales en movimientos de caja chica',
+    data: [
+      {
+        subtitle: 'entradas',
+        soles: 20.0,
+        dolars: 50.0,
+      },
+      {
+        subtitle: 'salidas',
+        soles: 40.0,
+        dolars: 30.0,
+      }
+    ],
+  },
+{
+    iconName: 'monitoring',
+    title: 'Promedios de los totales de ventas',
+    data: [
+      {
+        soles: 20.0,
+        dolars: 50.0,
+      }
+    ],
+  }];
 }

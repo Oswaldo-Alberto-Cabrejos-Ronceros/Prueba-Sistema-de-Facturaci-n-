@@ -19,7 +19,7 @@
           <td class="text-xl font-medium">
             S/ {{item.soles}}
           </td>
-          <td class="pl-2">
+          <td class="pl-2" *ngIf="item.subtitle">
             en {{item.subtitle.toLowerCase()}}
           </td>
         </tr>
@@ -36,7 +36,7 @@
           <td class="text-xl font-medium">
             S/ {{item.soles}}
           </td>
-          <td class="pl-2">
+          <td class="pl-2" *ngIf="item.subtitle">
             en {{item.subtitle.toLowerCase()}}
           </td>
         </tr>
