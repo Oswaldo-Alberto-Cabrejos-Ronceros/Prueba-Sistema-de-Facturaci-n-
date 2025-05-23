@@ -32,9 +32,9 @@
   <tbody class="border-1 border-neutral-300 ">
     <tr
       class="transition-colors duration-150 odd:bg-neutral-100 hover:odd:bg-neutral-200 dark:odd:bg-neutral-700 dark:hover:odd:bg-neutral-600 even:bg-transparent hover:even:bg-neutral-200 dark:hover:even:bg-neutral-600"
-      *ngFor="let item of data">
+      *ngFor="let item of data;let i=index">
       <!-- el padre pasara los row con los datos a mostrar -->
-      <ng-container *ngTemplateOutlet="rowTemplate; context:{$implicit: item}"></ng-container>
+      <ng-container *ngTemplateOutlet="rowTemplate; context:{$implicit: item,index: i}"></ng-container>
     </tr>
   </tbody>
 </table>
