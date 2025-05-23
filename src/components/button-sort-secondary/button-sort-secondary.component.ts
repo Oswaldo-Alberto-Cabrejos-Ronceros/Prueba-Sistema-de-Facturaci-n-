@@ -8,14 +8,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './button-sort-secondary.component.css'
 })
 export class ButtonSortSecondaryComponent {
+optionsIcons:string[]=[
+   'expand_all',
+  'arrow_drop_up',
+  'arrow_drop_down'
+]
 
-state:number=0
-handleState=()=>{
-  if(this.state<2){
-    this.state=this.state+1
+icon:number=0
+
+handleIcon=()=>{
+  if(this.icon<2){
+    this.icon=this.icon+1
   } else{
-    this.state=0
+    this.icon=0
   }
 }
-
 }

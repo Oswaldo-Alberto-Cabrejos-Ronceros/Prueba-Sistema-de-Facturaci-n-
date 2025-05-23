@@ -2,10 +2,11 @@ import { Component, ContentChild, HostBinding, Input, TemplateRef } from '@angul
 import { CommonModule } from '@angular/common';
 import { InputSecondaryComponent } from "../input-secondary/input-secondary.component";
 import { ButtonSortComponent } from '../button-sort/button-sort.component';
+import { ButtonSortSecondaryComponent } from "../button-sort-secondary/button-sort-secondary.component";
 
 @Component({
   selector: 'app-table-filter-secondary',
-  imports: [CommonModule, InputSecondaryComponent,ButtonSortComponent],
+  imports: [CommonModule, InputSecondaryComponent, ButtonSortComponent, ButtonSortSecondaryComponent],
   templateUrl: './table-filter-secondary.component.html',
   styleUrl: './table-filter-secondary.component.css'
 })

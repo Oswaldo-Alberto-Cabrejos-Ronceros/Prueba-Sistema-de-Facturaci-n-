@@ -10,8 +10,7 @@
           <div class="flex gap-1 items-center justify-center ">
             <p class="text-xs font-semibold">{{column.label}}</p>
             <!-- boton de sorteo -->
-            <app-button-sort
-              *ngIf="column.ordenable===undefined"></app-button-sort>
+<app-button-sort-secondary *ngIf="column.ordenable===undefined || column.ordenable===true"></app-button-sort-secondary>
           </div>
           <!-- si es input y no se envia disable -->
           <app-input-secondary  *ngIf="column.typeFilter==='input' &&column.disable===undefined" type="text" [name]="column.key" size="sm"></app-input-secondary>
