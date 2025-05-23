@@ -1,1 +1,33 @@
-<p>reports-accounting-page works!</p>
+<!-- seccion de envio -->
+<div class="grid grid-cols-2 gap-2">
+
+  <!-- tabla de emails -->
+  <div class="border-1 border-neutral-300 rounded-sm p-3.5">
+    <app-table-primary [columns]="columnsEmailsDestino" [data]="emailsDestinoData">
+      <ng-template #row let-emailDestino let-i="index">
+        <td class="py-2 px-2.5">
+          {{emailDestino.email}}
+        </td>
+        <td class="py-2 px-2.5 flex items-center justify-center gap-2">
+          <app-button-icon-terciary iconName="edit" ariaLabel="Editar"></app-button-icon-terciary>
+          <app-button-icon-terciary iconName="delete" ariaLabel="Eliminar"></app-button-icon-terciary>
+        </td>
+      </ng-template>
+    </app-table-primary>
+  </div>
+
+  <!-- seccion 2 -->
+  <div class="flex ">
+    <!-- seccion de email de destino -->
+    <div>
+
+
+    </div>
+    <!-- seccion tipo de tributario -->
+    <div>
+
+    </div>
+  </div>
+</div>
+
+<app-table-primary [columns]="columns"></app-table-primary>
