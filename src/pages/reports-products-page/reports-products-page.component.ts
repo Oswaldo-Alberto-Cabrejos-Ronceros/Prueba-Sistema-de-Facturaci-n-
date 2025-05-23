@@ -10,6 +10,7 @@ import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-t
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
 import { CommonModule } from '@angular/common';
+import { DatePickerSetComponent } from "../../components/date-picker-set/date-picker-set.component";
 
 @Component({
   selector: 'app-reports-products-page',
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     TableFilterSecondaryComponent,
     ButtonIconLabelTerciaryComponent,
     PopUpOptionsComponent,
-  ],
+    DatePickerSetComponent
+],
   templateUrl: './reports-products-page.component.html',
   styleUrl: './reports-products-page.component.css',
 })
