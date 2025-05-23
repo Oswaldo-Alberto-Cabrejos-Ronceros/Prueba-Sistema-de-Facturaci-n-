@@ -19,7 +19,7 @@ export class ReportsLayoutComponent {
       title: 'Reportes',
     },
     {
-      to: '/app/reports/day',
+      to: '/app/reports/today',
       title: 'Hoy',
     },
     {

@@ -32,6 +32,13 @@ import { ExpensesPageComponent } from '../pages/expenses-page/expenses-page.comp
 import { TransactionsLayoutComponent } from '../layouts/transactions-layout/transactions-layout.component';
 import { TransactionsPageComponent } from '../pages/transactions-page/transactions-page.component';
 import { TransactionsAccountsPageComponent } from '../pages/transactions-accounts-page/transactions-accounts-page.component';
+import { ReportsPageComponent } from '../pages/reports-page/reports-page.component';
+import { ReportsTodayPageComponent } from '../pages/reports-today-page/reports-today-page.component';
+import { ReportsKardexPageComponent } from '../pages/reports-kardex-page/reports-kardex-page.component';
+import { ReportsAccountingPageComponent } from '../pages/reports-accounting-page/reports-accounting-page.component';
+import { ReportsClientsPageComponent } from '../pages/reports-clients-page/reports-clients-page.component';
+import { ReportsDownloadsPageComponent } from '../pages/reports-downloads-page/reports-downloads-page.component';
+import { ReportsProductsPageComponent } from '../pages/reports-products-page/reports-products-page.component';
 
 
 export const routes: Routes = [
@@ -161,7 +168,34 @@ export const routes: Routes = [
       {
         path:'reports',
         component:ReportsLayoutComponent,
-        children:[
+        children:[{
+          path:'',
+          component:ReportsPageComponent
+        },
+        {
+          path:'today',
+          component:ReportsTodayPageComponent
+        },
+        {
+          path:'products',
+          component:ReportsProductsPageComponent
+        },
+        {
+          path:'kardex',
+          component:ReportsKardexPageComponent
+        },
+                {
+          path:'accounting',
+          component:ReportsAccountingPageComponent
+        },
+                {
+          path:'clients',
+          component:ReportsClientsPageComponent
+        },
+                {
+          path:'downloads',
+          component:ReportsDownloadsPageComponent
+        }
         ]
       }
     ],
