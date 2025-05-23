@@ -1,6 +1,6 @@
 <div #popupRef [ngStyle]="popupStyles" class="absolute z-50 bg-white w-min  dark:bg-neutral-800 flex flex-col  gap-2 shadow-uniform
           opacity-0 origin-top scale-y-0 transition-opacity-transform duration-200 ease-out"
   [class.opacity-100]="visible  && isReady" [class.scale-y-100]="visible && isReady"
-  [ngClass]="size==='sm'?'min-w-36 py-2 rounded':'min-w-72 py-4 rounded-xl'">
+  [ngClass]="size==='sm'?'min-w-36 py-2 rounded':'min-w-52 py-4 rounded-xl'">
   <ng-content></ng-content>
 </div>
