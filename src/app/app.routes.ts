@@ -18,6 +18,8 @@ import { ProductsLayoutComponent } from '../layouts/products-layout/products-lay
 import { ProductsPageComponent } from '../pages/products-page/products-page.component';
 import { PackagesPageComponent } from '../pages/packages-page/packages-page.component';
 import { ProductCategoriesPageComponent } from '../pages/product-categories-page/product-categories-page.component';
+//reportes
+import { ReportsLayoutComponent } from '../layouts/reports-layout/reports-layout.component';
 //clientes/ provedores
 import { ClientsProvidersLayoutComponent } from '../layouts/clients-providers-layout/clients-providers-layout.component';
 import { ClientsPageComponent } from '../pages/clients-page/clients-page.component';
@@ -30,6 +32,7 @@ import { ExpensesPageComponent } from '../pages/expenses-page/expenses-page.comp
 import { TransactionsLayoutComponent } from '../layouts/transactions-layout/transactions-layout.component';
 import { TransactionsPageComponent } from '../pages/transactions-page/transactions-page.component';
 import { TransactionsAccountsPageComponent } from '../pages/transactions-accounts-page/transactions-accounts-page.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -153,6 +156,12 @@ export const routes: Routes = [
             path:'accounts',
             component:TransactionsAccountsPageComponent
           }
+        ]
+      },
+      {
+        path:'reports',
+        component:ReportsLayoutComponent,
+        children:[
         ]
       }
     ],

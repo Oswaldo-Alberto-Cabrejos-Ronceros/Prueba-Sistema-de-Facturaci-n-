@@ -132,6 +132,11 @@ export class MenuPrincipalLayoutComponent {
       iconName: 'inventory_2',
     },
     {
+      to: '/app/reports',
+      title: 'Reportes',
+      iconName: 'monitoring',
+    },
+    {
       to: '/app/clients',
       title: 'Clientes',
       iconName: 'perm_contact_calendar',
