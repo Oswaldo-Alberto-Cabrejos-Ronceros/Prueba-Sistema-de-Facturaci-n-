@@ -1,0 +1,6 @@
+<select [name]="name" [id]="name"
+[(ngModel)]="value"
+  class="text-neutral-800 dark:text-neutral-50 w-full bg-transparent p-1 border-1 border-neutral-300 appearance-none rounded-sm transition-shadow duration-300 focus:outline-none focus:border-red-500 focus:shadow-uniform-lg focus:shadow-red-300"
+  [ngClass]="size==='sm'?'text-sm':(size==='xs'?'text-xs':'text-base')">
+  <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
+</select>
