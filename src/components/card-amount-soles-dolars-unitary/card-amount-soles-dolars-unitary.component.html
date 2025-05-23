@@ -6,8 +6,11 @@
       {{title}}
     </h3>
   </div>
+  <p class="text-neutral-500" *ngIf="data.length===0">
+    {{emptyMessage}}
+  </p>
   <!-- contenido -->
-  <div class="grid grid-cols-2 gap-4">
+  <div *ngIf="data.length>0" class="grid grid-cols-2 gap-4">
     <!-- soles -->
     <div>
       <p class="text-neutral-500">

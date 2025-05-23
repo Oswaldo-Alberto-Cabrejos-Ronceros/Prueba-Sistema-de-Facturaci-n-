@@ -64,13 +64,27 @@ export class ReportsTodayPageComponent {
       ],
     },
   ];
+
+  //para info de ventas por empleados
+  infoSaleEmployee: {
+    iconName: string;
+    title: string;
+    emptyMessage?: string;
+    data: { subtitle?: string; soles: number; dolars: number }[];
+  }[] = [
+    {
+      iconName: 'groups',
+      title: 'Ventas por vendedor',
+      emptyMessage:'Aún no han habido ventas el día de hoy',
+      data: [],
+    },
+  ];
   //conseguimos el dia de actual
   //opciones para la fecha
-  optionsDate:Intl.DateTimeFormatOptions = {
-  day: 'numeric',
-  month: 'short',
-  year: 'numeric'
-};
-  today=new Date().toLocaleDateString('es-PE',this.optionsDate);
-
+  optionsDate: Intl.DateTimeFormatOptions = {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  };
+  today = new Date().toLocaleDateString('es-PE', this.optionsDate);
 }

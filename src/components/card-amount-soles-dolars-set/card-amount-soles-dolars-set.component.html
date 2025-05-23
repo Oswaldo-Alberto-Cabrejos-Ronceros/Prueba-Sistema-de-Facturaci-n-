@@ -1,8 +1,8 @@
 <div class="p-3.5 border-1 border-neutral-300 w-full rounded-sm">
   <!-- por cada item -->
   <div *ngFor="let item of items, let i=index" class="w-full flex-col">
-    <app-card-amount-soles-dolars-unitary [iconName]="item.iconName" [title]="item.title"
-      [data]="item.data"></app-card-amount-soles-dolars-unitary>
+    <app-card-amount-soles-dolars-unitary [iconName]="item.iconName" [title]="item.title" [data]="item.data"
+      [emptyMessage]="item.emptyMessage?item.emptyMessage:''"></app-card-amount-soles-dolars-unitary>
     <hr *ngIf="i<items.length-1" class="my-4 border-neutral-300">
   </div>
 </div>

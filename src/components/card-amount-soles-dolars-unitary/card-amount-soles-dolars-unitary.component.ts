@@ -12,6 +12,6 @@ export class CardAmountSolesDolarsUnitaryComponent {
   @HostBinding('class') class = 'w-full max-w-2xl';
   @Input() iconName: string = '';
   @Input() title: string = '';
-  @Input() emptyMessage: string = '';
+  @Input() emptyMessage: string = 'Aún no hay datos';
   @Input() data: { subtitle?: string; soles: number; dolars: number }[] = [];
 }
