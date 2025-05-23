@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CardAmountSolesDolarsSetComponent } from "../../components/card-amount-soles-dolars-set/card-amount-soles-dolars-set.component";
+import { Component, HostBinding } from '@angular/core';
+import { CardAmountSolesDolarsSetComponent } from '../../components/card-amount-soles-dolars-set/card-amount-soles-dolars-set.component';
 
 @Component({
   selector: 'app-reports-today-page',
@@ -8,55 +8,69 @@ import { CardAmountSolesDolarsSetComponent } from "../../components/card-amount-
   styleUrl: './reports-today-page.component.css',
 })
 export class ReportsTodayPageComponent {
+  @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
+  //datos para la carde de informacion de hoy
   infoToday: {
     iconName: string;
     title: string;
     emptyMessage?: string;
     data: { subtitle?: string; soles: number; dolars: number }[];
-  } [] = [{
-    iconName: 'shopping_basket',
-    title: 'Montos totales empleados en compras',
-    data: [
-      {
-        subtitle: 'compras',
-        soles: 20.0,
-        dolars: 50.0,
-      },
-      {
-        subtitle: 'percepciones',
-        soles: 40.0,
-        dolars: 30.0,
-      },
-      {
-        subtitle: 'fletes',
-        soles: 10.0,
-        dolars: 80.0,
-      },
-    ],
-  },{
-    iconName: 'inventory_2',
-    title: 'Montos totales en movimientos de caja chica',
-    data: [
-      {
-        subtitle: 'entradas',
-        soles: 20.0,
-        dolars: 50.0,
-      },
-      {
-        subtitle: 'salidas',
-        soles: 40.0,
-        dolars: 30.0,
-      }
-    ],
-  },
-{
-    iconName: 'monitoring',
-    title: 'Promedios de los totales de ventas',
-    data: [
-      {
-        soles: 20.0,
-        dolars: 50.0,
-      }
-    ],
-  }];
+  }[] = [
+    {
+      iconName: 'shopping_basket',
+      title: 'Montos totales empleados en compras',
+      data: [
+        {
+          subtitle: 'compras',
+          soles: 20.0,
+          dolars: 50.0,
+        },
+        {
+          subtitle: 'percepciones',
+          soles: 40.0,
+          dolars: 30.0,
+        },
+        {
+          subtitle: 'fletes',
+          soles: 10.0,
+          dolars: 80.0,
+        },
+      ],
+    },
+    {
+      iconName: 'inventory_2',
+      title: 'Montos totales en movimientos de caja chica',
+      data: [
+        {
+          subtitle: 'entradas',
+          soles: 20.0,
+          dolars: 50.0,
+        },
+        {
+          subtitle: 'salidas',
+          soles: 40.0,
+          dolars: 30.0,
+        },
+      ],
+    },
+    {
+      iconName: 'monitoring',
+      title: 'Promedios de los totales de ventas',
+      data: [
+        {
+          soles: 20.0,
+          dolars: 50.0,
+        },
+      ],
+    },
+  ];
+  //conseguimos el dia de actual
+  //opciones para la fecha
+  optionsDate:Intl.DateTimeFormatOptions = {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric'
+};
+  today=new Date().toLocaleDateString('es-PE',this.optionsDate);
+
 }
