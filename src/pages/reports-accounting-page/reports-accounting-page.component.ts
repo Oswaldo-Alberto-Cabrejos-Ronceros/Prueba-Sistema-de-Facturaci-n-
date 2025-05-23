@@ -1,10 +1,12 @@
 import { Component, HostBinding } from '@angular/core';
 import { TablePrimaryComponent } from "../../components/table-primary/table-primary.component";
 import { ButtonIconTerciaryComponent } from "../../components/button-icon-terciary/button-icon-terciary.component";
+import { ButtonSecondaryComponent } from "../../components/button-secondary/button-secondary.component";
+import { SelectSecondaryComponent } from "../../components/select-secondary/select-secondary.component";
 
 @Component({
   selector: 'app-reports-accounting-page',
-  imports: [TablePrimaryComponent, ButtonIconTerciaryComponent],
+  imports: [TablePrimaryComponent, ButtonIconTerciaryComponent, ButtonSecondaryComponent, SelectSecondaryComponent],
   templateUrl: './reports-accounting-page.component.html',
   styleUrl: './reports-accounting-page.component.css'
 })
@@ -22,6 +24,19 @@ export class ReportsAccountingPageComponent {
     },
         {
       email:'oswaldocabrejos15r@gmail.com'
+    }
+  ]
+
+  //opciones para tipo de regimen
+
+  optionsRegimen:{label:string,value:number}[]=[
+    {
+      label:"NRUS Régimen Unico Simplificado",
+      value:1
+    },
+      {
+      label:"RER Régimen Especial",
+      value:1
     }
   ]
 
