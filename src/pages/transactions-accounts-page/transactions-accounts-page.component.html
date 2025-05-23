@@ -1,8 +1,19 @@
-
 <!-- contenido inyectado -->
 <ng-template #customRightTemplate>
   <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" iconName="add"></app-button-icon-label-quaternary>
 </ng-template>
 
-
-<p>transactions-accounts-page works!</p>
+<app-table-filter-secondary [columns]="columns" [data]="cuentas">
+  <ng-template #row let-cuenta let-i="index">
+    <td class="py-2 px-2.5">
+      {{cuenta.name}}
+    </td>
+    <td class="py-2 px-2.5 flex items-center justify-center gap-2">
+      <app-button-icon-terciary iconName="edit" ariaLabel="Editar"></app-button-icon-terciary>
+      <app-button-icon-terciary (click)="handlePopUpExport(i)" #trigger iconName="more_horiz"
+        ariaLabel="Opciones"></app-button-icon-terciary>
+      <app-pop-up-options size="sm" [options]="optionsExport" *ngIf="activePopUpIndex === i" [trigger]="trigger.elementRef"
+        [visible]="activePopUpIndex === i">></app-pop-up-options>
+    </td>
+  </ng-template>
+</app-table-filter-secondary>

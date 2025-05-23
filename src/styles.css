@@ -5,6 +5,7 @@
   --shadow-uniform: 0 0 8px rgba(0, 0, 0, 0.2);
    --transition-opacity-transform: opacity,transform;
    ----breakpoint-xs: 25rem;
+   --shadow-uniform-lg:0 0 16px
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -12,3 +13,4 @@
 .transition-opacity-transform {
   transition-property: var(--transition-opacity-transform);
 }
+

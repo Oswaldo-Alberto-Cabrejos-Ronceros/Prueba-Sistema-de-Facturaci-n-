@@ -13,12 +13,12 @@ export class TableFilterComponent {
   @HostBinding('class') class = 'flex-1 overflow-x-auto';
   //inputs de columnas
   @Input() columns: {
-    key: string;
-    label: string;
-    typeFilter: string;
-    disable?: boolean
-    options?: string[];
-    ordenable?: boolean;
+    key: string; //clave
+    label: string; //titulo a mostrar
+    typeFilter: string; //tipo de filtro 'input' o 'select'
+    disable?: boolean // para desabilitar el filtro
+    options?: string[];  //opciones en caso de select
+    ordenable?: boolean; //si permite ordenamiento
   }[] = [];
   @Input() data:any[]=[]
   //bandera que habilita los filtros

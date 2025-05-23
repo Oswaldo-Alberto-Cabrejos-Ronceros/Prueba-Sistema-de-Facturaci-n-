@@ -1,0 +1,6 @@
+<button type="button" (click)="handleIcon()" class="cursor-pointer flex flex-col items-center justify-center transition-colors duration-100 text-red-700 hover:text-red-800 overflow-hidden h-8 w-6">
+<span class="material-symbols-rounded rounded-lg "
+[ngClass]="icon===1||icon===2?'text-2xl!':'text-xl!'">
+{{optionsIcons[icon]}}
+</span>
+</button>
