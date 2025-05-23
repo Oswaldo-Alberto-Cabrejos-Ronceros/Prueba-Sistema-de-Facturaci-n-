@@ -1,0 +1,10 @@
+<button type="button" (click)="handleState()" class="cursor-pointer flex flex-col items-center justify-center transition-colors duration-100 text-red-700 hover:text-red-800 ">
+<span class="material-symbols-rounded text-xl! size-2 "
+[ngClass]="state===0||state===1?'visible':'invisible'">
+arrow_drop_up
+</span>
+<span class="material-symbols-rounded text-xl! size-2"
+[ngClass]="state===0||state===2?'visible':'invisible'">
+arrow_drop_down
+</span>
+</button>
