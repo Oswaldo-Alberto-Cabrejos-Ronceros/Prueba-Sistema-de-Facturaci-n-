@@ -1,10 +1,16 @@
-
 <!-- contenido inyectado -->
 <ng-template #customRightTemplate>
   <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" iconName="add"></app-button-icon-label-quaternary>
 </ng-template>
 
-
-<p>transactions-accounts-page works!</p>
-
-<app-input-secondary type="text" name="name" size="sm" placeholder="Nombre" ></app-input-secondary>
+<app-table-filter-secondary [columns]="columns" [data]="cuentas">
+  <ng-template #row let-cuenta>
+    <td class="py-2 px-2.5">
+      {{cuenta.name}}
+    </td>
+    <td class="py-2 px-2.5 flex items-center justify-center gap-2">
+      <app-button-icon-terciary iconName="edit" ariaLabel="Editar"></app-button-icon-terciary>
+       <app-button-icon-terciary iconName="more_horiz" ariaLabel="Opciones"></app-button-icon-terciary>
+    </td>
+  </ng-template>
+</app-table-filter-secondary>
