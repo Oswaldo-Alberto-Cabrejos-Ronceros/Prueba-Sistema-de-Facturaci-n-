@@ -12,7 +12,7 @@ export class TablePrimaryComponent {
 //input para los datos
 @Input() data: any[]= []
 //input para columnas
-@Input() columns:string[]=[]
+@Input() columns:{label:string,width?:string}[]=[]
 
 // template para las filas
 @ContentChild('row',{static:true}) rowTemplate!:TemplateRef<any>;

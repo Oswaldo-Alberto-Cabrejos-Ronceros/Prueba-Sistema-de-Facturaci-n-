@@ -2,8 +2,9 @@
   <!-- cabezera -->
   <thead class="font-semibold">
     <tr>
-      <th *ngFor="let column of columns" class="border-b-2 border-neutral-300 align-top text-center p-3 min-w-fit">
-        <p>{{column}}</p>
+      <th *ngFor="let column of columns,let i=index" class="border-b-2 border-neutral-300 align-top p-3 min-w-fit"
+      [ngClass]="[column.width || '',i===0?'text-left':'text-center']">
+        <p>{{column.label}}</p>
       </th>
     </tr>
   </thead>
