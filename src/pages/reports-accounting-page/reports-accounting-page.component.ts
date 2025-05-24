@@ -1,8 +1,9 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { TablePrimaryComponent } from '../../components/table-primary/table-primary.component';
 import { ButtonIconTerciaryComponent } from '../../components/button-icon-terciary/button-icon-terciary.component';
 import { ButtonSecondaryComponent } from '../../components/button-secondary/button-secondary.component';
 import { SelectSecondaryComponent } from '../../components/select-secondary/select-secondary.component';
+import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 
 @Component({
   selector: 'app-reports-accounting-page',
@@ -17,6 +18,17 @@ import { SelectSecondaryComponent } from '../../components/select-secondary/sele
 })
 export class ReportsAccountingPageComponent {
   @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
+  //referencia al rightTemplatePersonalizado
+  @ViewChild('customRightTemplate', { static: true })
+  customRightTemplate!: TemplateRef<any>;
+
+  constructor(
+    private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
+  ) {}
+  ngAfterViewInit(): void {
+    this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
+  }
+
   //columnas de tabla de emails de destino
   columnsEmailsDestino: { label: string; width?: string }[] = [
     {
