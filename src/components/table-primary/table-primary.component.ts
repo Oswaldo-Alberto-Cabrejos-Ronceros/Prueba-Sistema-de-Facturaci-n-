@@ -14,6 +14,7 @@ export class TablePrimaryComponent {
 //input para columnas
 @Input() columns:{label:string,width?:string}[]=[]
 @Input() size:string='full' //puede ser full o sm
+@Input() align:string='center' // puede ser left o center
 
 // template para las filas
 @ContentChild('row',{static:true}) rowTemplate!:TemplateRef<any>;
