@@ -1,0 +1,15 @@
+<div class="p-3.5 border-1 border-neutral-300 w-full rounded-sm flex gap-1 justify-between items-start mb-4">
+  <app-card-amount-soles-dolars-unitary [iconName]="iconName" [title]="title" [data]="data"
+    [emptyMessage]="emptyMessage"></app-card-amount-soles-dolars-unitary>
+  <div class="flex gap-2 px-4 pt-4">
+    <h3 class="text-xl font-semibold">
+      {{optionAlternate}}
+    </h3>
+    <!-- boton exportar -->
+    <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
+      iconName="download"></app-button-icon-label-terciary>
+    <!-- pop up de opciones de exportar -->
+    <app-pop-up-options [options]="optionsExport" *ngIf=" showPopUpExport && triggerExportRef"
+      [trigger]="triggerExportRef" [visible]="showPopUpExport"></app-pop-up-options>
+  </div>
+</div>

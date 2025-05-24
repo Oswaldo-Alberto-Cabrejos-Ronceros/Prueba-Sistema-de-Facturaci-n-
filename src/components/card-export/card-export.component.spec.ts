@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { CardExportComponent } from './card-export.component';
+
+describe('CardExportComponent', () => {
+  let component: CardExportComponent;
+  let fixture: ComponentFixture<CardExportComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [CardExportComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(CardExportComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

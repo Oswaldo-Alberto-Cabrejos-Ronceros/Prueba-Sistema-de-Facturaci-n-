@@ -1,0 +1,38 @@
+<!-- inyectamos en rightemplate -->
+
+<ng-template #customRightTemplate></ng-template>
+
+<!-- seccion de envio -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+
+  <!-- tabla de emails -->
+  <div class="border-1 border-neutral-300 rounded-sm p-3.5">
+    <app-table-primary size="sm" [columns]="columnsEmailsDestino" [data]="emailsDestinoData">
+      <ng-template #row let-emailDestino let-i="index">
+        <td class="py-2 px-2.5">
+          {{emailDestino.email}}
+        </td>
+        <td class="py-2 px-2.5 flex items-center justify-center gap-2">
+          <app-button-icon-terciary iconName="edit" ariaLabel="Editar"></app-button-icon-terciary>
+          <app-button-icon-terciary iconName="delete" ariaLabel="Eliminar"></app-button-icon-terciary>
+        </td>
+      </ng-template>
+    </app-table-primary>
+  </div>
+
+  <!-- seccion 2 -->
+  <div class="flex flex-col md:flex-row text-xs md:pl-8 md:items-center justify-between gap-7 md:gap-2">
+    <!-- seccion de email de destino -->
+    <div class="flex flex-col gap-2">
+      <app-button-secondary nombre="Agregar email de destino"></app-button-secondary>
+      <p >El reporte se enviará por email el día 2 de cada mes.</p>
+    </div>
+    <!-- seccion tipo de tributario -->
+    <div class="flex flex-col gap-2 md:pl-4 w-full md:max-w-64">
+<p>Tipo de régimen tributario:</p>
+<app-select-secondary name="tipo_regimen" size="xs" [options]="optionsRegimen"></app-select-secondary>
+    </div>
+  </div>
+</div>
+
+<app-table-primary [columns]="columns"></app-table-primary>

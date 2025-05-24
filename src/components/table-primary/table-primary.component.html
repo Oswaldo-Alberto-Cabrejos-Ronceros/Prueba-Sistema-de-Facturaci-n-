@@ -1,0 +1,21 @@
+<table class="w-full table-fixed text-xs mb-2"
+[ngClass]="size==='full'?'min-w-4xl':''">
+  <!-- cabezera -->
+  <thead class="font-semibold">
+    <tr>
+      <th *ngFor="let column of columns,let i=index" class="border-b-2 border-neutral-300 align-top p-3 min-w-fit"
+      [ngClass]="[column.width || '',i===0 ||align==='left'?'text-left':'text-center']">
+        <p>{{column.label}}</p>
+      </th>
+    </tr>
+  </thead>
+  <!-- body -->
+  <tbody>
+    <tr *ngFor="let item of data;let i=index">
+      <ng-container *ngTemplateOutlet="rowTemplate; context:{$implicit: item,index: i}"></ng-container>
+    </tr>
+  </tbody>
+  <caption *ngIf="data.length===0" class="text-xs text-neutral-500 caption-bottom pt-3">No hay
+    <strong>registros</strong> para mostrar
+  </caption>
+</table>

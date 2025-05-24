@@ -1,0 +1,5 @@
+<label class="rounded cursor-pointer relative" >
+<input type="checkbox" class="sr-only peer" [checked]="value" (change)="switchEmit($event)">
+  <div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:bg-red-500 transition-colors duration-400"></div>
+  <div class="absolute left-0.5 top-0.5 bg-white size-4 rounded-full transition-transform duration-400 peer-checked:translate-x-4"></div>
+</label>
