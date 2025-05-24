@@ -1,1 +1,27 @@
-<p>reports-page works!</p>
+<!-- inyectamos rightTemplate -->
+<ng-template #customRightTemplate></ng-template>
+
+<app-date-picker-set class="mb-3"></app-date-picker-set>
+
+<app-table-primary align="left" [columns]="withExpenses?columnsWithExpenses:columns" [data]="withExpenses?dataWithExpenses:data">
+  <ng-template #row let-item let-i="index">
+    <td class="py-2 px-2.5 bg-neutral-300 dark:bg-neutral-700">
+      S/ {{item.totalVentas}}
+    </td>
+    <td class="py-2 px-2.5 bg-neutral-300 dark:bg-neutral-700">
+      S/ {{item.totalCompras}}
+    </td>
+
+        <td class="py-2 px-2.5 bg-neutral-300 dark:bg-neutral-700" *ngIf="withExpenses">
+      S/ {{item.totalGastos}}
+    </td>
+
+    <td class="py-2 px-2.5 bg-neutral-300 dark:bg-neutral-700">
+      S/ {{item.total}}
+    </td>
+  </ng-template>
+</app-table-primary>
+<div class="flex items-center gap-1">
+  <app-switch-primary (state)="changeWithExpenses($event)"></app-switch-primary>
+  <label class="text-xs">Con gastos</label>
+</div>
