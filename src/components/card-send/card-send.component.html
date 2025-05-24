@@ -1,0 +1,19 @@
+<div class="p-3.5 border-1 border-neutral-300 w-full rounded-sm flex flex-col gap-3">
+  <h2 class="text-2xl mb-3 font-medium">{{title}}</h2>
+  <label class="text-xs" for="date_range">Rango de fechas</label>
+  <div class="w-full grid grid-cols-1  md:grid-cols-2 mb-3 gap-2 md:gap-7">
+    <!-- desde -->
+    <app-input-secondary size="sm" type="date" name="since"></app-input-secondary>
+    <!-- hasta -->
+    <app-input-secondary size="sm" type="date" name="until"></app-input-secondary>
+
+  </div>
+  <label class="text-xs" for="date_range">Enviar a</label>
+  <div class="flex md:w-8/12 xl:w-1/2">
+    <!-- correo -->
+     <div class="flex-1">
+         <app-input-secondary placeholder="ejemplo@gmail.com"  type="text" name="email"></app-input-secondary>
+     </div>
+     <app-button-secondary nombre="Enviar"></app-button-secondary>
+  </div>
+</div>
