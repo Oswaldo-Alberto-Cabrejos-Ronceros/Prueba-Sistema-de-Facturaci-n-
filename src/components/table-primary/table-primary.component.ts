@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './table-primary.component.css'
 })
 export class TablePrimaryComponent {
-@HostBinding('class') class = 'flex-1 overflow-x-auto';
+@HostBinding('class') class = 'w-full overflow-x-auto';
 //input para los datos
 @Input() data: any[]= []
 //input para columnas
