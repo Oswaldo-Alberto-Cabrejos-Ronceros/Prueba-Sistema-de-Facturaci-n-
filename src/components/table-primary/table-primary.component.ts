@@ -13,6 +13,7 @@ export class TablePrimaryComponent {
 @Input() data: any[]= []
 //input para columnas
 @Input() columns:{label:string,width?:string}[]=[]
+@Input() size:string='full' //puede ser full o sm
 
 // template para las filas
 @ContentChild('row',{static:true}) rowTemplate!:TemplateRef<any>;
