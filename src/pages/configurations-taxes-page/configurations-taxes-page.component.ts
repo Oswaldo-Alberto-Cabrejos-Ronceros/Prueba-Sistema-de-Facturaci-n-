@@ -31,7 +31,7 @@ export class ConfigurationsTaxesPageComponent {
     label: string;
     typeFilter: string;
     disable?: boolean;
-    options?: string[];
+    options?: {label:string,value:string|number}[];
     ordenable?: boolean;
     width?: string;
   }[] = [

@@ -1,1 +1,27 @@
-<p>configurations-serials-page works!</p>
+<!-- contenido inyectado -->
+<ng-template #customRightTemplate>
+  <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" iconName="add"></app-button-icon-label-quaternary>
+</ng-template>
+
+<!-- table -->
+<app-table-filter-secondary [columns]="columns" [data]="serials">
+<ng-template #row let-serial let-i="index">
+      <td class="py-2 px-2.5 text-center">
+      {{serial.name}}
+    </td>
+          <td class="py-2 px-2.5 text-center">
+      {{serial.correlative}}
+    </td>
+              <td class="py-2 px-2.5 text-center">
+      {{serial.typeDocument}}
+    </td>
+                  <td class="py-2 px-2.5 text-center">
+      {{serial.description}}
+    </td>
+        <td class="py-2 px-2.5 ">
+      <div class="size-full flex justify-center">
+        <app-switch-primary [value]="serial.active"></app-switch-primary>
+      </div>
+    </td>
+</ng-template>
+</app-table-filter-secondary>
