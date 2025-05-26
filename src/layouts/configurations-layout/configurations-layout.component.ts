@@ -31,7 +31,7 @@ export class ConfigurationsLayoutComponent {
       title: 'Pagos',
     },
     {
-      to: '/app/configurations/clients',
+      to: '/app/configurations/serials',
       title: 'Series',
     },
     {
