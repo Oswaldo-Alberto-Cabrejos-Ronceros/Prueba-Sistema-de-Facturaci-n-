@@ -2,11 +2,10 @@ import { Component, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 import { TableFilterSecondaryComponent } from "../../components/table-filter-secondary/table-filter-secondary.component";
 import { SwitchPrimaryComponent } from "../../components/switch-primary/switch-primary.component";
-import { TabBarComponent } from "../../components/tab-bar/tab-bar.component";
 
 @Component({
   selector: 'app-configurations-currencies-page',
-  imports: [TableFilterSecondaryComponent, SwitchPrimaryComponent, TabBarComponent],
+  imports: [TableFilterSecondaryComponent, SwitchPrimaryComponent],
   templateUrl: './configurations-currencies-page.component.html',
   styleUrl: './configurations-currencies-page.component.css'
 })
@@ -15,8 +14,6 @@ export class ConfigurationsCurrenciesPageComponent {
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
-taxe: any;
-unit: any;
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
