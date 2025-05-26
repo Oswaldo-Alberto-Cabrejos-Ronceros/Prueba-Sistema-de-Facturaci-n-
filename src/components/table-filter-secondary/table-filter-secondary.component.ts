@@ -10,7 +10,7 @@ import { ButtonSortSecondaryComponent } from "../button-sort-secondary/button-so
   styleUrl: './table-filter-secondary.component.css'
 })
 export class TableFilterSecondaryComponent {
-@HostBinding('class') class = 'flex-1 overflow-x-auto';
+@HostBinding('class') class = 'overflow-x-auto';
 //input para los datos
 @Input() data: any[]= []
 

@@ -1,1 +1,42 @@
-<p>configurations-currencies-page works!</p>
+<!-- contenido inyectado -->
+<ng-template #customRightTemplate>
+</ng-template>
+<!-- currencies -->
+<!-- title -->
+<h2 class="text-2xl font-medium mb-2">
+  Monedas
+</h2>
+
+<!-- table -->
+<app-table-filter-secondary [columns]="columnsCurrencies" [data]="dataCurrencies">
+  <ng-template #row let-currencie let-i="index">
+<td class="py-2 px-2.5">
+{{currencie.name}}
+</td>
+<td class="py-2 px-2.5 text-center">
+{{currencie.symbol}}
+</td>
+<td class="py-2 px-2.5 ">
+  <div class="size-full flex justify-center">
+<app-switch-primary [value]="currencie.default"></app-switch-primary>
+  </div></td>
+  </ng-template>
+</app-table-filter-secondary>
+<!-- exchange rate -->
+<!-- title -->
+<h2 class="text-2xl font-medium my-2">
+  Tipo de cambio
+</h2>
+<app-table-filter-secondary [columns]="columnsExchangeRate" [data]="dataExhangeRate">
+  <ng-template #row let-exhangeRate let-i="index">
+<td class="py-2 px-2.5">
+{{exhangeRate.currencie}}
+</td>
+<td class="py-2 px-2.5 text-center">
+{{exhangeRate.amount}}
+</td>
+<td class="py-2 px-2.5 text-center">
+{{exhangeRate.createDate}}
+</td>
+  </ng-template>
+</app-table-filter-secondary>
