@@ -211,6 +211,11 @@ export const routes: Routes = [
         component: ConfigurationsLayoutComponent,
         children: [
           {
+            path:'',
+            redirectTo:'//app/configurations/taxes',
+            pathMatch:'full'
+          },
+          {
             path: 'taxes',
             component: ConfigurationsTaxesPageComponent,
           },
