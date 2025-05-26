@@ -156,5 +156,10 @@ export class MenuPrincipalLayoutComponent {
       title: 'Transacciones',
       iconName: 'currency_exchange',
     },
+        {
+      to: '/app/configurations',
+      title: 'Configuraciones',
+      iconName: 'settings',
+    }
   ];
 }

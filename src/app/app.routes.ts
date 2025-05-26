@@ -39,7 +39,8 @@ import { ReportsAccountingPageComponent } from '../pages/reports-accounting-page
 import { ReportsClientsPageComponent } from '../pages/reports-clients-page/reports-clients-page.component';
 import { ReportsDownloadsPageComponent } from '../pages/reports-downloads-page/reports-downloads-page.component';
 import { ReportsProductsPageComponent } from '../pages/reports-products-page/reports-products-page.component';
-
+//configurations
+import { ConfigurationsLayoutComponent } from '../layouts/configurations-layout/configurations-layout.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -196,6 +197,13 @@ export const routes: Routes = [
           path:'downloads',
           component:ReportsDownloadsPageComponent
         }
+        ]
+      },
+      {
+        path:'configurations',
+        component:ConfigurationsLayoutComponent,
+        children:[
+
         ]
       }
     ],
