@@ -1,1 +1,26 @@
-<p>configurations-taxes-page works!</p>
+<!-- contenido inyectado -->
+<ng-template #customRightTemplate>
+</ng-template>
+
+<app-table-filter-secondary [columns]="columns" [data]="taxes">
+<ng-template #row let-taxe let-i="index">
+<td class="py-2 px-2.5">
+{{taxe.name}}
+</td>
+<td class="py-2 px-2.5">
+{{taxe.abbreviation}}
+</td>
+<td class="py-2 px-2.5 ">
+  <div class="size-full flex justify-center">
+<app-switch-primary [value]="taxe.default"></app-switch-primary>
+  </div>
+
+</td>
+
+<td class="py-2 px-2.5 ">
+  <div class="size-full flex justify-center">
+<app-switch-primary [value]="taxe.active"></app-switch-primary>
+  </div>
+</td>
+</ng-template>
+</app-table-filter-secondary>

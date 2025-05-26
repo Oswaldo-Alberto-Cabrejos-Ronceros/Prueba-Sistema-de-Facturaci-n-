@@ -4,7 +4,8 @@
     <tr>
 
       <th *ngFor="let column of columns" [ngClass]="column.width?column.width:''"
-        class="border-1 border-neutral-300 align-top min-w-fit">
+        class="border-1 border-neutral-300 align-top min-w-fit"
+        [ngClass]="column.disable && !column.ordenable?'py-2':''">
         <div class="flex flex-col gap-1 items-center justify-center px-2.5 pt-1.5 pb-2">
           <div class="flex gap-1 items-center justify-center ">
             <p>{{column.label}}</p>
