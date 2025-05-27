@@ -5,10 +5,11 @@ import { BusinessPredeterminedObservationsCardComponent } from "./components/bus
 import { BusinessReferralGuidesCardComponent } from "./components/business-referral-guides-card/business-referral-guides-card.component";
 import { BusinessAdditionalProductFieldsCardComponent } from "./components/business-additional-product-fields-card/business-additional-product-fields-card.component";
 import { BusinessAdditionalPurchaseDetailsCardComponent } from "./components/business-additional-purchase-details-card/business-additional-purchase-details-card.component";
+import { BusinessAdditionalSalesDetailsCardComponent } from "./components/business-additional-sales-details-card/business-additional-sales-details-card.component";
 
 @Component({
   selector: 'app-configurations-business-page',
-  imports: [CardOptionsComponent, BusinessCharacteristicsCardComponent, BusinessPredeterminedObservationsCardComponent, BusinessReferralGuidesCardComponent, BusinessAdditionalProductFieldsCardComponent, BusinessAdditionalPurchaseDetailsCardComponent],
+  imports: [CardOptionsComponent, BusinessCharacteristicsCardComponent, BusinessPredeterminedObservationsCardComponent, BusinessReferralGuidesCardComponent, BusinessAdditionalProductFieldsCardComponent, BusinessAdditionalPurchaseDetailsCardComponent, BusinessAdditionalSalesDetailsCardComponent],
   templateUrl: './configurations-business-page.component.html',
   styleUrl: './configurations-business-page.component.css'
 })
@@ -21,6 +22,7 @@ export class ConfigurationsBusinessPageComponent implements AfterViewInit{
   @ViewChild('referralGuides') referralGuides!:TemplateRef<any>
   @ViewChild('additionalProductFields') additionalProductFields!:TemplateRef<any>
   @ViewChild('additionalPurchaseDetails') additionalPurchaseDetails!:TemplateRef<any>
+  @ViewChild('additionalSalesDetails') additionalSalesDetails!:TemplateRef<any>
   constructor(private cdr: ChangeDetectorRef) {}
   //opciones
   options:CardOption[]=[]
@@ -45,9 +47,14 @@ export class ConfigurationsBusinessPageComponent implements AfterViewInit{
         label:'Campos adicionales de los productos',
         template:this.additionalProductFields
       },
-       {
-        key:'additionalPurchaseDetails',
+
+             {
+        key:'additionalSalesDetails',
         label:'Campos adicionales en detalle venta',
+        template:this.additionalSalesDetails
+      }      , {
+        key:'additionalPurchaseDetails',
+        label:'Campos adicionales en detalle compra',
         template:this.additionalPurchaseDetails
       }
     ]
