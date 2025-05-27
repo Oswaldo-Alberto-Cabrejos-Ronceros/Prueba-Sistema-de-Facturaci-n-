@@ -1,1 +1,19 @@
-<p>business-characteristics-card works!</p>
+<div class="w-full flex flex-col gap-6">
+  <div class="w-full flex" *ngFor="let item of cardsWithSwitch ">
+    <div class="w-3/4"><app-card-item-presentation [iconName]="item.iconName" [title]="item.title"
+        [content]="item.content"></app-card-item-presentation>
+    </div>
+    <div class="flex-1 flex items-center justify-center">
+      <app-switch-primary [value]="item.active"></app-switch-primary>
+    </div>
+  </div>
+  <app-card-item-presentation iconName="filter_alt" title="Filtrar lista de ventas por defecto"
+    content="En la lista de ventas verá solo las que cumplan con su selección."></app-card-item-presentation>
+  <!-- miltiple buttons select -->
+  <app-card-item-presentation iconName="person_check" title="Cliente en ventas por defecto"
+    content="Este cliente se seleccionara por defecto cuando cree una nueva venta."></app-card-item-presentation>
+</div>
+
+<!-- input for search-->
+<div class="max-w-3xs pl-10 mt-4"><app-input-secondary size="sm" ></app-input-secondary>
+</div>

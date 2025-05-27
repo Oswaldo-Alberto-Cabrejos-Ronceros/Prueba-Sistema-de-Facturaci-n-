@@ -1,3 +1,6 @@
-<span class="material-symbols-rounded text-neutral-900 dark:text-neutral-50 p-0 size-min" [ariaLabel]="ariaLabel">
-{{iconName}}
+
+<span class="material-symbols-rounded text-neutral-900 dark:text-neutral-50 p-0 size-min"
+  [ngClass]="size!==''?`${size}!`:''" [ariaLabel]="ariaLabel">
+  {{iconName}}
 </span>
+
