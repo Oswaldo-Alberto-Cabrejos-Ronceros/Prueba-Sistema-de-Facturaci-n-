@@ -4,10 +4,11 @@ import { BusinessCharacteristicsCardComponent } from "./components/business-char
 import { BusinessPredeterminedObservationsCardComponent } from "./components/business-predetermined-observations-card/business-predetermined-observations-card.component";
 import { BusinessReferralGuidesCardComponent } from "./components/business-referral-guides-card/business-referral-guides-card.component";
 import { BusinessAdditionalProductFieldsCardComponent } from "./components/business-additional-product-fields-card/business-additional-product-fields-card.component";
+import { BusinessAdditionalPurchaseDetailsCardComponent } from "./components/business-additional-purchase-details-card/business-additional-purchase-details-card.component";
 
 @Component({
   selector: 'app-configurations-business-page',
-  imports: [CardOptionsComponent, BusinessCharacteristicsCardComponent, BusinessPredeterminedObservationsCardComponent, BusinessReferralGuidesCardComponent, BusinessAdditionalProductFieldsCardComponent],
+  imports: [CardOptionsComponent, BusinessCharacteristicsCardComponent, BusinessPredeterminedObservationsCardComponent, BusinessReferralGuidesCardComponent, BusinessAdditionalProductFieldsCardComponent, BusinessAdditionalPurchaseDetailsCardComponent],
   templateUrl: './configurations-business-page.component.html',
   styleUrl: './configurations-business-page.component.css'
 })
@@ -19,6 +20,7 @@ export class ConfigurationsBusinessPageComponent implements AfterViewInit{
   @ViewChild('predeterminedObservations') predeterminedObservations!:TemplateRef<any>
   @ViewChild('referralGuides') referralGuides!:TemplateRef<any>
   @ViewChild('additionalProductFields') additionalProductFields!:TemplateRef<any>
+  @ViewChild('additionalPurchaseDetails') additionalPurchaseDetails!:TemplateRef<any>
   constructor(private cdr: ChangeDetectorRef) {}
   //opciones
   options:CardOption[]=[]
@@ -42,6 +44,11 @@ export class ConfigurationsBusinessPageComponent implements AfterViewInit{
         key:'additionalProductFields',
         label:'Campos adicionales de los productos',
         template:this.additionalProductFields
+      },
+       {
+        key:'additionalPurchaseDetails',
+        label:'Campos adicionales en detalle venta',
+        template:this.additionalPurchaseDetails
       }
     ]
      this.cdr.detectChanges();
