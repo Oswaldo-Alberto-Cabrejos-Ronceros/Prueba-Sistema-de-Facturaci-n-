@@ -1,0 +1,27 @@
+<div class="w-full flex flex-col gap-6">
+  <div class="w-full flex">
+    <div class="w-3/4"><app-card-item-presentation iconName="local_shipping"
+        title="Activar Guías de remisión remitente en el menú principal"
+        content="Habilita la opción en el menú principal para gestionar y emitir guías de remisión"></app-card-item-presentation>
+    </div>
+    <div class="flex-1 flex items-center justify-center">
+      <app-switch-primary [value]="false"></app-switch-primary>
+    </div>
+  </div>
+  <div class="w-3/4 pl-10 text-xs flex flex-col ">
+    <p>Sus guías de remisión iniciarán con la siguiente serie y numeración, puedes editarlas en la</p>
+    <a class="text-red-500 duration-150 transition-colors hover:text-red-700 cursor-pointer">sección de series</a>
+    <app-table-filter-secondary class="mt-4" size="sm" [columns]="columns" [data]="data">
+      <ng-template #row let-serial let-i="index">
+        <td class="py-2 px-2.5 text-center">
+          {{serial.serial}}
+        </td>
+        <td class="py-2 px-2.5 text-center">
+          {{serial.correlative}}
+        </td>
+        <td class="py-2 px-2.5 text-center">
+          {{serial.description}}
+        </td>
+      </ng-template></app-table-filter-secondary>
+  </div>
+</div>

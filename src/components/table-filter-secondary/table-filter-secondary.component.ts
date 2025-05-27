@@ -14,7 +14,7 @@ export class TableFilterSecondaryComponent {
 @HostBinding('class') class = 'overflow-x-auto';
 //input para los datos
 @Input() data: any[]= []
-
+@Input() size:string='base' //puede ser base o sm
   @Input() columns: {
     key: string; //clave
     label: string; //titulo a mostrar
