@@ -1,0 +1,24 @@
+<!-- contenido inyectado -->
+<ng-template #customRightTemplate>
+  <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" iconName="add"></app-button-icon-label-quaternary>
+</ng-template>
+<app-table-filter-secondary [columns]="columns" [data]="units">
+  <ng-template #row let-unit let-i="index">
+    <td class="py-2 px-2.5 text-center">
+      {{unit.symbol}}
+    </td>
+    <td class="py-2 px-2.5 text-center">
+      {{unit.name}}
+    </td>
+    <td class="py-2 px-2.5 ">
+      <div class="size-full flex justify-center">
+        <app-switch-primary [value]="unit.default"></app-switch-primary>
+      </div>
+    </td>
+    <td class="py-2 px-2.5 ">
+      <div class="size-full flex justify-center">
+        <app-button-icon-terciary iconName="delete"></app-button-icon-terciary>
+      </div>
+    </td>
+  </ng-template>
+</app-table-filter-secondary>

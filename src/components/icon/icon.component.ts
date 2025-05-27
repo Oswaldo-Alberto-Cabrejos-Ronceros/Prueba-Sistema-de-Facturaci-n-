@@ -1,13 +1,16 @@
 import { Component, HostBinding, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-icon',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './icon.component.html',
   styleUrl: './icon.component.css'
 })
 export class IconComponent {
 @Input() iconName:string=''
 @Input() ariaLabel:string=''
-@HostBinding('class') class='max-h-6 max-w-6 '
+//size
+@Input() size:string=''
+@HostBinding('class') class='flex '
 }

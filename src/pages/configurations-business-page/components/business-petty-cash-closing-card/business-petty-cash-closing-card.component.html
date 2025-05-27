@@ -1,0 +1,10 @@
+<div class="w-full flex flex-col gap-6">
+  <p class="text-xs">Las cajas chicas se cerrarán y abrirán a la hora configurada.</p>
+  <div class="flex items-center gap-2">
+<div class="w-28"><app-input-secondary type="number" size="sm"></app-input-secondary></div>
+<div class="w-14">
+  <app-select-secondary [options]="optionHours" size="xs"></app-select-secondary>
+</div>
+  </div>
+<app-button-secondary nombre="Guardar"></app-button-secondary>
+</div>

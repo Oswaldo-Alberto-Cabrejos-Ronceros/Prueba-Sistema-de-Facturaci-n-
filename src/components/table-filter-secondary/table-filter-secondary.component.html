@@ -1,9 +1,9 @@
-<table class="min-w-4xl w-full table-fixed text-xs">
+<table class="min-w-4xl w-full table-fixed text-xs" [ngClass]="size==='sm'?'min-w-auto':''">
   <!-- cabezera -->
   <thead class="font-semibold">
     <tr>
 
-      <th *ngFor="let column of columns" [ngClass]="column.width?column.width:''"
+      <th *ngFor="let column of columns" [ngClass]="[column.width?column.width:'',column.disable && !column.ordenable?'py-2':'']"
         class="border-1 border-neutral-300 align-top min-w-fit">
         <div class="flex flex-col gap-1 items-center justify-center px-2.5 pt-1.5 pb-2">
           <div class="flex gap-1 items-center justify-center ">
@@ -17,12 +17,8 @@
             [name]="column.key" size="sm"></app-input-secondary>
 
           <!-- si es select -->
-          <select
-            class="p-2 min-w-20 group w-full hover:text-neutral-800 dark:hover:text-neutral-100  focus:outline-none text-neutral-300 transition-colors duration-150 focus:text-neutral-900 border-b-2 border-transparent focus:border-neutral-900 dark:focus:border-neutral-50 dark:focus:text-neutral-200 cursor-pointer"
-            *ngIf="column.typeFilter==='select'" name="" id="">
-            <option *ngFor="let option of column.options" [value]="option
-        ">{{option}}</option>
-          </select>
+          <app-select-secondary size="sm" *ngIf="column.typeFilter==='select'&& column.options"
+            [options]="column.options"></app-select-secondary>
 
         </div>
       </th>
@@ -37,5 +33,6 @@
       <ng-container *ngTemplateOutlet="rowTemplate; context:{$implicit: item,index: i}"></ng-container>
     </tr>
   </tbody>
-  <caption *ngIf="data.length===0" class="text-xs text-neutral-500 caption-bottom pt-3">No hay <strong>registros</strong> para mostrar</caption>
+  <caption *ngIf="data.length===0" class="text-xs text-neutral-500 caption-bottom pt-3">No hay
+    <strong>registros</strong> para mostrar</caption>
 </table>

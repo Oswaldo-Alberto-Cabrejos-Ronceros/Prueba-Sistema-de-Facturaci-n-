@@ -39,7 +39,14 @@ import { ReportsAccountingPageComponent } from '../pages/reports-accounting-page
 import { ReportsClientsPageComponent } from '../pages/reports-clients-page/reports-clients-page.component';
 import { ReportsDownloadsPageComponent } from '../pages/reports-downloads-page/reports-downloads-page.component';
 import { ReportsProductsPageComponent } from '../pages/reports-products-page/reports-products-page.component';
-
+//configurations
+import { ConfigurationsLayoutComponent } from '../layouts/configurations-layout/configurations-layout.component';
+import { ConfigurationsTaxesPageComponent } from '../pages/configurations-taxes-page/configurations-taxes-page.component';
+import { ConfigurationsUnitsPageComponent } from '../pages/configurations-units-page/configurations-units-page.component';
+import { ConfigurationsCurrenciesPageComponent } from '../pages/configurations-currencies-page/configurations-currencies-page.component';
+import { ConfigurationsPaymentMethodsPageComponent } from '../pages/configurations-payment-methods-page/configurations-payment-methods-page.component';
+import { ConfigurationsSerialsPageComponent } from '../pages/configurations-serials-page/configurations-serials-page.component';
+import { ConfigurationsBusinessPageComponent } from '../pages/configurations-business-page/configurations-business-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
@@ -132,72 +139,108 @@ export const routes: Routes = [
         ],
       },
       {
-        path:'users',
-        component:UsersLayoutComponent,
-        children:[
+        path: 'users',
+        component: UsersLayoutComponent,
+        children: [
           {
-            path:'',
-            component:UsersPageComponent
-          }
-        ]
+            path: '',
+            component: UsersPageComponent,
+          },
+        ],
       },
       {
-        path:'expenses',
-        component:ExpensesLayoutComponent,
-        children:[
+        path: 'expenses',
+        component: ExpensesLayoutComponent,
+        children: [
           {
-            path:'',
-            component:ExpensesPageComponent
-          }
-        ]
+            path: '',
+            component: ExpensesPageComponent,
+          },
+        ],
       },
       {
-        path:'transactions',
-        component:TransactionsLayoutComponent,
-        children:[
+        path: 'transactions',
+        component: TransactionsLayoutComponent,
+        children: [
           {
-            path:'',
-            component:TransactionsPageComponent
+            path: '',
+            component: TransactionsPageComponent,
           },
           {
-            path:'accounts',
-            component:TransactionsAccountsPageComponent
-          }
-        ]
+            path: 'accounts',
+            component: TransactionsAccountsPageComponent,
+          },
+        ],
       },
       {
-        path:'reports',
-        component:ReportsLayoutComponent,
-        children:[{
-          path:'',
-          component:ReportsPageComponent
-        },
-        {
-          path:'today',
-          component:ReportsTodayPageComponent
-        },
-        {
-          path:'products',
-          component:ReportsProductsPageComponent
-        },
-        {
-          path:'kardex',
-          component:ReportsKardexPageComponent
-        },
-                {
-          path:'accounting',
-          component:ReportsAccountingPageComponent
-        },
-                {
-          path:'clients',
-          component:ReportsClientsPageComponent
-        },
-                {
-          path:'downloads',
-          component:ReportsDownloadsPageComponent
-        }
-        ]
-      }
+        path: 'reports',
+        component: ReportsLayoutComponent,
+        children: [
+          {
+            path: '',
+            component: ReportsPageComponent,
+          },
+          {
+            path: 'today',
+            component: ReportsTodayPageComponent,
+          },
+          {
+            path: 'products',
+            component: ReportsProductsPageComponent,
+          },
+          {
+            path: 'kardex',
+            component: ReportsKardexPageComponent,
+          },
+          {
+            path: 'accounting',
+            component: ReportsAccountingPageComponent,
+          },
+          {
+            path: 'clients',
+            component: ReportsClientsPageComponent,
+          },
+          {
+            path: 'downloads',
+            component: ReportsDownloadsPageComponent,
+          },
+        ],
+      },
+      {
+        path: 'configurations',
+        component: ConfigurationsLayoutComponent,
+        children: [
+          {
+            path:'',
+            redirectTo:'//app/configurations/taxes',
+            pathMatch:'full'
+          },
+          {
+            path: 'taxes',
+            component: ConfigurationsTaxesPageComponent,
+          },
+          {
+            path: 'units',
+            component: ConfigurationsUnitsPageComponent,
+          },
+          {
+            path: 'currencies',
+            component: ConfigurationsCurrenciesPageComponent,
+          },
+          {
+            path: 'payment-methods',
+            component: ConfigurationsPaymentMethodsPageComponent,
+          },
+          {
+            path: 'serials',
+            component: ConfigurationsSerialsPageComponent,
+          },
+          {
+            path: 'business',
+            component: ConfigurationsBusinessPageComponent,
+          },
+        ],
+      },
     ],
   },
 ];
