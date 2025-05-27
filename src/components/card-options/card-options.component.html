@@ -1,0 +1,17 @@
+<div class="w-full flex border border-neutral-300">
+  <!-- menu -->
+  <div>
+    <ul class="bg-neutral-200 text-xs w-72 text-neutral-600 p-5">
+      <li *ngFor="let option of options" class="w-full cursor-pointer py-2 px-4 rounded-sm duration-100 transition-colors "
+        (click)="selectOption(option.key)" [ngClass]="isActive(option.key)?'bg-neutral-700 text-neutral-50 hover:text-neutral-50 hover:bg-neutral-800':'hover:text-neutral-900'">
+        {{option.label}}
+      </li>
+    </ul>
+  </div>
+  <!-- content -->
+  <div class="flex-1 p-3.5">
+    <ng-container *ngFor="let option of options">
+      <ng-container *ngIf="isActive(option.key)" [ngTemplateOutlet]="option.template"></ng-container>
+    </ng-container>
+  </div>
+</div>
