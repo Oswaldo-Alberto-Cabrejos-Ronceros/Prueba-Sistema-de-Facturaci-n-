@@ -1,0 +1,35 @@
+<div class="w-full min-w-xs font-medium bg-neutral-100 flex rounded-2xl overflow-hidden text-sm">
+  <!-- boton check  -->
+  <button type="button"
+    class="h-9.5 bg-green-500 hover:bg-green-600 flex items-center justify-center px-0.5  transition-colors duration-150 cursor-pointer">
+    <span class="material-symbols-rounded text-neutral-50 p-0 size-min text-xl! " aria-label="ariaLabel">
+      check
+    </span>
+  </button>
+  <!-- inputs y selects -->
+  <div class="flex-1 flex "> <!-- select metodo de pago -->
+    <select name="method" id="method" class="w-4/12  py-1 px-2 border-r border-neutral-300 dark:border-neutral-50 ">
+      <option value="1">Efectivo</option>
+      <option value="2">+ Nuevo</option>
+    </select>
+    <!-- simbolo de monera -->
+
+    <!-- fecha -->
+    <input type="date" placeholder="Fecha"
+      class="w-3/12  py-1 px-2 focus:bg-white border-r border-neutral-300 dark:border-neutral-50 " />
+    <!-- simbolo de moneda -->
+    <p class="w-1/12 border-r  py-1 px-2 border-neutral-300 dark:border-neutral-50 flex items-center justify-center">S/
+    </p>
+    <!-- monto -->
+    <input type="number" placeholder="Monto"
+      class="w-4/12 h-full py-1 px-2 focus:bg-white border-r border-neutral-300 dark:border-neutral-50 " />
+  </div>
+
+  <!-- button nota -->
+  <button type="button"
+    class="h-9.5 flex items-center justify-center px-0.5 hover:bg-neutral-200 transition-colors duration-150 cursor-pointer">
+    <span class="material-symbols-rounded p-0 size-min text-xl! " aria-label="ariaLabel">
+      note_add
+    </span>
+  </button>
+</div>
