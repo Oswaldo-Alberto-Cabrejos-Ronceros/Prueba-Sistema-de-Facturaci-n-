@@ -1,0 +1,8 @@
+<label class="w-full cursor pointer relative flex justify-between py-2.5 px-3 transition-colors duration-150 hover:bg-neutral-200 cursor-pointer ">
+    <input type="checkbox" class="sr-only peer" [ngModel]="value" (ngModelChange)="checkEmit($event)">
+        <p class=" font-medium">{{label}}</p>
+        <!-- indicador de seleccion -->
+         <div class="rounded-full flex items-center justify-center size-5 bg-neutral-300 peer-checked:bg-red-500">
+            <span class="material-symbols-rounded text-base! text-neutral-50 p-0 size-min"> check </span>
+         </div>
+</label>
