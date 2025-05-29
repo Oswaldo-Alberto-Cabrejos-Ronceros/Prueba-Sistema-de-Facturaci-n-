@@ -11,7 +11,7 @@ import { ButtonIconLabelTerciaryComponent } from "../button-icon-label-terciary/
 })
 export class CardSavePrimaryComponent {
   @HostBinding('class') class =
-    'w-full max-w-lg h-[95%] p-8 rounded-3xl gap-4 flex flex-col bg-neutral-100 dark:bg-neutral-800';
+    'w-full max-w-xl min-w-lg h-[90vh] p-8 rounded-3xl gap-4 flex flex-col bg-white dark:bg-neutral-800 relative';
   @Input() title: string = '';
   @Output() close = new EventEmitter<void>();
   onClose = () => {

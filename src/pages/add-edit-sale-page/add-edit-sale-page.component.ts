@@ -8,14 +8,12 @@ import { InputSearchComponent } from '../../components/input-search/input-search
 import { IconComponent } from '../../components/icon/icon.component';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
 import { SharedModalComponent } from '../../components/shared-modal/shared-modal.component';
-import { CardSavePrimaryComponent } from '../../components/card-save-primary/card-save-primary.component';
-import { CheckboxPrimaryComponent } from '../../components/checkbox-primary/checkbox-primary.component';
-import { CommonModule } from '@angular/common';
+import { CardConfigurationsBillingComponent } from "../../components/card-configurations-billing/card-configurations-billing.component";
 
 @Component({
   selector: 'app-add-edit-sale-page',
   imports: [
-    BarSearchAddProductServiceComponent,CommonModule,
+    BarSearchAddProductServiceComponent,
     EmptyCardComponent,
     ButtonTerciaryComponent,
     BarAddPayComponent,
@@ -23,9 +21,8 @@ import { CommonModule } from '@angular/common';
     IconComponent,
     ButtonIconLabelTerciaryComponent,
     SharedModalComponent,
-    CardSavePrimaryComponent,
-    CheckboxPrimaryComponent,
-  ],
+    CardConfigurationsBillingComponent
+],
   templateUrl: './add-edit-sale-page.component.html',
   styleUrl: './add-edit-sale-page.component.css',
 })
