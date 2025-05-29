@@ -1,4 +1,4 @@
-<div class="w-full flex rounded-2xl overflow-hidden text-sm">
+<div class="w-full min-w-xs bg-neutral-100 flex rounded-2xl overflow-hidden text-sm">
   <!-- button producto -->
   <app-button-square
     iconName="search"
@@ -10,7 +10,12 @@
     [active]="activeButtonService"
   ></app-button-square>
   <!-- input de producto -->
-  <input type="text" placeholder="Buscar producto" class="w-52 py-1 px-2" />
-  <input type="number" placeholder="Cantidad" class="w-28 py-1 px-2" />
-  <input type="number" placeholder="Precio" class="w-28 py-1 px-2" />
+   <div class="flex-1">  <input type="text" placeholder="Buscar producto" class="w-3/5 h-full py-1 px-2 focus:bg-white" />
+  <input type="number" placeholder="Cantidad" class="w-1/5 h-full py-1 px-2 focus:bg-white" />
+  <input type="number" placeholder="Precio" class="w-1/5 h-full py-1 px-2 focus:bg-white" /></div>
+
+    <app-button-square
+    iconName="add"
+    [active]="activeButtonSearch"
+  ></app-button-square>
 </div>
