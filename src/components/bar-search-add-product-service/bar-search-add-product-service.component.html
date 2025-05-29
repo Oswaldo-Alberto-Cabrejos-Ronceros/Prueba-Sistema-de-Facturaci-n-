@@ -1,21 +1,14 @@
 <div class="w-full min-w-xs bg-neutral-100 flex rounded-2xl overflow-hidden text-sm">
   <!-- button producto -->
-  <app-button-square
-    iconName="search"
-    [active]="activeButtonSearch"
-  ></app-button-square>
+  <app-button-square iconName="search" [active]="activeButtonSearch"></app-button-square>
   <!-- button service -->
-  <app-button-square
-    iconName="build"
-    [active]="activeButtonService"
-  ></app-button-square>
+  <app-button-square iconName="build" [active]="activeButtonService"></app-button-square>
   <!-- input de producto -->
-   <div class="flex-1">  <input type="text" placeholder="Buscar producto" class="w-3/5 h-full py-1 px-2" />
-  <input type="number" placeholder="Cantidad" class="w-1/5 h-full py-1 px-2 focus:bg-white" />
-  <input type="number" placeholder="Precio" class="w-1/5 h-full py-1 px-2 focus:bg-white" /></div>
+  <div class="flex-1">
+    <input type="text" placeholder="Buscar producto" class="w-3/5 h-full py-1 px-2 placeholder:font-medium placeholder:text-neutral-400  border-x border-neutral-300 dark:border-neutral-50" />
+    <input type="number" placeholder="Cantidad" class="w-1/5 h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-r border-neutral-300 dark:border-neutral-50" />
+    <input type="number" placeholder="Precio" class="w-1/5 h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-r border-neutral-300 dark:border-neutral-50" />
+  </div>
 
-    <app-button-square
-    iconName="add"
-    [active]="activeButtonSearch"
-  ></app-button-square>
+  <app-button-square iconName="add" [active]="activeButtonSearch"></app-button-square>
 </div>
