@@ -13,7 +13,7 @@ import { TableFilterComponent } from '../../components/table-filter/table-filter
 import { CommonModule } from '@angular/common';
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
 import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
-import { BarSearchAddProductServiceComponent } from "../../components/bar-search-add-product-service/bar-search-add-product-service.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sales-page',
@@ -24,7 +24,7 @@ import { BarSearchAddProductServiceComponent } from "../../components/bar-search
     PopUpOptionsComponent,
     CommonModule,
     ButtonIconLabelQuaternaryComponent,
-    BarSearchAddProductServiceComponent
+    RouterLink
 ],
   templateUrl: './sales-page.component.html',
   styleUrl: './sales-page.component.css',

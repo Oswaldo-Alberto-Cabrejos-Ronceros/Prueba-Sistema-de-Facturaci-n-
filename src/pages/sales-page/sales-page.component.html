@@ -1,7 +1,7 @@
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva Venta" iconName="add"
+  <app-button-icon-label-quaternary ariaLabel="Nueva Venta" routerLink="/app/sales/add-edit" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva Venta" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary routerLink="/app/sales/add-edit" label="Nueva Venta" class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para notificaciones -->
   <app-button-icon-label-terciary (click)="handlePopUpNotifications()" #triggerNotifications ariaLabel="Notificaciones"
     iconName="notifications"></app-button-icon-label-terciary>
@@ -24,4 +24,3 @@
 
 <app-table-filter [columns]="columns" title="Ventas" (enabled)="handleEnabledTable()"
   [filtersEnabled]="isTableEnabled"></app-table-filter>
-<app-bar-search-add-product-service></app-bar-search-add-product-service>
