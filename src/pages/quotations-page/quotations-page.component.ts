@@ -12,6 +12,7 @@ import { DatePickerSetComponent } from '../../components/date-picker-set/date-pi
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
 import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-quotations-page',
@@ -22,6 +23,7 @@ import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon
     TableFilterComponent,
     PopUpOptionsComponent,
     ButtonIconLabelQuaternaryComponent,
+    RouterLink
   ],
   templateUrl: './quotations-page.component.html',
   styleUrl: './quotations-page.component.css',
