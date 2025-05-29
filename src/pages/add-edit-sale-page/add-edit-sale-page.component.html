@@ -1,7 +1,25 @@
+<!-- modal -->
+<app-shared-modal [show]="showModal" (close)="closeModal()">
+<app-card-save-primary (close)="closeModal()" title="Configuración de facturación">
+  <!-- seccion barra de busqueda -->
+   <p class="text-base font-bold mb-4">Barra de búsqueda</p>
+<app-checkbox-primary *ngFor="let option of optionsSearchBar"  [value]="option.value" [label]="option.label" ></app-checkbox-primary>
+<!-- seccion visualizaciones coplementarias -->
+    <p class="text-base font-bold mt-5 mb-4">Visualizaciones complementarias</p>
+<app-checkbox-primary *ngFor="let option of optionsComplementaryVisualizations"  [value]="option.value" [label]="option.label" ></app-checkbox-primary>
+ <!-- seccion opciones de facturacion -->
+      <p class="text-base font-bold mt-5 mb-4">Opciones de facturación</p>
+<app-checkbox-primary *ngFor="let option of optionsBilling"  [value]="option.value" [label]="option.label" ></app-checkbox-primary>
+
+  <!-- seccion opciones de pago -->
+         <p class="text-base font-bold mt-5 mb-4">Opciones de pago</p>
+<app-checkbox-primary *ngFor="let option of optionsPay"  [value]="option.value" [label]="option.label" ></app-checkbox-primary>
+</app-card-save-primary>
+</app-shared-modal>
 <!-- contenido inyectado a nav-bar-menu -->
 <ng-template #customRightTemplate>
   <!-- para opciones -->
-  <app-button-icon-label-terciary ariaLabel="Configuración de facturación"
+  <app-button-icon-label-terciary (click)="openModal()" ariaLabel="Configuración de facturación"
     iconName="settings"></app-button-icon-label-terciary>
 </ng-template>
 
