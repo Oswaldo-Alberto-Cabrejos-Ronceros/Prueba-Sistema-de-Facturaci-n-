@@ -1,0 +1,16 @@
+<div class="w-full flex rounded-2xl overflow-hidden text-sm">
+  <!-- button producto -->
+  <app-button-square
+    iconName="search"
+    [active]="activeButtonSearch"
+  ></app-button-square>
+  <!-- button service -->
+  <app-button-square
+    iconName="build"
+    [active]="activeButtonService"
+  ></app-button-square>
+  <!-- input de producto -->
+  <input type="text" placeholder="Buscar producto" class="w-52 py-1 px-2" />
+  <input type="number" placeholder="Cantidad" class="w-28 py-1 px-2" />
+  <input type="number" placeholder="Precio" class="w-28 py-1 px-2" />
+</div>
