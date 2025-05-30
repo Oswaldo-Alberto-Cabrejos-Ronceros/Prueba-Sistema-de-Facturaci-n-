@@ -11,8 +11,5 @@ export class ButtonSquareComponent {
 @Input() iconName:string=''
 @Input() ariaLabel:string=''
 @Input() active:boolean=false
-//funcion para varia active
-handleActive(){
-  this.active=!this.active
-}
+
 }

@@ -12,4 +12,12 @@ export class BarSearchAddProductServiceComponent {
 //activacion del boton buscar
 activeButtonSearch:boolean=true
 activeButtonService:boolean=false
+
+//para manejar activaciones de los botones
+//para search
+handleActivationButtons(){
+  this.activeButtonSearch=!this.activeButtonSearch
+  this.activeButtonService=!this.activeButtonService
+}
+
 }
