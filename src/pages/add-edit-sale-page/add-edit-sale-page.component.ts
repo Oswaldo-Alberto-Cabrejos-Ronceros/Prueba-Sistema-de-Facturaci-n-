@@ -17,9 +17,9 @@ import { SharedModalComponent } from '../../components/shared-modal/shared-modal
 import { CardConfigurationsBillingComponent } from '../../components/card-configurations-billing/card-configurations-billing.component';
 import { BarCodeRetailComponent } from '../../components/bar-code-retail/bar-code-retail.component';
 import { BarProductServicioUnitaryComponent } from '../../components/bar-product-servicio-unitary/bar-product-servicio-unitary.component';
-import { PopUpOptionsCheckReturnComponent } from "../../components/pop-up-options-check-return/pop-up-options-check-return.component";
+import { PopUpOptionsCheckReturnComponent } from '../../components/pop-up-options-check-return/pop-up-options-check-return.component';
 import { CommonModule } from '@angular/common';
-import { TextAreaTerciaryComponent } from "../../components/text-area-terciary/text-area-terciary.component";
+import { TextAreaTerciaryComponent } from '../../components/text-area-terciary/text-area-terciary.component';
 
 @Component({
   selector: 'app-add-edit-sale-page',
@@ -37,8 +37,8 @@ import { TextAreaTerciaryComponent } from "../../components/text-area-terciary/t
     BarProductServicioUnitaryComponent,
     PopUpOptionsCheckReturnComponent,
     CommonModule,
-    TextAreaTerciaryComponent
-],
+    TextAreaTerciaryComponent,
+  ],
   templateUrl: './add-edit-sale-page.component.html',
   styleUrl: './add-edit-sale-page.component.css',
 })
@@ -143,22 +143,20 @@ export class AddEditSalePageComponent {
     ' Producto o Servicio',
   ];
 
-    //para mostrar opciones de venta
+  //para mostrar opciones de venta
   showPopUpOptionsSale = false;
 
   //para manejar el pop up opciones venta
-  handlePopUpOptionsSale(){
-    this.showPopUpOptionsSale=!this.showPopUpOptionsSale
+  handlePopUpOptionsSale() {
+    this.showPopUpOptionsSale = !this.showPopUpOptionsSale;
   }
 
-  optionSaleSelected:number=1
+  optionSaleSelected: number = 1;
 
-    //funcion que cambio la opcion seleccionada
+  //funcion que cambio la opcion seleccionada
 
   changeOptionSelected(option: number) {
     this.optionSaleSelected = option;
-    this.handlePopUpOptionsSale()
-    console.log(this.optionSaleSelected)
+    this.handlePopUpOptionsSale();
   }
-
 }
