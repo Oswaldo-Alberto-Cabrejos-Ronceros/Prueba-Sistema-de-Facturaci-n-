@@ -20,6 +20,7 @@ import { BarProductServicioUnitaryComponent } from '../../components/bar-product
 import { PopUpOptionsCheckReturnComponent } from '../../components/pop-up-options-check-return/pop-up-options-check-return.component';
 import { CommonModule } from '@angular/common';
 import { TextAreaTerciaryComponent } from '../../components/text-area-terciary/text-area-terciary.component';
+import { TabBarSecondaryComponent } from "../../components/tab-bar-secondary/tab-bar-secondary.component";
 
 @Component({
   selector: 'app-add-edit-sale-page',
@@ -38,7 +39,8 @@ import { TextAreaTerciaryComponent } from '../../components/text-area-terciary/t
     PopUpOptionsCheckReturnComponent,
     CommonModule,
     TextAreaTerciaryComponent,
-  ],
+    TabBarSecondaryComponent
+],
   templateUrl: './add-edit-sale-page.component.html',
   styleUrl: './add-edit-sale-page.component.css',
 })
@@ -158,5 +160,27 @@ export class AddEditSalePageComponent {
   changeOptionSelected(option: number) {
     this.optionSaleSelected = option;
     this.handlePopUpOptionsSale();
+  }
+
+  //opcion seleccionada en el tabbar
+  optionsTabBarSelected:number=0
+
+  //para opciones de tabbar para pantallas pequeñas
+
+  optionsTabBar:{label:string,iconName:string}[]=[
+{
+  label: 'Productos',
+  iconName: 'inventory_2'
+},
+{
+  label: 'Pagos',
+  iconName: 'universal_currency_alt'
+}
+  ]
+
+  //para manejar el cambio de navegacion
+  changeOptionTabBarSelected(option:number){
+    this.optionsTabBarSelected=option
+    console.log(this.optionsTabBarSelected)
   }
 }

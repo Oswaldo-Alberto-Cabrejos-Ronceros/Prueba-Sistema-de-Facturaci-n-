@@ -5,9 +5,30 @@
     iconName="settings"></app-button-icon-label-terciary>
 </ng-template>
 
-<div class="w-full flex min-h-full ">
-  <!-- seccion-productos -->
-  <div class="border-r pt-5 border-neutral-300 dark:border-neutral-50 w-3/5 lg:w-2/3 pr-1 sm:pr-1.5">
+<!-- tab nav para movil -->
+<app-tab-bar-secondary (changeOption)="changeOptionTabBarSelected($event)" class="block md:hidden"
+  [options]="optionsTabBar"></app-tab-bar-secondary>
+
+<!-- para escritorio -->
+<div class="w-full flex-col md:flex-row min-h-full hidden md:flex">
+  <ng-container *ngTemplateOutlet="productosTemplate"></ng-container>
+  <ng-container *ngTemplateOutlet="pagosTemplate"></ng-container>
+</div>
+
+<!-- para movil -->
+<div class="block md:hidden" [ngSwitch]="optionsTabBarSelected">
+  <ng-container *ngSwitchCase="0">
+    <ng-container *ngTemplateOutlet="productosTemplate"></ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="1">
+    <ng-container *ngTemplateOutlet="pagosTemplate"></ng-container>
+  </ng-container>
+</div>
+
+<!-- seccion productos -->
+
+<ng-template #productosTemplate>
+  <div class="md:border-r md:pt-5 border-neutral-300 dark:border-neutral-50 md:w-3/5 lg:w-2/3 pr-1 sm:pr-1.5">
     <!-- contenedor de barras y boton -->
     <div class="w-full flex gap-1">
       <!-- contenedor de barras dinamicas -->
@@ -33,14 +54,15 @@
     </div>
 
     <app-empty-card [large]="true" message="No hay productos"></app-empty-card>
-
-
-
   </div>
-  <!-- seccion pagos -->
-  <div class="w-2/5 lg:w-1/3 pt-5">
+</ng-template>
 
-    <div class="pl-5 mb-7">
+<!-- seccion pagos -->
+
+<ng-template #pagosTemplate>
+  <div class="md:w-2/5 lg:w-1/3 pt-5">
+
+    <div class="md:pl-5 mb-7">
       <app-button-terciary class="mb-8" label="Boleta"></app-button-terciary>
       <!-- monto total -->
       <div class="w-full mb-4 flex justify-between font-bold">
@@ -67,7 +89,7 @@
 
     </div>
     <!-- container de select e input date -->
-    <div class="flex text-sm border-y py-1.5 -mr-5 lg:-mr-10 border-neutral-300 dark:border-neutral-50">
+    <div class="flex text-sm border-y py-1.5 md:-mr-5 lg:-mr-10 border-neutral-300 dark:border-neutral-50">
       <select name="method" id="method" class="w-4/6  py-1 px-2 border-r border-neutral-300 dark:border-neutral-50 ">
         <option value="1">Soles</option>
         <option value="2">Dolares</option>
@@ -75,7 +97,7 @@
       <input type="date" placeholder="Fecha" class="w-2/6 py-1 px-2" />
     </div>
   </div>
-</div>
+</ng-template>
 
 <!-- modal -->
 <app-shared-modal [show]="showModal" (close)="closeModal()">

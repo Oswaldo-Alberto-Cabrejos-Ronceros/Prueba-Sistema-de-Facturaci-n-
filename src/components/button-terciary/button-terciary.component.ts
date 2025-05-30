@@ -8,5 +8,5 @@ import { Component, HostBinding, Input } from '@angular/core';
 })
 export class ButtonTerciaryComponent {
   @Input() label:string=''
-@HostBinding('class') class='w-full max-w-lg min-w-min flex items-center justify-center'
+@HostBinding('class') class='w-full max-w-3xl min-w-min flex items-center justify-center'
 }
