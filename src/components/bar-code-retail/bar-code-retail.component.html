@@ -1,10 +1,12 @@
 <div class="w-full min-w-xs bg-neutral-100 flex rounded-2xl overflow-hidden text-sm">
   <!-- button code -->
-  <app-button-square iconName="barcode" (click)="handleActivationButtons()" [active]="activeButtonCode"></app-button-square>
+  <app-button-square iconName="barcode" (click)="handleActivationButtons()"
+    [active]="activeButtonCode"></app-button-square>
   <!-- button name -->
-  <app-button-square iconName="keyboard" (click)="handleActivationButtons()" [active]="activeButtonNome"></app-button-square>
+  <app-button-square iconName="keyboard" (click)="handleActivationButtons()"
+    [active]="activeButtonNome"></app-button-square>
   <div class="flex-1">
     <input type="text" [placeholder]="infoForInput[inputActive].placeholder"
-      class="w-full rounded-r-2xl h-full py-1 px-2 placeholder:font-medium placeholder:text-neutral-400  border-x border-neutral-300 dark:border-neutral-50" />
+      class="w-full rounded-r-2xl h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-x border-neutral-300 dark:border-neutral-50" />
   </div>
 </div>
