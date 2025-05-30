@@ -1,4 +1,3 @@
-
 <!-- contenido inyectado a nav-bar-menu -->
 <ng-template #customRightTemplate>
   <!-- para opciones -->
@@ -8,23 +7,28 @@
 
 <div class="w-full flex min-h-full ">
   <!-- seccion-productos -->
-  <div class="border-r pt-5 border-neutral-300 dark:border-neutral-50 w-2/3 pr-1 sm:pr-1.5">
+  <div class="border-r pt-5 border-neutral-300 dark:border-neutral-50 w-3/5 lg:w-2/3 pr-1 sm:pr-1.5">
     <!-- contenedor de barras y boton -->
     <div class="w-full flex gap-1">
       <!-- contenedor de barras dinamicas -->
       <div class="flex-1 flex flex-col gap-2" [ngSwitch]="optionSaleSelected">
         <app-bar-code-retail *ngSwitchCase="0"></app-bar-code-retail>
         <app-bar-search-add-product-service *ngSwitchCase="1"></app-bar-search-add-product-service>
-        <app-text-area-terciary *ngSwitchCase="2" size="sm" name="description" placeholder="Descripción"></app-text-area-terciary>
+        <app-text-area-terciary *ngSwitchCase="2" size="sm" name="description"
+          placeholder="Descripción"></app-text-area-terciary>
         <app-bar-product-servicio-unitary *ngSwitchCase="2"></app-bar-product-servicio-unitary>
         <p *ngSwitchDefault>Opcion invalida</p>
       </div>
       <!-- boton -->
-       <div class="group h-min">
-      <app-button-icon-label-terciary (click)="handlePopUpOptionsSale()" #triggerOptionsSale class="invisible group-hover:visible" size="sm" iconName="more_horiz"></app-button-icon-label-terciary>
-    <!-- opciones de venta -->
-     <app-pop-up-options-check-return (changeOption)="changeOptionSelected($event)" [optionsSelected]="optionSaleSelected" *ngIf="showPopUpOptionsSale && triggerOptionsSale" [trigger]="triggerOptionsSaleRef" [options]="optionsOptionsSale" [visible]="showPopUpOptionsSale" ></app-pop-up-options-check-return>
-    </div>
+      <div class="group h-min">
+        <app-button-icon-label-terciary (click)="handlePopUpOptionsSale()" #triggerOptionsSale
+          class="invisible group-hover:visible" size="sm" iconName="more_horiz"></app-button-icon-label-terciary>
+        <!-- opciones de venta -->
+        <app-pop-up-options-check-return (changeOption)="changeOptionSelected($event)"
+          [optionsSelected]="optionSaleSelected" *ngIf="showPopUpOptionsSale && triggerOptionsSale"
+          [trigger]="triggerOptionsSaleRef" [options]="optionsOptionsSale"
+          [visible]="showPopUpOptionsSale"></app-pop-up-options-check-return>
+      </div>
 
     </div>
 
@@ -34,7 +38,7 @@
 
   </div>
   <!-- seccion pagos -->
-  <div class="w-1/3 pt-5">
+  <div class="w-2/5 lg:w-1/3 pt-5">
 
     <div class="pl-5 mb-7">
       <app-button-terciary class="mb-8" label="Boleta"></app-button-terciary>
@@ -63,7 +67,7 @@
 
     </div>
     <!-- container de select e input date -->
-    <div class="flex text-sm border-y py-1.5 -mr-10 border-neutral-300 dark:border-neutral-50">
+    <div class="flex text-sm border-y py-1.5 -mr-5 lg:-mr-10 border-neutral-300 dark:border-neutral-50">
       <select name="method" id="method" class="w-4/6  py-1 px-2 border-r border-neutral-300 dark:border-neutral-50 ">
         <option value="1">Soles</option>
         <option value="2">Dolares</option>
@@ -74,6 +78,6 @@
 </div>
 
 <!-- modal -->
-<app-shared-modal  [show]="showModal" (close)="closeModal()">
+<app-shared-modal [show]="showModal" (close)="closeModal()">
   <app-card-configurations-billing (close)="closeModal()"></app-card-configurations-billing>
 </app-shared-modal>
