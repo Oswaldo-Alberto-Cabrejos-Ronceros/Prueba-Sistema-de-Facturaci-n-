@@ -8,7 +8,7 @@ import { IconComponent } from "../icon/icon.component";
   styleUrl: './input-search.component.css'
 })
 export class InputSearchComponent {
-@HostBinding('class') class='w-full max-w-2xl min-w-min flex items-center justify-center'
+@HostBinding('class') class='w-full max-w-3xl min-w-min flex items-center justify-center'
 //nombre
 @Input() name:string=''
 //placeholder

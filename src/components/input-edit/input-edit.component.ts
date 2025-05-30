@@ -8,7 +8,7 @@ import { IconComponent } from "../icon/icon.component";
   styleUrl: './input-edit.component.css'
 })
 export class InputEditComponent {
-@HostBinding('class') class='w-full max-w-lg min-w-min flex items-center justify-center'
+@HostBinding('class') class='w-full max-w-3xl min-w-min flex items-center justify-center'
 //nombre
 @Input() name:string=''
 //placeholder
