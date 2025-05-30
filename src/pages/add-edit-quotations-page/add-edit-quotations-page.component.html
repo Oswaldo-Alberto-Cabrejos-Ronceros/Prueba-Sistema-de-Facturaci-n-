@@ -1,0 +1,44 @@
+<!-- contenido inyectado a nav-bar-menu -->
+<ng-template #customRightTemplate>
+  <!-- para opciones -->
+  <app-button-icon-label-terciary ariaLabel="Configuración de facturación"
+    iconName="settings"></app-button-icon-label-terciary>
+</ng-template>
+
+<div class="w-full flex min-h-full flex-col md:flex-row ">
+  <!-- seccion-productos -->
+  <div class="md:border-r border-neutral-300 dark:border-neutral-50 md:w-3/5 lg:w-2/3 pr-1 sm:pr-1.5">
+    <app-bar-search-add-product-service></app-bar-search-add-product-service>
+    <app-empty-card [large]="true" message="No hay productos"></app-empty-card>
+  </div>
+  <!-- seccion pagos -->
+  <div class="md:w-2/5 lg:w-1/3 pt-5">
+
+    <div class="md:pl-5 mb-7">
+
+      <!-- editor -->
+
+      <app-input-edit class="mb-5" name="tipo" placeholder="Tipo" value="Cotización"></app-input-edit>
+
+      <!-- buscador -->
+      <app-input-search name="client" class="mt-2" placeholder="Cliente"></app-input-search>
+
+      <div class="flex justify-end my-3">
+        <!-- button agregar cliente -->
+        <button type="button" class="text-sm group cursor-pointer  flex items-center justify-center gap-1">
+          <app-icon ariaLabel="Agregar cliente" iconName="person_add" size="text-xl"></app-icon>
+          <p class="group-hover:underline">Nuevo cliente</p>
+        </button>
+      </div>
+
+    </div>
+          <!-- container de select e input date -->
+      <div class="flex text-sm border-y py-1.5  md:-mr-5 lg:-mr-10 border-neutral-300 dark:border-neutral-50">
+        <select name="method" id="method" class="w-4/6  py-1 px-2 border-r border-neutral-300 dark:border-neutral-50 ">
+          <option value="1">Soles</option>
+          <option value="2">Dolares</option>
+        </select>
+        <input type="date" placeholder="Fecha" class="w-2/6 py-1 px-2" />
+      </div>
+  </div>
+</div>

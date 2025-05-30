@@ -1,6 +1,6 @@
-<div class="w-full flex items-center justify-between gap-2 px-4 py-2">
-<app-button-icon (click)="onOpen()" ariaLabel="Menú" iconName="menu"></app-button-icon>
-<app-button-icon ariaLabel="Logo" #triggerMyUser (click)="handlePopup()" iconName="public"></app-button-icon>
-<!-- pop up de usuario -->
-    <app-pop-up-my-user-acount [trigger]="triggerMyUserRef " [visible]="showPopup"></app-pop-up-my-user-acount>
+<div class="w-full flex items-center justify-between gap-2 px-4 py-2 border-b border-neutral-300 dark:border-neutral-50">
+  <app-button-icon (click)="onOpen()" ariaLabel="Menú" iconName="menu"></app-button-icon>
+  <app-button-icon ariaLabel="Logo" #triggerMyUser (click)="handlePopup()" iconName="public"></app-button-icon>
+  <!-- pop up de usuario -->
+  <app-pop-up-my-user-acount [trigger]="triggerMyUserRef " [visible]="showPopup"></app-pop-up-my-user-acount>
 </div>

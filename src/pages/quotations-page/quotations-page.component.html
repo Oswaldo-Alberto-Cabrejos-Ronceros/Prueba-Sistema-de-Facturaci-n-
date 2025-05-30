@@ -1,7 +1,7 @@
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva Cotización" iconName="add"
+  <app-button-icon-label-quaternary ariaLabel="Nueva Cotización" routerLink="/app/sales/quotations/add-edit" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva Cotización" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary label="Nueva Cotización" routerLink="/app/sales/quotations/add-edit" class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para exportar -->
   <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
     iconName="download"></app-button-icon-label-terciary>

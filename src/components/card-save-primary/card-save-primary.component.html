@@ -1,0 +1,26 @@
+<!-- header -->
+   <app-button-icon
+    ariaLabel="Cerrar"
+    iconName="close"
+    (click)="onClose()"
+    class="absolute right-4 top-4"
+  ></app-button-icon>
+<div class="w-full flex items-start">
+  <h3 class="text-lg font-black">{{ title }}</h3>
+</div>
+<!-- contenido -->
+<div class="flex-1 overflow-y-auto max-h-full">
+  <ng-content></ng-content>
+</div>
+<!-- footer -->
+<div class="w-full flex items-center justify-end gap-2">
+  <!-- boton cancelar -->
+  <app-button-icon-label-terciary
+    label="Cancelar"
+    (click)="onClose()"
+  ></app-button-icon-label-terciary>
+  <!-- boton guardar -->
+  <app-button-icon-label-quaternary
+    label="Guardar"
+  ></app-button-icon-label-quaternary>
+</div>

@@ -11,5 +11,6 @@ export class ButtonIconLabelTerciaryComponent {
 @Input() ariaLabel:string=''
 @Input() label:string=''
 @Input() iconName:string=''
+@Input() size='base' //puede ser base o sm
 @HostBinding('class') class='min-w-max h-min'
 }

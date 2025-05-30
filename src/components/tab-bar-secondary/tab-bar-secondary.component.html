@@ -1,0 +1,8 @@
+<nav class="w-full h-12 flex">
+<div *ngFor="let option of options,let i= index" class="flex-1 text-center flex items-center justify-center gap-1.5 border-b-2 " [ngClass]="i===optionSelected?'text-red-500 border-red-500 font-medium':'border-transparent'" (click)="handleOption(i)">
+      <span class="material-symbols-rounded"> {{option.iconName}}</span>
+<p class="text-sm">
+{{option.label}}
+</p>
+</div>
+</nav>

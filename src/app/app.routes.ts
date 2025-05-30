@@ -9,6 +9,8 @@ import { SalesLayoutComponent } from '../layouts/sales-layout/sales-layout.compo
 import { SalesPageComponent } from '../pages/sales-page/sales-page.component';
 import { BillingPageComponent } from '../pages/billing-page/billing-page.component';
 import { QuotationsPageComponent } from '../pages/quotations-page/quotations-page.component';
+import { AddEditSalePageComponent } from '../pages/add-edit-sale-page/add-edit-sale-page.component';
+import { AddEditQuotationsPageComponent } from '../pages/add-edit-quotations-page/add-edit-quotations-page.component';
 //compras
 import { PurchasesLayoutComponent } from '../layouts/purchases-layout/purchases-layout.component';
 import { PurchasesPageComponent } from '../pages/purchases-page/purchases-page.component';
@@ -94,6 +96,14 @@ export const routes: Routes = [
             path: 'quotations',
             component: QuotationsPageComponent,
           },
+          {
+            path:'add-edit',
+            component:AddEditSalePageComponent
+          },
+                    {
+            path:'quotations/add-edit',
+            component:AddEditQuotationsPageComponent
+          }
         ],
       },
       {
