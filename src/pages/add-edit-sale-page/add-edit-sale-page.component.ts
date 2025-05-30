@@ -1,4 +1,10 @@
-import { Component, HostBinding, TemplateRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostBinding,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 import { BarSearchAddProductServiceComponent } from '../../components/bar-search-add-product-service/bar-search-add-product-service.component';
 import { EmptyCardComponent } from '../../components/empty-card/empty-card.component';
@@ -8,7 +14,12 @@ import { InputSearchComponent } from '../../components/input-search/input-search
 import { IconComponent } from '../../components/icon/icon.component';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
 import { SharedModalComponent } from '../../components/shared-modal/shared-modal.component';
-import { CardConfigurationsBillingComponent } from "../../components/card-configurations-billing/card-configurations-billing.component";
+import { CardConfigurationsBillingComponent } from '../../components/card-configurations-billing/card-configurations-billing.component';
+import { BarCodeRetailComponent } from '../../components/bar-code-retail/bar-code-retail.component';
+import { BarProductServicioUnitaryComponent } from '../../components/bar-product-servicio-unitary/bar-product-servicio-unitary.component';
+import { PopUpOptionsCheckReturnComponent } from "../../components/pop-up-options-check-return/pop-up-options-check-return.component";
+import { CommonModule } from '@angular/common';
+import { TextAreaTerciaryComponent } from "../../components/text-area-terciary/text-area-terciary.component";
 
 @Component({
   selector: 'app-add-edit-sale-page',
@@ -21,17 +32,24 @@ import { CardConfigurationsBillingComponent } from "../../components/card-config
     IconComponent,
     ButtonIconLabelTerciaryComponent,
     SharedModalComponent,
-    CardConfigurationsBillingComponent
+    CardConfigurationsBillingComponent,
+    BarCodeRetailComponent,
+    BarProductServicioUnitaryComponent,
+    PopUpOptionsCheckReturnComponent,
+    CommonModule,
+    TextAreaTerciaryComponent
 ],
   templateUrl: './add-edit-sale-page.component.html',
   styleUrl: './add-edit-sale-page.component.css',
 })
 export class AddEditSalePageComponent {
-  @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
+  @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4 -mt-5';
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
-
+  //referencia del elemento que activa opciones venta
+  @ViewChild('triggerOptionsSale', { read: ElementRef })
+  triggerOptionsSaleRef!: ElementRef;
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
@@ -117,4 +135,30 @@ export class AddEditSalePageComponent {
       value: false,
     },
   ];
+
+  //opciones para el pop up opcion venta
+  optionsOptionsSale: string[] = [
+    'Código de barras RETAIL',
+    'Producto o Servicio',
+    ' Producto o Servicio',
+  ];
+
+    //para mostrar opciones de venta
+  showPopUpOptionsSale = false;
+
+  //para manejar el pop up opciones venta
+  handlePopUpOptionsSale(){
+    this.showPopUpOptionsSale=!this.showPopUpOptionsSale
+  }
+
+  optionSaleSelected:number=1
+
+    //funcion que cambio la opcion seleccionada
+
+  changeOptionSelected(option: number) {
+    this.optionSaleSelected = option;
+    this.handlePopUpOptionsSale()
+    console.log(this.optionSaleSelected)
+  }
+
 }
