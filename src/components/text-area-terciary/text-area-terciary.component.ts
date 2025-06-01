@@ -14,5 +14,6 @@ export class TextAreaTerciaryComponent {
 @Input() rows:number=1
 @HostBinding('class') class='w-full min-w-min'
 @Input() size:string="base";
+@Input() resize:boolean=true;
 value: string = '';
 }
