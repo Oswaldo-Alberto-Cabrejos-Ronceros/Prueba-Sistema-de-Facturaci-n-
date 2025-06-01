@@ -3,7 +3,7 @@
 
   <!-- select -->
   <select [name]="nameSelect" [id]="nameSelect" [(ngModel)]="valueSelect"
-    class="w-3/5 transition-colors duration-150 py-2 px-3 rounded-l-xlplaceholder:font-medium placeholder:text-neutral-400">
+    class="w-3/5 transition-colors duration-150 py-2 px-3 rounded-l-xl placeholder:font-medium focus:outline-none placeholder:text-neutral-400">
     <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
   </select>
 
