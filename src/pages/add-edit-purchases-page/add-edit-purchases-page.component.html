@@ -1,0 +1,46 @@
+<!-- contenido inyectado a nav-bar-menu -->
+<ng-template #customRightTemplate>
+  <!-- para opciones -->
+  <app-button-icon-label-terciary ariaLabel="Configuración de facturación"
+    iconName="settings"></app-button-icon-label-terciary>
+</ng-template>
+<div class="w-full flex min-h-full flex-col md:flex-row ">
+  <!-- seccion productos -->
+  <div class="md:border-r pt-5 border-neutral-300 dark:border-neutral-50 md:w-3/5 lg:w-2/3 pr-1 sm:pr-1.5">
+    <app-bar-search-add-product></app-bar-search-add-product>
+    <app-empty-card [large]="true" message="No hay productos"></app-empty-card>
+  </div>
+  <!-- seccion 2 -->
+  <div class="md:w-2/5 lg:w-1/3">
+    <!-- barra seleccion de comprobante -->
+    <div class="md:-mr-5 lg:-mr-10">
+      <app-bar-voucher-number-date></app-bar-voucher-number-date>
+    </div>
+
+    <div class="w-full py-5 md:pl-5 pr-0 flex flex-col gap-4">
+      <app-input-file-primary></app-input-file-primary>
+
+      <!-- monto total -->
+      <div class="w-full flex justify-between font-bold">
+        <p>Total</p>
+        <p>{{totalMount}}</p>
+      </div>
+      <app-bar-add-pay></app-bar-add-pay>
+      <!-- deuda -->
+      <p class="text-sm text-right"><strong>Deuda </strong>S/ {{debtMount}}</p>
+    </div>
+
+
+    <div class="md:-mr-5 lg:-mr-10">
+      <app-bar-currency-type-date></app-bar-currency-type-date>
+    </div>
+    <div class="w-full py-5 md:pl-5 pr-0">
+      <h3 class="font-bold mb-2">Proveedor</h3>
+      <!-- buscador -->
+      <app-input-search placeholder="Proveedor"></app-input-search>
+      <div class="flex justify-end my-3"> <app-button-add-underline iconName="person_add"
+          label="Nuevo Proveedor"></app-button-add-underline></div>
+
+    </div>
+  </div>
+</div>

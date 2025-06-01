@@ -11,7 +11,6 @@ import { EmptyCardComponent } from '../../components/empty-card/empty-card.compo
 import { ButtonTerciaryComponent } from '../../components/button-terciary/button-terciary.component';
 import { BarAddPayComponent } from '../../components/bar-add-pay/bar-add-pay.component';
 import { InputSearchComponent } from '../../components/input-search/input-search.component';
-import { IconComponent } from '../../components/icon/icon.component';
 import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-label-terciary/button-icon-label-terciary.component';
 import { SharedModalComponent } from '../../components/shared-modal/shared-modal.component';
 import { CardConfigurationsBillingComponent } from '../../components/card-configurations-billing/card-configurations-billing.component';
@@ -21,6 +20,8 @@ import { PopUpOptionsCheckReturnComponent } from '../../components/pop-up-option
 import { CommonModule } from '@angular/common';
 import { TextAreaTerciaryComponent } from '../../components/text-area-terciary/text-area-terciary.component';
 import { TabBarSecondaryComponent } from "../../components/tab-bar-secondary/tab-bar-secondary.component";
+import { BarCurrencyTypeDateComponent } from "../../components/bar-currency-type-date/bar-currency-type-date.component";
+import { ButtonAddUnderlineComponent } from "../../components/button-add-underline/button-add-underline.component";
 
 @Component({
   selector: 'app-add-edit-sale-page',
@@ -30,7 +31,6 @@ import { TabBarSecondaryComponent } from "../../components/tab-bar-secondary/tab
     ButtonTerciaryComponent,
     BarAddPayComponent,
     InputSearchComponent,
-    IconComponent,
     ButtonIconLabelTerciaryComponent,
     SharedModalComponent,
     CardConfigurationsBillingComponent,
@@ -39,7 +39,9 @@ import { TabBarSecondaryComponent } from "../../components/tab-bar-secondary/tab
     PopUpOptionsCheckReturnComponent,
     CommonModule,
     TextAreaTerciaryComponent,
-    TabBarSecondaryComponent
+    TabBarSecondaryComponent,
+    BarCurrencyTypeDateComponent,
+    ButtonAddUnderlineComponent
 ],
   templateUrl: './add-edit-sale-page.component.html',
   styleUrl: './add-edit-sale-page.component.css',

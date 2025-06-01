@@ -25,20 +25,12 @@
 
       <div class="flex justify-end my-3">
         <!-- button agregar cliente -->
-        <button type="button" class="text-sm group cursor-pointer  flex items-center justify-center gap-1">
-          <app-icon ariaLabel="Agregar cliente" iconName="person_add" size="text-xl"></app-icon>
-          <p class="group-hover:underline">Nuevo cliente</p>
-        </button>
+        <app-button-add-underline iconName="person_add" label="Nuevo Cliente"></app-button-add-underline>
       </div>
 
     </div>
-          <!-- container de select e input date -->
-      <div class="flex text-sm border-y py-1.5  md:-mr-5 lg:-mr-10 border-neutral-300 dark:border-neutral-50">
-        <select name="method" id="method" class="w-4/6  py-1 px-2 border-r border-neutral-300 dark:border-neutral-50 ">
-          <option value="1">Soles</option>
-          <option value="2">Dolares</option>
-        </select>
-        <input type="date" placeholder="Fecha" class="w-2/6 py-1 px-2" />
+      <div class=" md:-mr-5 lg:-mr-10">
+        <app-bar-currency-type-date></app-bar-currency-type-date>
       </div>
   </div>
 </div>
