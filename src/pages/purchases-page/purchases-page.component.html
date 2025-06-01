@@ -1,8 +1,8 @@
 <ng-template #customRightTemplate>
 
-  <app-button-icon-label-quaternary ariaLabel="Nueva compra" iconName="add"
+  <app-button-icon-label-quaternary routerLink="/app/purchases/add-edit" ariaLabel="Nueva compra" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva compra" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary routerLink="/app/purchases/add-edit" label="Nueva compra" class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para notificaciones -->
   <app-button-icon-label-terciary (click)="handlePopUpNotifications()" #triggerNotifications ariaLabel="Notificaciones"
     iconName="notifications"></app-button-icon-label-terciary>

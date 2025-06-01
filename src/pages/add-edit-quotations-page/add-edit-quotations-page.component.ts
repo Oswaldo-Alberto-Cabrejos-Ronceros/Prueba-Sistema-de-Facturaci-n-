@@ -1,15 +1,16 @@
 import { Component, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 import { InputSearchComponent } from "../../components/input-search/input-search.component";
-import { IconComponent } from "../../components/icon/icon.component";
 import { ButtonIconLabelTerciaryComponent } from "../../components/button-icon-label-terciary/button-icon-label-terciary.component";
 import { BarSearchAddProductServiceComponent } from "../../components/bar-search-add-product-service/bar-search-add-product-service.component";
 import { EmptyCardComponent } from "../../components/empty-card/empty-card.component";
 import { InputEditComponent } from "../../components/input-edit/input-edit.component";
+import { BarCurrencyTypeDateComponent } from "../../components/bar-currency-type-date/bar-currency-type-date.component";
+import { ButtonAddUnderlineComponent } from "../../components/button-add-underline/button-add-underline.component";
 
 @Component({
   selector: 'app-add-edit-quotations-page',
-  imports: [InputSearchComponent, IconComponent, ButtonIconLabelTerciaryComponent, BarSearchAddProductServiceComponent, EmptyCardComponent, InputEditComponent],
+  imports: [InputSearchComponent, ButtonIconLabelTerciaryComponent, BarSearchAddProductServiceComponent, EmptyCardComponent, InputEditComponent, BarCurrencyTypeDateComponent, ButtonAddUnderlineComponent],
   templateUrl: './add-edit-quotations-page.component.html',
   styleUrl: './add-edit-quotations-page.component.css'
 })

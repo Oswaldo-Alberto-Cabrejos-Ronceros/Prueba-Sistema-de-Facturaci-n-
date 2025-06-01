@@ -15,6 +15,8 @@ import { AddEditQuotationsPageComponent } from '../pages/add-edit-quotations-pag
 import { PurchasesLayoutComponent } from '../layouts/purchases-layout/purchases-layout.component';
 import { PurchasesPageComponent } from '../pages/purchases-page/purchases-page.component';
 import { WarehousePageComponent } from '../pages/warehouse-page/warehouse-page.component';
+import { AddEditPurchasesPageComponent } from '../pages/add-edit-purchases-page/add-edit-purchases-page.component';
+import { AddEditWarehousePageComponent } from '../pages/add-edit-warehouse-page/add-edit-warehouse-page.component';
 //productos
 import { ProductsLayoutComponent } from '../layouts/products-layout/products-layout.component';
 import { ProductsPageComponent } from '../pages/products-page/products-page.component';
@@ -118,6 +120,14 @@ export const routes: Routes = [
             path: 'warehouse',
             component: WarehousePageComponent,
           },
+          {
+            path: 'add-edit',
+            component:AddEditPurchasesPageComponent
+          },
+          {
+            path:'warehouse/add-edit',
+            component:AddEditWarehousePageComponent
+          }
         ],
       },
       {

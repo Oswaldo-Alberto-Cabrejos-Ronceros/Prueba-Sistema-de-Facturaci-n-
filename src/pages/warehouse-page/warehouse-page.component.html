@@ -1,7 +1,7 @@
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva entrada / salida de almacén" iconName="add"
+  <app-button-icon-label-quaternary routerLink="/app/purchases/warehouse/add-edit" ariaLabel="Nueva entrada / salida de almacén" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva entrada / salida de almacén"
+  <app-button-icon-label-quaternary routerLink="/app/purchases/warehouse/add-edit" label="Nueva entrada / salida de almacén"
     class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para exportar -->
   <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"

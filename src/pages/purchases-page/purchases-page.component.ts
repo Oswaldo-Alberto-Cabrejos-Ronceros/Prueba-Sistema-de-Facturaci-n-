@@ -12,6 +12,7 @@ import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-op
 import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-purchases-page',
@@ -22,6 +23,7 @@ import { CommonModule } from '@angular/common';
     DatePickerSetComponent,
     TableFilterComponent,
     CommonModule,
+    RouterLink
   ],
   templateUrl: './purchases-page.component.html',
   styleUrl: './purchases-page.component.css',
