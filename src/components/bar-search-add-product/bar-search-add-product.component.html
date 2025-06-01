@@ -3,16 +3,22 @@
   <div class="flex-1">
 
     <input type="text" placeholder="Buscar producto"
-      class="rounded-l-2xl w-[65%] h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-x border-neutral-300 dark:border-neutral-50" />
+      class="rounded-l-2xl h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-x border-neutral-300 dark:border-neutral-50"
+      [ngClass]="!withIGV && !withPriceUnitary?'w-[82%]':'w-[65%]'" />
     <input type="number" placeholder="Cantidad"
-      class="w-[12%] h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-r border-neutral-300 dark:border-neutral-50" />
-    <select
-      class="w-[11%] h-full py-1 px-2 placeholder:font-medium placeholder:text-neutral-400  border-x border-neutral-300 dark:border-neutral-50">
+      class=" h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-r border-neutral-300 dark:border-neutral-50"
+      [ngClass]="withIGV && withPriceUnitary?'w-[12%]':withIGV && !withPriceUnitary?'w-[18%]':!withIGV && withPriceUnitary?'w-[18%]':'w-[18%]'"/>
+    <select *ngIf="withIGV"
+      class="h-full py-1 px-2 placeholder:font-medium placeholder:text-neutral-400  border-x border-neutral-300 dark:border-neutral-50"
+      [ngClass]="withIGV && !withPriceUnitary?'w-[17%]':'w-[11%]'"
+      >
       <option value="1">Incluye IGV</option>
       <option value="2">No incluye IGV</option>
     </select>
-    <input type="number" placeholder="Precio"
-      class="w-[12%] h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-r border-neutral-300 dark:border-neutral-50" />
+    <input *ngIf="withPriceUnitary" type="number" placeholder="Precio"
+      class="h-full py-1 px-2 focus:bg-white placeholder:font-medium placeholder:text-neutral-400  border-r border-neutral-300 dark:border-neutral-50"
+       [ngClass]="!withIGV && withPriceUnitary?'w-[17%]':'w-[12%]'"
+      />
 
   </div>
   <app-button-square iconName="add" [active]="true"></app-button-square>

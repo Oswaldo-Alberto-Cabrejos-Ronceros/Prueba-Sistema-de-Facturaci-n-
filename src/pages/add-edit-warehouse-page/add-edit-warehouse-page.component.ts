@@ -8,6 +8,7 @@ import { SelectInputSetTerciaryComponent } from '../../components/select-input-s
 import { InputDoubleTerciaryComponent } from '../../components/input-double-terciary/input-double-terciary.component';
 import { InputSearchComponent } from "../../components/input-search/input-search.component";
 import { ButtonAddUnderlineComponent } from "../../components/button-add-underline/button-add-underline.component";
+import { BarSearchAddProductComponent } from "../../components/bar-search-add-product/bar-search-add-product.component";
 
 @Component({
   selector: 'app-add-edit-warehouse-page',
@@ -19,7 +20,8 @@ import { ButtonAddUnderlineComponent } from "../../components/button-add-underli
     SelectInputSetTerciaryComponent,
     InputDoubleTerciaryComponent,
     InputSearchComponent,
-    ButtonAddUnderlineComponent
+    ButtonAddUnderlineComponent,
+    BarSearchAddProductComponent
 ],
   templateUrl: './add-edit-warehouse-page.component.html',
   styleUrl: './add-edit-warehouse-page.component.css',
