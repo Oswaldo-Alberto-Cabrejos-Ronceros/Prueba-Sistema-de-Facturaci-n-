@@ -1,12 +1,12 @@
 <!-- contenido inyectado a nav-bar-menu -->
 <ng-template #customRightTemplate>
   <!-- para opciones -->
-  <app-button-icon-label-terciary ariaLabel="Configuración de facturación"
+  <app-button-icon-label-terciary (click)="openModal()" ariaLabel="Configuración de facturación"
     iconName="settings"></app-button-icon-label-terciary>
 </ng-template>
 <div class="w-full flex min-h-full flex-col md:flex-row ">
   <!-- seccion productos -->
-  <div class="md:border-r pt-5 border-neutral-300 dark:border-neutral-50 md:w-3/5 lg:w-2/3 pr-1 sm:pr-1.5">
+  <div class="md:border-r pt-5 border-neutral-300 dark:border-neutral-50 md:w-3/5 lg:w-2/3 sm:pr-9">
     <app-bar-search-add-product></app-bar-search-add-product>
     <app-empty-card [large]="true" message="No hay productos"></app-empty-card>
   </div>
@@ -44,3 +44,13 @@
     </div>
   </div>
 </div>
+
+<!-- modal -->
+<app-shared-modal [show]="showModal" (close)="closeModal()">
+  <app-card-save-primary (close)="closeModal()" title="Configuración de facturación">
+    <div class="w-full flex items-center justify-between">
+      <p class="">Activar guías de remisión</p>
+      <app-switch-primary [value]="false"></app-switch-primary>
+    </div>
+  </app-card-save-primary>
+</app-shared-modal>

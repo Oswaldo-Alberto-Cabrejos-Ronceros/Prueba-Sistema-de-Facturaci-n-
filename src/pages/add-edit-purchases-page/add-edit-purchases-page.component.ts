@@ -9,10 +9,13 @@ import { BarAddPayComponent } from "../../components/bar-add-pay/bar-add-pay.com
 import { BarCurrencyTypeDateComponent } from "../../components/bar-currency-type-date/bar-currency-type-date.component";
 import { InputSearchComponent } from "../../components/input-search/input-search.component";
 import { ButtonAddUnderlineComponent } from "../../components/button-add-underline/button-add-underline.component";
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardSavePrimaryComponent } from "../../components/card-save-primary/card-save-primary.component";
+import { SwitchPrimaryComponent } from "../../components/switch-primary/switch-primary.component";
 
 @Component({
   selector: 'app-add-edit-purchases-page',
-  imports: [ButtonIconLabelTerciaryComponent, EmptyCardComponent, BarSearchAddProductComponent, BarVoucherNumberDateComponent, InputFilePrimaryComponent, BarAddPayComponent, BarCurrencyTypeDateComponent, InputSearchComponent, ButtonAddUnderlineComponent],
+  imports: [ButtonIconLabelTerciaryComponent, EmptyCardComponent, BarSearchAddProductComponent, BarVoucherNumberDateComponent, InputFilePrimaryComponent, BarAddPayComponent, BarCurrencyTypeDateComponent, InputSearchComponent, ButtonAddUnderlineComponent, SharedModalComponent, CardSavePrimaryComponent, SwitchPrimaryComponent],
   templateUrl: './add-edit-purchases-page.component.html',
   styleUrl: './add-edit-purchases-page.component.css'
 })
@@ -33,4 +36,14 @@ export class AddEditPurchasesPageComponent {
 
     totalMount:number=0.0
     debtMount:number=0.0
+
+      //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
 }
