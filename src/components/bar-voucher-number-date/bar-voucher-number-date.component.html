@@ -1,0 +1,9 @@
+<div class="w-full flex text-sm border-b border-neutral-300 dark:border-neutral-50">
+  <select name="method" id="method" [ngModel]="selectedVoucher" (ngModelChange)="onChange($event)" class="w-2/6 focus:outline-none py-2 px-2 border-r border-neutral-300 dark:border-neutral-50 ">
+    <option value="1">Sin comprobante</option>
+    <option value="2">Boleta</option>
+    <option value="3">Factura</option>
+  </select>
+  <input type="number" [disabled]="isDisabled()" id="numberComprobante" placeholder="Número" class="w-2/6 py-2 px-2 border-r border-neutral-300 dark:border-neutral-50" />
+  <input type="date"  [disabled]="isDisabled()" id="fecha" placeholder="Fecha" class="w-4/6 py-2 px-2" />
+</div>
