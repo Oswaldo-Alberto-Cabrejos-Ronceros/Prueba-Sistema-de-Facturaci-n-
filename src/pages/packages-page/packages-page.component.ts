@@ -11,6 +11,8 @@ import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-l
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
 import { CommonModule } from '@angular/common';
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardAddPackageComponent } from "../../components/card-add-package/card-add-package.component";
 
 @Component({
   selector: 'app-packages-page',
@@ -19,8 +21,10 @@ import { CommonModule } from '@angular/common';
     ButtonIconLabelTerciaryComponent,
     PopUpOptionsComponent,
     TableFilterComponent,
-    CommonModule
-  ],
+    CommonModule,
+    SharedModalComponent,
+    CardAddPackageComponent
+],
   templateUrl: './packages-page.component.html',
   styleUrl: './packages-page.component.css',
 })
@@ -98,4 +102,16 @@ export class PackagesPageComponent {
   handleEnabledTable = () => {
     this.isTableEnabled = !this.isTableEnabled;
   };
+
+        //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
+
+
 }
