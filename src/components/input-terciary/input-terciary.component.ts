@@ -14,4 +14,5 @@ export class InputTerciaryComponent {
 //placeholder
 @Input() placeholder:string=''
 @Input() size:string='sm'
+@Input() type:string='text'
 }

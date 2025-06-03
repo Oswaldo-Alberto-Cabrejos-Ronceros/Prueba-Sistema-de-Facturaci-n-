@@ -1,0 +1,10 @@
+<label
+  class="w-full h-32 group cursor-pointer rounded-2xl flex ">
+  <input type="file" id="file" class="sr-only peer">
+  <div class="w-32 rounded-2xl bg-neutral-100 dark:bg-neutral-600 flex items-center justify-center">
+    <app-icon [ariaLabel]="label" [iconName]="iconName"></app-icon>
+  </div>
+  <div class="flex-1 flex group-hover:underline p-4 items-center">
+    <p class="font-medium text-sm">{{label}}</p>
+  </div>
+</label>
