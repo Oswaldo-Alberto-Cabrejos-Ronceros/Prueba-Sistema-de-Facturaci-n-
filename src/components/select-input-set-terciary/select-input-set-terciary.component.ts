@@ -17,7 +17,7 @@ export class SelectInputSetTerciaryComponent {
   @Input() nameInput: string = '';
   @Input() placeholderInput: string = '';
   @Input() typeInput: string = 'text';
-  valueSelect: string = '';
+  valueSelect: string = '1';
   @Input() size:string='sm'
   @Input() selectWidth:string='w-3/5'
    @Input() inputWidth:string='w-2/5'
