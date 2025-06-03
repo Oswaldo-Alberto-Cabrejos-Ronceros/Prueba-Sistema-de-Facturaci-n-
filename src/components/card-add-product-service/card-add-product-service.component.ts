@@ -100,4 +100,16 @@ export class CardAddProductServiceComponent {
     this.advancedsOptions = !this.advancedsOptions;
   }
 
+    //options impuesto ISC
+  optionsISC: { label: string; value: string | number }[] = [
+    {
+      label: 'Al valor',
+      value: 1,
+    },
+    {
+      label: 'Monto Fijo',
+      value: 2,
+    },
+  ];
+
 }
