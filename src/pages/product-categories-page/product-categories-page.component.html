@@ -4,7 +4,7 @@
 </ng-template>
 <div class="max-w-md w-full self-center">
 
-  <app-presentation-card-primary [items]="itemsCard" title="Organiza tus productos"
+  <app-presentation-card-primary (agregarCategoria)="openModal()" [items]="itemsCard" title="Organiza tus productos"
     labelButton="Crea tu primera categoría"></app-presentation-card-primary>
 
 </div>
@@ -15,7 +15,6 @@
      <div class="w-full justify-between flex">
       <p class="text-sm">Nombre</p>
       <div class="w-84"><app-input-secondary size="sm" placeholder="Nombre de categoria"></app-input-secondary></div>
-
      </div>
   </app-card-save-secondary>
 </app-shared-modal>
