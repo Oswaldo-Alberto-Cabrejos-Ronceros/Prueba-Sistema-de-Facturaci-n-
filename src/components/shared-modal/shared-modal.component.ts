@@ -8,4 +8,5 @@ import { CommonModule } from '@angular/common';
 })
 export class SharedModalComponent {
   @Input() show = false;
+  @Input() typeConfirm:boolean=false;
 }
