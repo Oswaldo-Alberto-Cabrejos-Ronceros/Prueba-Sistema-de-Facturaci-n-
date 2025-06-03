@@ -15,7 +15,10 @@ export class SelectInputSetTerciaryComponent {
   @Input() options: { label: string; value: string | number }[] = [];
   //para input
   @Input() nameInput: string = '';
-  @Input() placeholderInput: string = 'Buscar';
+  @Input() placeholderInput: string = '';
   @Input() typeInput: string = 'text';
   valueSelect: string = '';
+  @Input() size:string='sm'
+  @Input() selectWidth:string='w-3/5'
+   @Input() inputWidth:string='w-2/5'
 }
