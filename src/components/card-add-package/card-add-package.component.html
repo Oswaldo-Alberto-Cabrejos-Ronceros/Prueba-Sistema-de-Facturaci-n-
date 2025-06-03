@@ -1,0 +1,97 @@
+<!-- header -->
+<app-button-icon ariaLabel="Cerrar" iconName="close" (click)="onClose()"
+  class="absolute right-4 top-4"></app-button-icon>
+<div class="w-full flex items-start">
+  <h3 class="text-lg font-black">Nuevo paquete</h3>
+</div>
+<!-- contenido -->
+<form class="flex-1 overflow-y-auto max-h-full flex flex-col gap-4 font-semibold pr-1 pb-1">
+    <!-- nombre -->
+    <div class="w-full flex justify-between items-center">
+      <label>Nombres</label>
+      <div class="w-sm"><app-input-terciary size="base"></app-input-terciary></div>
+    </div>
+        <!-- codigo -->
+    <div class="w-full flex justify-between items-center">
+      <label>Código</label>
+      <div class="w-sm"><app-input-terciary size="base"></app-input-terciary></div>
+    </div>
+
+        <!-- Precio Venta -->
+    <div class="w-full flex justify-between items-center">
+      <label>Precio Venta</label>
+      <div class="w-sm"><app-select-input-set-terciary selectWidth="w-1/6" inputWidth="w-5/6" size="base"
+          [options]="optionsTypeExchange" typeInput="number" placeholderInput="0"></app-select-input-set-terciary></div>
+    </div>
+<!-- selects -->
+    <div class="w-full flex justify-end items-center">
+        <div class="w-sm flex gap-2">
+            <!-- unidad -->
+            <div class="w-1/2">
+                <app-select-terciary [options]="optionsUnit"></app-select-terciary>
+            </div>
+            <!-- tipo impuestp -->
+            <div class="w-1/2">
+                <app-select-terciary [options]="optionsTax"></app-select-terciary>
+
+            </div>
+            
+        </div>
+    </div>
+        <!-- Imagen -->
+
+    <div class="w-full flex justify-between items-center">
+      <label>Imagen</label>
+      <div class="w-sm"><app-input-file-secondary label="Subir Imagen"
+          iconName="image_arrow_up"></app-input-file-secondary></div>
+    </div>
+     <app-bar-search-add-product size="base" [withIGV]="false" [withPriceUnitary]="false" ></app-bar-search-add-product>
+    <!-- productos vacios -->
+     <div class="w-full flex flex-col gap-3 items-center justify-center">
+        <img src="assets/images/package-empty.svg" class="w-48" alt="Vacio">
+    <p>No hay productos en el paquete </p> 
+    </div>
+    <div *ngIf="advancedsOptions" class="flex flex-col gap-4 font-semibold pr-1 pb-1">
+         <h3 class="text-lg font-black">Opciones avanzadas</h3>
+        <!-- categoria -->
+    <div class="w-full flex justify-between items-center">
+      <label>Categoria</label>
+      <div class="w-sm"><app-select-terciary [options]="optionsCategory"></app-select-terciary> </div>
+    </div>
+
+    <!-- alias -->
+
+        <div class="w-full flex justify-between items-center">
+      <label>Alias</label>
+      <div class="w-sm"><app-input-terciary size="base"></app-input-terciary></div>
+    </div>
+
+                <!-- Impuesto ISC -->
+      <div class="w-full flex justify-between items-center">
+        <label>Impuesto ISC</label>
+        <div class="w-sm"><app-select-input-set-terciary selectWidth="w-2/6" inputWidth="w-4/6" size="base"
+            [options]="optionsISC" typeInput="number" placeholderInput="0"></app-select-input-set-terciary>
+        </div>
+      </div>
+      <!-- buscador de venta -->
+      <div class="w-full flex justify-between items-center">
+        <label>Buscador de ventas</label>
+        <div class="w-sm">
+          <div class="w-min"><app-switch-primary></app-switch-primary></div>
+        </div>
+      </div>
+
+        </div>
+    </form>
+<!-- footer -->
+<div class="w-full flex items-center justify-end gap-2">
+  <div class="flex-1">
+    <button class="font-bold cursor-pointer w-max hover:underline" (click)="handleAdvancedOptions()">
+      <span>{{advancedsOptions?'Ver Menos':' Opciones Avanzadas'}}</span></button>
+  </div>
+
+  <!-- boton cancelar -->
+  <app-button-icon-label-terciary label="Cancelar" (click)="onClose()"></app-button-icon-label-terciary>
+  <!-- boton guardar -->
+  <app-button-icon-label-quaternary label="Guardar"></app-button-icon-label-quaternary>
+</div>

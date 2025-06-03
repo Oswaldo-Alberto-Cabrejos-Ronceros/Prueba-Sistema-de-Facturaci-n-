@@ -38,7 +38,6 @@ import { InputSearchComponent } from "../input-search/input-search.component";
 export class CardAddProductServiceComponent {
   @HostBinding('class') class =
     'w-full max-w-2xl min-w-lg max-h-[90vh] p-8 rounded-3xl gap-4 flex flex-col bg-white dark:bg-neutral-800 relative';
-  @Input() title: string = '';
   @Output() close = new EventEmitter<void>();
   onClose = () => {
     this.close.emit();

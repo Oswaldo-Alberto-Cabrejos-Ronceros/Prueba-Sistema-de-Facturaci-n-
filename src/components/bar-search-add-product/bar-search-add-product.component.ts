@@ -12,4 +12,5 @@ export class BarSearchAddProductComponent {
 @HostBinding('class') class = 'w-full'
 @Input() withIGV:boolean=true
 @Input() withPriceUnitary=true
+@Input() size:string='sm'
 }
