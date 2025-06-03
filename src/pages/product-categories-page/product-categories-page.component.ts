@@ -3,10 +3,14 @@ import { PresentationItemCardPrimaryComponent } from '../../components/presentat
 import { PresentationCardPrimaryComponent } from "../../components/presentation-card-primary/presentation-card-primary.component";
 import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardSaveSecondaryComponent } from "../../components/card-save-secondary/card-save-secondary.component";
+import { InputTerciaryComponent } from "../../components/input-terciary/input-terciary.component";
+import { InputSecondaryComponent } from "../../components/input-secondary/input-secondary.component";
 
 @Component({
   selector: 'app-product-categories-page',
-  imports: [PresentationCardPrimaryComponent, ButtonIconLabelQuaternaryComponent],
+  imports: [PresentationCardPrimaryComponent, ButtonIconLabelQuaternaryComponent, SharedModalComponent, CardSaveSecondaryComponent, InputTerciaryComponent, InputSecondaryComponent],
   templateUrl: './product-categories-page.component.html',
   styleUrl: './product-categories-page.component.css',
 })
@@ -30,4 +34,13 @@ export class ProductCategoriesPageComponent {
     ngAfterViewInit(): void {
       this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
     }
+
+          //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
 }
