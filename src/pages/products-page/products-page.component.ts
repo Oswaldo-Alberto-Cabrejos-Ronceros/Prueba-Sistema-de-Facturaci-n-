@@ -11,10 +11,12 @@ import { ButtonIconLabelTerciaryComponent } from "../../components/button-icon-l
 import { PopUpOptionsComponent } from "../../components/pop-up-options/pop-up-options.component";
 import { CommonModule } from '@angular/common';
 import { TableFilterComponent } from "../../components/table-filter/table-filter.component";
+import { CardAddProductServiceComponent } from "../../components/card-add-product-service/card-add-product-service.component";
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
 
 @Component({
   selector: 'app-products-page',
-  imports: [CommonModule, ButtonIconLabelQuaternaryComponent, ButtonIconLabelTerciaryComponent, PopUpOptionsComponent, TableFilterComponent],
+  imports: [CommonModule, ButtonIconLabelQuaternaryComponent, ButtonIconLabelTerciaryComponent, PopUpOptionsComponent, TableFilterComponent, CardAddProductServiceComponent, SharedModalComponent],
   templateUrl: './products-page.component.html',
   styleUrl: './products-page.component.css',
 })
@@ -100,5 +102,14 @@ export class ProductsPageComponent {
   handleEnabledTable = () => {
     this.isTableEnabled = !this.isTableEnabled;
   };
+      //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
 
 }
