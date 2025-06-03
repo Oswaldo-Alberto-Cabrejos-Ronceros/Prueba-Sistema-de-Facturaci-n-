@@ -1,0 +1,20 @@
+<!-- header -->
+
+<div class="w-full flex items-center px-4 py-3 justify-between border-b border-neutral-300">
+  <h3 class="text-lg font-semibold">{{ title }}</h3>
+     <app-button-icon size="sm"
+    ariaLabel="Cerrar"
+    iconName="close"
+    (click)="onClose()"
+  ></app-button-icon>
+</div>
+
+<!-- contenido -->
+<div class="flex-1 overflow-y-auto max-h-full px-4 py-3">
+  <ng-content></ng-content>
+</div>
+<div class="w-full flex items-center justify-end gap-2 px-4 py-3 border-t border-neutral-300">
+     <app-button-secondary nombre="Cancelar" (click)="onClose()" ></app-button-secondary>
+    <app-button-secondary nombre="Guardar"></app-button-secondary>
+</div>
+
