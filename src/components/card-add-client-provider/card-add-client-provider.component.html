@@ -1,0 +1,100 @@
+<!-- header -->
+<app-button-icon
+  ariaLabel="Cerrar"
+  iconName="close"
+  (click)="onClose()"
+  class="absolute right-4 top-4"
+></app-button-icon>
+<div class="w-full flex items-start">
+  <h3 class="text-lg font-black">Nuevo cliente / proveedor</h3>
+</div>
+<!-- contenido -->
+<div class="flex-1 overflow-y-auto max-h-full">
+  <form class="flex flex-col gap-4 font-semibold pr-1 pb-1">
+    <!-- numero de documento -->
+    <div class="w-full flex justify-between items-center">
+      <label>Número de documento</label>
+      <div class="w-sm">
+        <app-input-terciary size="base"></app-input-terciary>
+      </div>
+    </div>
+    <!-- nombre legal -->
+    <div class="w-full flex justify-between items-center">
+      <label>Nombre legal</label>
+      <div class="w-sm">
+        <app-input-terciary size="base"></app-input-terciary>
+      </div>
+    </div>
+    <!-- direccion -->
+    <div class="w-full flex justify-between items-center">
+      <label>Dirección</label>
+      <div class="w-sm">
+        <app-input-terciary size="base"></app-input-terciary>
+      </div>
+    </div>
+
+    <!-- tipo -->
+    <div class="w-full flex justify-between items-center">
+      <label>Tipo</label>
+      <div class="w-sm">
+        <app-select-terciary [options]="optionsType"></app-select-terciary>
+      </div>
+    </div>
+    <div
+      *ngIf="advancedsOptions"
+      class="flex flex-col gap-4 font-semibold pr-1 pb-1"
+    >
+      <h3 class="text-lg font-black">Opciones avanzadas</h3>
+      <!-- alias -->
+      <div class="w-full flex justify-between items-center">
+        <label>Tipo</label>
+        <div class="w-sm">
+          <app-input-terciary size="base"></app-input-terciary>
+        </div>
+      </div>
+      <!-- genero -->
+      <div class="w-full flex justify-between items-center">
+        <label>Género</label>
+        <div class="w-sm">
+          <app-select-terciary [options]="optionsType"></app-select-terciary>
+        </div>
+      </div>
+      <!-- telefono -->
+      <div class="w-full flex justify-between items-center">
+        <label>Teléfono</label>
+        <div class="w-sm">
+          <app-input-terciary type="tel" size="base"></app-input-terciary>
+        </div>
+      </div>
+      <!-- email -->
+      <div class="w-full flex justify-between items-center">
+        <label>Correo electrónico</label>
+        <div class="w-sm">
+          <app-input-terciary type="email" size="base"></app-input-terciary>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- footer -->
+<div class="w-full flex items-center justify-end gap-2">
+  <div class="flex-1">
+    <button
+      class="font-bold cursor-pointer w-max hover:underline"
+      (click)="handleAdvancedOptions()"
+    >
+      <span>{{ advancedsOptions ? "Ver Menos" : " Opciones Avanzadas" }}</span>
+    </button>
+  </div>
+
+  <!-- boton cancelar -->
+  <app-button-icon-label-terciary
+    label="Cancelar"
+    (click)="onClose()"
+  ></app-button-icon-label-terciary>
+  <!-- boton guardar -->
+  <app-button-icon-label-quaternary
+    label="Guardar"
+  ></app-button-icon-label-quaternary>
+</div>
