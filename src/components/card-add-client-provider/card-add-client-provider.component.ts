@@ -39,7 +39,7 @@ export class CardAddClientProviderComponent {
     },
         {
       label: 'Cliente/Proveedor',
-      value: 2,
+      value: 3,
     }
   ];
 
