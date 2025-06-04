@@ -4,10 +4,12 @@
     ariaLabel="Nuevo cliente / proveedor"
     iconName="add"
     class="block xl:hidden"
+    (click)="openModal()"
   ></app-button-icon-label-quaternary>
   <app-button-icon-label-quaternary
     label="Nuevo cliente / proveedor"
     class="hidden xl:block"
+    (click)="openModal()"
   ></app-button-icon-label-quaternary>
   <!-- boton de importar -->
   <app-button-icon-label-terciary
@@ -37,9 +39,15 @@
 </ng-template>
 
 <div class="max-w-md w-full self-center">
-  <app-presentation-card-primary
+  <app-presentation-card-primary (agregar)="openModal()"
     [items]="itemsCard"
     title="Bienvenido al directorio de clientes"
     labelButton="Empezar"
   ></app-presentation-card-primary>
 </div>
+
+
+  <!-- modal -->
+<app-shared-modal [show]="showModal" (close)="closeModal()">
+<app-card-add-client-provider (close)="closeModal()"></app-card-add-client-provider>
+</app-shared-modal>

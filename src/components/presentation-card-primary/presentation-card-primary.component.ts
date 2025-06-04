@@ -14,10 +14,10 @@ export class PresentationCardPrimaryComponent {
 @Input() title:string=''
 @Input() items:{title:string,content:string,iconName:string}[]=[]
 @Input() labelButton:string=''
-@Output() agregarCategoria=new EventEmitter<void>()
+@Output() agregar=new EventEmitter<void>()
 
-emitAgregarCategoria(){
-  this.agregarCategoria.emit()
+emitAgregar(){
+  this.agregar.emit()
 }
 
 }
