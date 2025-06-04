@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PresentationItemCardPrimaryComponent } from "../presentation-item-card-primary/presentation-item-card-primary.component";
 import { ButtonOutlinePrimaryComponent } from "../button-outline-primary/button-outline-primary.component";
@@ -14,5 +14,10 @@ export class PresentationCardPrimaryComponent {
 @Input() title:string=''
 @Input() items:{title:string,content:string,iconName:string}[]=[]
 @Input() labelButton:string=''
+@Output() agregarCategoria=new EventEmitter<void>()
+
+emitAgregarCategoria(){
+  this.agregarCategoria.emit()
+}
 
 }

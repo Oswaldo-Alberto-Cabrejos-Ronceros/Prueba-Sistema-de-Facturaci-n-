@@ -1,8 +1,8 @@
 <!-- contenido inyectado -->
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva paquete" iconName="add"
-    class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva paquete" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary (click)="openModal()" ariaLabel="Nueva paquete" iconName="add"
+    class="block xl:hidden" ></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary (click)="openModal()" label="Nueva paquete" class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- boton de importar -->
   <app-button-icon-label-terciary label="Importar paquetes" class="hidden xl:block"></app-button-icon-label-terciary>
   <!-- boton de importar pequeño para diseño responsivo -->
@@ -24,3 +24,8 @@
 
 <app-table-filter [columns]="columns" title="Paquetes" (enabled)="handleEnabledTable()"
   [filtersEnabled]="isTableEnabled"></app-table-filter>
+
+    <!-- modal -->
+<app-shared-modal [show]="showModal" (close)="closeModal()">
+<app-card-add-package (close)="closeModal()" ></app-card-add-package>
+</app-shared-modal>

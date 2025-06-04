@@ -13,5 +13,5 @@ export class SelectTerciaryComponent {
   @Input() name: string = '';
   @Input() size: string = 'base'; //sm,xs o se deja vacio para que sea base
   @Input() options: { label: string; value: string | number }[] = [];
-  value: string = '';
+  value: string = '1';
 }

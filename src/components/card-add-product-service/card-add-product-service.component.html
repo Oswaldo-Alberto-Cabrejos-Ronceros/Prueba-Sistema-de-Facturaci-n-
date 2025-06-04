@@ -1,0 +1,141 @@
+<!-- header -->
+<app-button-icon ariaLabel="Cerrar" iconName="close" (click)="onClose()"
+  class="absolute right-4 top-4"></app-button-icon>
+<div class="w-full flex items-start">
+  <h3 class="text-lg font-black">Nuevo producto / servicio</h3>
+</div>
+<!-- contenido -->
+<div class="flex-1 overflow-y-auto max-h-full">
+  <!-- botones stock y selectores -->
+  <div class="flex justify-end gap-2 mb-4">
+    <div class="w-48">
+      <app-button-icon-label [border]="true" size="sm" iconName="inventory_2" name="Con Stock"></app-button-icon-label>
+    </div>
+    <div class="w-48">
+      <app-button-icon-label [border]="true"  size="sm" iconName="style" name="Selectores"></app-button-icon-label>
+    </div>
+  </div>
+  <!-- formulario -->
+  <form class="flex flex-col gap-4 font-semibold pr-1 pb-1">
+    <!-- nombre -->
+    <div class="w-full flex justify-between items-center">
+      <label>Nombres</label>
+      <div class="w-sm"><app-input-terciary size="base"></app-input-terciary></div>
+    </div>
+    <!-- codigo -->
+    <div class="w-full flex justify-between items-center">
+      <label>Código</label>
+      <div class="w-sm"><app-input-terciary size="base"></app-input-terciary></div>
+    </div>
+    <!-- Precio Venta -->
+    <div class="w-full flex justify-between items-center">
+      <label>Precio Venta</label>
+      <div class="w-sm"><app-select-input-set-terciary selectWidth="w-1/6" inputWidth="w-5/6" size="base"
+          [options]="optionsTypeExchange" typeInput="number" placeholderInput="0"></app-select-input-set-terciary></div>
+    </div>
+    <!-- impuesto -->
+    <div class="w-full flex justify-between items-center">
+      <label>Impuesto</label>
+      <div class="w-sm"><app-select-terciary [options]="optionsTax"></app-select-terciary> </div>
+    </div>
+    <!-- Unidad -->
+    <div class="w-full flex justify-between items-center">
+      <label>Unidad</label>
+      <div class="w-sm"><app-select-terciary [options]="optionsUnit"></app-select-terciary> </div>
+    </div>
+    <!-- categoria -->
+    <div class="w-full flex justify-between items-center">
+      <label>Categoria</label>
+      <div class="w-sm"><app-select-terciary [options]="optionsCategory"></app-select-terciary> </div>
+    </div>
+    <!-- Imagen -->
+
+    <div class="w-full flex justify-between items-center">
+      <label>Imagen</label>
+      <div class="w-sm"><app-input-file-secondary label="Subir Imagen"
+          iconName="image_arrow_up"></app-input-file-secondary></div>
+    </div>
+    <div *ngIf="advancedsOptions" class="flex flex-col gap-4 font-semibold pr-1 pb-1">
+      <h3 class="text-lg font-black">Opciones avanzadas</h3>
+      <!-- precio inicial -->
+      <div class="w-full flex justify-between items-center">
+        <label>Precio inicial de compra</label>
+        <div class="w-sm"><app-select-input-set-terciary selectWidth="w-1/6" inputWidth="w-5/6" size="base"
+            [options]="optionsTypeExchange" typeInput="number" placeholderInput="0"></app-select-input-set-terciary>
+        </div>
+      </div>
+      <!-- Peso bruto -->
+      <div class="w-full flex justify-between items-center">
+        <label>Precio Bruto (KGM)</label>
+        <div class="w-sm"><app-input-terciary size="base" type="number"></app-input-terciary></div>
+      </div>
+
+      <!-- Alias -->
+      <div class="w-full flex justify-between items-center">
+        <label>Alias</label>
+        <div class="w-sm"><app-input-terciary size="base"></app-input-terciary></div>
+      </div>
+
+      <!-- Stock Minimo -->
+      <div class="w-full flex justify-between items-center">
+        <label>Stock mínimo</label>
+        <div class="w-sm"><app-input-terciary size="base" type="number"></app-input-terciary></div>
+      </div>
+      <!-- stock inicial -->
+      <div class="w-full flex justify-between items-center">
+        <label>Stock inicial</label>
+        <div class="w-sm"><app-input-terciary size="base" type="number"></app-input-terciary></div>
+      </div>
+      <!-- porcentaje incial -->
+      <div class="w-full flex justify-between items-center">
+        <label>Porcentaje inicial</label>
+        <div class="w-sm"><app-input-terciary size="base" type="number"></app-input-terciary></div>
+      </div>
+
+      <!-- descuento -->
+
+      <div class="w-full flex justify-between items-center">
+        <label>Descuento</label>
+        <div class="w-sm"><app-input-terciary size="base" type="number"></app-input-terciary></div>
+      </div>
+
+      <!-- buscador de ventas -->
+
+      <div class="w-full flex justify-between items-center">
+        <label>Buscador de ventas</label>
+        <div class="w-sm">
+          <div class="w-min"><app-switch-primary></app-switch-primary></div>
+        </div>
+      </div>
+<!-- codigo de sunat -->
+
+      <div class="w-full flex justify-between items-center">
+        <label>Código de Sunat</label>
+        <div class="w-sm">
+          <app-input-search size="base" ></app-input-search>
+        </div>
+      </div>
+
+            <!-- Impuesto ISC -->
+      <div class="w-full flex justify-between items-center">
+        <label>Impuesto ISC</label>
+        <div class="w-sm"><app-select-input-set-terciary selectWidth="w-2/6" inputWidth="w-4/6" size="base"
+            [options]="optionsISC" typeInput="number" placeholderInput="0"></app-select-input-set-terciary>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+<!-- footer -->
+<div class="w-full flex items-center justify-end gap-2">
+  <div class="flex-1">
+    <button class="font-bold cursor-pointer w-max hover:underline" (click)="handleAdvancedOptions()">
+      <span>{{advancedsOptions?'Ver Menos':' Opciones Avanzadas'}}</span></button>
+  </div>
+
+  <!-- boton cancelar -->
+  <app-button-icon-label-terciary label="Cancelar" (click)="onClose()"></app-button-icon-label-terciary>
+  <!-- boton guardar -->
+  <app-button-icon-label-quaternary label="Guardar"></app-button-icon-label-quaternary>
+</div>

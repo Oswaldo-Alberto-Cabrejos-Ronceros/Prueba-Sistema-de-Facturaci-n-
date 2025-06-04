@@ -1,5 +1,7 @@
-<button class="w-max fle rounded-sm px-2 py-1 transition-colors duration-150 bg-red-500 hover:bg-red-700 cursor-pointer">
-  <span class="text-sm text-neutral-50">
+<button class="w-max fle rounded-sm px-2 py-1 transition-colors duration-150 cursor-pointer"
+[ngClass]="variant==='red'?'bg-red-500 hover:bg-red-700 text-neutral-50':'bg-neutral-300 hover:bg-neutral-400'"
+>
+  <span class="text-sm">
     {{nombre}}
   </span>
 </button>

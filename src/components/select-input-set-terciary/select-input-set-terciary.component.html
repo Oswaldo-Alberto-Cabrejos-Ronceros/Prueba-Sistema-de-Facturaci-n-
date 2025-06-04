@@ -1,14 +1,17 @@
 <div
-  class="w-full flex items-center justify-center rounded-xl min-w-min transition-colors duration-150 bg-neutral-100 dark:bg-neutral-600 text-sm">
+  class="w-full flex items-center justify-center rounded-xl min-w-min transition-colors duration-150 bg-neutral-100 dark:bg-neutral-600 "
+  [ngClass]="size==='sm'?'text-sm':'text-base'" >
 
   <!-- select -->
   <select [name]="nameSelect" [id]="nameSelect" [(ngModel)]="valueSelect"
-    class="w-3/5 transition-colors duration-150 py-2 px-3 rounded-l-xl placeholder:font-medium focus:outline-none placeholder:text-neutral-400">
+    class="transition-colors border-r border-neutral-300 duration-150 rounded-l-xl  placeholder:font-medium focus:outline-none placeholder:text-neutral-400"
+    [ngClass]="[size==='sm'?'py-2 px-3':'py-3 px-4',selectWidth]" >
     <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
   </select>
 
   <!-- input -->
   <input type="text"
-    class="w-2/5 py-2 px-3 rounded-r-xl focus:bg-white placeholder:font-medium placeholder:text-neutral-400"
+    class="rounded-r-xl focus:bg-white placeholder:font-medium placeholder:text-neutral-400"
+    [ngClass]="[size==='sm'?'py-2 px-3':'py-3 px-4',inputWidth]"
     [placeholder]="placeholderInput" [name]="nameInput" [type]="typeInput">
 </div>

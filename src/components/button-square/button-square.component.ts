@@ -11,5 +11,5 @@ export class ButtonSquareComponent {
 @Input() iconName:string=''
 @Input() ariaLabel:string=''
 @Input() active:boolean=false
-
+@Input() size:string='sm'
 }

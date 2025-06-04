@@ -2,5 +2,5 @@
 <h3 class="text-xl sm:text-2xl font-black mb-5 sm:mb-7">{{title}}</h3>
 <div class="w-full flex flex-col gap-6 mb-8"><app-presentation-item-card-primary *ngFor="let item of items" [title]="item.title" [content]="item.content" [iconName]="item.iconName" ></app-presentation-item-card-primary></div>
 
-<app-button-outline-primary [label]="labelButton"></app-button-outline-primary>
+<app-button-outline-primary (click)="emitAgregarCategoria()" [label]="labelButton"></app-button-outline-primary>
 </div>
