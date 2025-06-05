@@ -1,0 +1,55 @@
+<app-card-save-primary title="Nuevo usuario" (close)="onClose()">
+  <form class="flex flex-col gap-4 font-semibold pr-1 pb-1">
+    <!-- nombre de usuario -->
+    <div class="w-full flex justify-between items-center">
+      <label>Nombre de usuario</label>
+      <div class="w-2xs">
+        <app-input-terciary size="base"></app-input-terciary>
+      </div>
+    </div>
+    <!-- email -->
+    <div class="w-full flex justify-between items-center">
+      <label>Email</label>
+      <div class="w-2xs">
+        <app-input-terciary type="email" size="base"></app-input-terciary>
+      </div>
+    </div>
+
+    <!-- nombre -->
+    <div class="w-full flex justify-between items-center">
+      <label>Nombres</label>
+      <div class="w-2xs">
+        <app-input-terciary size="base"></app-input-terciary>
+      </div>
+    </div>
+
+    <!-- apellidos -->
+    <div class="w-full flex justify-between items-center">
+      <label>Apellidos</label>
+      <div class="w-2xs">
+        <app-input-terciary size="base"></app-input-terciary>
+      </div>
+    </div>
+
+    <!-- tipo -->
+    <div class="w-full flex justify-between items-center">
+      <label>Tipo</label>
+      <div class="w-2xs">
+        <app-select-terciary [options]="optionsType"></app-select-terciary>
+      </div>
+    </div>
+    <!-- para password -->
+    <div class="w-full flex justify-between items-center">
+      <label>Contraseña</label>
+      <div class="w-2xs">
+        <app-input-terciary type="password" size="base"></app-input-terciary>
+      </div>
+    </div>
+    <!-- para confirmar contraseña -->
+    <div class="w-full flex justify-end items-center">
+      <div class="w-2xs">
+        <app-input-terciary type="password" size="base"></app-input-terciary>
+      </div>
+    </div>
+  </form>
+</app-card-save-primary>

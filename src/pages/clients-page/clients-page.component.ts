@@ -11,6 +11,8 @@ import { ButtonIconLabelTerciaryComponent } from '../../components/button-icon-l
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
 import { PresentationCardPrimaryComponent } from '../../components/presentation-card-primary/presentation-card-primary.component';
 import { CommonModule } from '@angular/common';
+import { CardAddClientProviderComponent } from '../../components/card-add-client-provider/card-add-client-provider.component';
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
 
 @Component({
   selector: 'app-clients-page',
@@ -20,7 +22,9 @@ import { CommonModule } from '@angular/common';
     PopUpOptionsComponent,
     PresentationCardPrimaryComponent,
     CommonModule,
-  ],
+    CardAddClientProviderComponent,
+    SharedModalComponent
+],
   templateUrl: './clients-page.component.html',
   styleUrl: './clients-page.component.css',
 })
@@ -72,4 +76,15 @@ export class ClientsPageComponent {
       iconName: 'newsstand',
     },
   ];
+
+        //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
+
 }

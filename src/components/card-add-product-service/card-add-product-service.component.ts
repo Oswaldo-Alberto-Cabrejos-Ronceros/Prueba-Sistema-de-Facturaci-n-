@@ -2,7 +2,6 @@ import {
   Component,
   EventEmitter,
   HostBinding,
-  Input,
   Output,
 } from '@angular/core';
 import { ButtonIconComponent } from '../button-icon/button-icon.component';
@@ -12,10 +11,10 @@ import { ButtonIconLabelComponent } from '../button-icon-label/button-icon-label
 import { InputTerciaryComponent } from '../input-terciary/input-terciary.component';
 import { SelectInputSetTerciaryComponent } from '../select-input-set-terciary/select-input-set-terciary.component';
 import { SelectTerciaryComponent } from '../select-terciary/select-terciary.component';
-import { InputFileSecondaryComponent } from '../input-file-secondary/input-file-secondary.component';
 import { CommonModule } from '@angular/common';
 import { SwitchPrimaryComponent } from "../switch-primary/switch-primary.component";
 import { InputSearchComponent } from "../input-search/input-search.component";
+import { InputFileSecondaryComponent } from '../input-file-secondary/input-file-secondary.component';
 
 @Component({
   selector: 'app-card-add-product-service',
@@ -27,10 +26,10 @@ import { InputSearchComponent } from "../input-search/input-search.component";
     InputTerciaryComponent,
     SelectInputSetTerciaryComponent,
     SelectTerciaryComponent,
-    InputFileSecondaryComponent,
     CommonModule,
     SwitchPrimaryComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    InputFileSecondaryComponent
 ],
   templateUrl: './card-add-product-service.component.html',
   styleUrl: './card-add-product-service.component.css',

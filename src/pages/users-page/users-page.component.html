@@ -1,7 +1,7 @@
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva usuario" iconName="add"
+  <app-button-icon-label-quaternary (click)="openModal()" ariaLabel="Nueva usuario" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva usuario" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary (click)="openModal()" label="Nueva usuario" class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para exportar -->
   <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
     iconName="download"></app-button-icon-label-terciary>
@@ -20,3 +20,8 @@
 
 <app-table-filter [columns]="columns" title="Usuarios" (enabled)="handleEnabledTable()"
   [filtersEnabled]="isTableEnabled"></app-table-filter>
+
+<!-- modal -->
+<app-shared-modal [show]="showModal" (close)="closeModal()">
+  <app-card-add-user (close)="closeModal()" ></app-card-add-user>
+</app-shared-modal>
