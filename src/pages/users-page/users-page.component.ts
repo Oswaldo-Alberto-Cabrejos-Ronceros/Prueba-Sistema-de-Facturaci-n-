@@ -12,6 +12,8 @@ import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-op
 import { CommonModule } from '@angular/common';
 import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
+import { CardAddUserComponent } from "../../components/card-add-user/card-add-user.component";
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
 
 @Component({
   selector: 'app-users-page',
@@ -22,7 +24,9 @@ import { TableFilterComponent } from '../../components/table-filter/table-filter
     PopUpOptionsComponent,
     DatePickerSetComponent,
     TableFilterComponent,
-  ],
+    CardAddUserComponent,
+    SharedModalComponent
+],
   templateUrl: './users-page.component.html',
   styleUrl: './users-page.component.css',
 })
@@ -94,4 +98,15 @@ export class UsersPageComponent {
       title: 'Exportar usuarios',
     },
   ];
+
+        //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
+
 }
