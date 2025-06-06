@@ -3,10 +3,13 @@ import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-t
 import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
 import { TableFilterSecondaryComponent } from "../../components/table-filter-secondary/table-filter-secondary.component";
 import { ButtonIconTerciaryComponent } from "../../components/button-icon-terciary/button-icon-terciary.component";
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardSaveSecondaryComponent } from "../../components/card-save-secondary/card-save-secondary.component";
+import { InputSecondaryComponent } from "../../components/input-secondary/input-secondary.component";
 
 @Component({
   selector: 'app-configurations-payment-methods-page',
-  imports: [ButtonIconLabelQuaternaryComponent, TableFilterSecondaryComponent, ButtonIconTerciaryComponent],
+  imports: [ButtonIconLabelQuaternaryComponent, TableFilterSecondaryComponent, ButtonIconTerciaryComponent, SharedModalComponent, CardSaveSecondaryComponent, InputSecondaryComponent],
   templateUrl: './configurations-payment-methods-page.component.html',
   styleUrl: './configurations-payment-methods-page.component.css'
 })
@@ -76,4 +79,13 @@ taxe: any;
       name: 'Efectivo'
     }
   ]
+
+            //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
 }
