@@ -163,7 +163,7 @@ export class TransactionsPageComponent {
 
   optionsAccount: { label: string; value: string | number }[] = [
     {
-      label: 'Efectivo Pen',
+      label: 'Efectivo (PEN)',
       value: 1,
     },
   ];
