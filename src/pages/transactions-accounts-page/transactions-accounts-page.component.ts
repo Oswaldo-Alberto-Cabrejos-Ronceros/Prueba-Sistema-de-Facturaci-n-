@@ -11,6 +11,11 @@ import { TableFilterSecondaryComponent } from '../../components/table-filter-sec
 import { ButtonIconTerciaryComponent } from '../../components/button-icon-terciary/button-icon-terciary.component';
 import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-options.component';
 import { CommonModule } from '@angular/common';
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardSaveSecondaryComponent } from "../../components/card-save-secondary/card-save-secondary.component";
+import { SelectSecondaryComponent } from "../../components/select-secondary/select-secondary.component";
+import { InputSecondaryComponent } from "../../components/input-secondary/input-secondary.component";
+import { TextAreaSecondaryComponent } from "../../components/text-area-secondary/text-area-secondary.component";
 
 @Component({
   selector: 'app-transactions-accounts-page',
@@ -20,7 +25,12 @@ import { CommonModule } from '@angular/common';
     TableFilterSecondaryComponent,
     ButtonIconTerciaryComponent,
     PopUpOptionsComponent,
-  ],
+    SharedModalComponent,
+    CardSaveSecondaryComponent,
+    SelectSecondaryComponent,
+    InputSecondaryComponent,
+    TextAreaSecondaryComponent
+],
   templateUrl: './transactions-accounts-page.component.html',
   styleUrl: './transactions-accounts-page.component.css',
 })
@@ -29,7 +39,6 @@ export class TransactionsAccountsPageComponent {
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
-
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
@@ -43,7 +52,7 @@ export class TransactionsAccountsPageComponent {
     label: string;
     typeFilter: string;
     disable?: boolean;
-    options?: {label:string,value:string|number}[];
+    options?: { label: string; value: string | number }[];
     ordenable?: boolean;
     width?: string;
   }[] = [
@@ -74,10 +83,10 @@ export class TransactionsAccountsPageComponent {
 
   //sobre exportar
 
-  optionsExport: { title: string,iconName:string }[] = [
+  optionsExport: { title: string; iconName: string }[] = [
     {
       title: 'Borrar',
-      iconName:'delete'
+      iconName: 'delete',
     },
   ];
 
@@ -86,4 +95,43 @@ export class TransactionsAccountsPageComponent {
   handlePopUpExport(index: number) {
     this.activePopUpIndex = this.activePopUpIndex === index ? null : index;
   }
+
+  //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
+  //para opciones de tipo
+
+  optionsType: { label: string; value: string | number }[] = [
+    {
+      label: 'Activo',
+      value: 1,
+    },
+    {
+      label: 'Pasivo',
+      value: 2,
+    },
+    {
+      label: 'Capital',
+      value: 3,
+    },
+  ];
+
+  //para opciones de moneda
+
+  optionsExchange: { label: string; value: string | number }[] = [
+    {
+      label: 'PEN (S/) - Soles',
+      value: 1,
+    },
+    {
+      label: 'USD ($) - Dólares Americanos',
+      value: 2,
+    },
+  ];
 }
