@@ -1,6 +1,6 @@
 <!-- contenido inyectado -->
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" iconName="add"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" (click)="openModal()" iconName="add"></app-button-icon-label-quaternary>
 </ng-template>
 
 <!-- table -->
@@ -25,3 +25,27 @@
     </td>
 </ng-template>
 </app-table-filter-secondary>
+
+<!-- modal -->
+<app-shared-modal [typeConfirm]="true" [show]="showModal" (close)="closeModal()">
+  <app-card-save-secondary title="Nueva serie" (close)="closeModal()">
+    <div class="w-full flex flex-col gap-2 text-sm">
+      <!-- tipo documento -->
+   <div class="w-full justify-between flex">
+      <p>Tipo documento</p>
+      <div class="w-84"><app-select-secondary [options]="optionsTypeDocument" size="sm"></app-select-secondary></div>
+     </div>
+     <!-- serie -->
+     <div class="w-full justify-between flex">
+      <p class="text-sm">Serie</p>
+      <div class="w-84"><app-input-secondary size="sm" placeholder="Serie"></app-input-secondary></div>
+     </div>
+     <!-- descripcion -->
+           <div class="w-full justify-between flex">
+      <p class="text-sm">Descripción</p>
+      <div class="w-84"><app-input-secondary size="sm" placeholder="Descripción"></app-input-secondary></div>
+     </div>
+    </div>
+  </app-card-save-secondary>
+</app-shared-modal>
+

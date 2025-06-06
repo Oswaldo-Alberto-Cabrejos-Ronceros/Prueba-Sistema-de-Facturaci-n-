@@ -13,5 +13,5 @@ export class SelectSecondaryComponent {
   @Input() size: string = 'base'; //sm,xs o se deja vacio para que sea base
   @Input() options: { label: string; value: string | number }[] = [];
   @HostBinding('class') class = 'w-full min-w-min';
-  value: string = '';
+  value: string = '1';
 }
