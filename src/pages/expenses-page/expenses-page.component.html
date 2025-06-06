@@ -1,44 +1,109 @@
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary
-    ariaLabel="Nueva gasto"
-    iconName="add"
-    class="block xl:hidden"
-  ></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary
-    label="Nueva gasto"
-    class="hidden xl:block"
-  ></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary (click)="openModal()" ariaLabel="Nueva gasto" iconName="add"
+    class="block xl:hidden"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary (click)="openModal()" label="Nueva gasto"
+    class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para exportar -->
-  <app-button-icon-label-terciary
-    (click)="handlePopUpExport()"
-    #triggerExport
-    ariaLabel="Exportar"
-    iconName="download"
-  ></app-button-icon-label-terciary>
+  <app-button-icon-label-terciary (click)="handlePopUpExport()" #triggerExport ariaLabel="Exportar"
+    iconName="download"></app-button-icon-label-terciary>
   <!-- pop up de opciones de exportar -->
-  <app-pop-up-options
-    [options]="optionsExport"
-    *ngIf="showPopUpExport && triggerExportRef"
-    [trigger]="triggerExportRef"
-    [visible]="showPopUpExport"
-  ></app-pop-up-options>
+  <app-pop-up-options [options]="optionsExport" *ngIf="showPopUpExport && triggerExportRef" [trigger]="triggerExportRef"
+    [visible]="showPopUpExport"></app-pop-up-options>
 </ng-template>
 
 <div class="w-full flex gap-2 items-center">
-  <app-button-icon-label-terciary
-    *ngIf="isTableEnabled"
-    ariaLabel="Cerrar filtros"
-    label="Cerrar filtros"
-    iconName="close"
-    class="font-medium!"
-    (click)="handleEnabledTable()"
-  ></app-button-icon-label-terciary>
+  <app-button-icon-label-terciary *ngIf="isTableEnabled" ariaLabel="Cerrar filtros" label="Cerrar filtros"
+    iconName="close" class="font-medium!" (click)="handleEnabledTable()"></app-button-icon-label-terciary>
   <app-date-picker-set></app-date-picker-set>
 </div>
 
-<app-table-filter
-  [columns]="columns"
-  title="Gastos"
-  (enabled)="handleEnabledTable()"
-  [filtersEnabled]="isTableEnabled"
-></app-table-filter>
+<app-table-filter [columns]="columns" title="Gastos" (enabled)="handleEnabledTable()"
+  [filtersEnabled]="isTableEnabled"></app-table-filter>
+
+<!-- modal -->
+<app-shared-modal [typeConfirm]="true" [show]="showModal" (close)="closeModal()">
+  <app-card-save-secondary title="Nueva gasto" (close)="closeModal()">
+
+    <div class="w-full flex flex-col gap-4 text-sm">
+      <div class="w-full flex">
+        <div class="w-1/2 flex items-center justify-center gap-2">
+          <label>
+            <input type="radio" name="withVoucher" [value]="false" [(ngModel)]="withVoucher">
+            Sin comprobante
+          </label>
+        </div>
+        <div class="w-1/2 flex items-center justify-center gap-2">
+          <label>
+            <input type="radio" name="withVoucher" [value]="true" [(ngModel)]="withVoucher">
+            Con comprobante
+          </label>
+        </div>
+      </div>
+      <!-- descripcion -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Descripción</p>
+        <div class="w-84"><app-input-secondary size="sm" placeholder="Descripción"></app-input-secondary></div>
+      </div>
+      <!-- cuenta -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Cuenta</p>
+        <div class="w-84"><app-select-secondary [options]="optionsAccount" size="sm"></app-select-secondary></div>
+      </div>
+
+      <!-- fecha -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Fecha</p>
+        <div class="w-84 flex">
+          <div class="w-1/2">
+            <app-input-secondary size="sm" type="date" placeholder="Fecha"></app-input-secondary>
+          </div>
+        </div>
+      </div>
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Categoría</p>
+        <div class="w-84"> <app-input-search placeholder="Buscar unidad" size="sm"
+            variant="terciary"></app-input-search></div>
+      </div>
+      <!-- monto -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Monto</p>
+        <div class="w-84"><app-input-secondary size="sm" type="number" placeholder="Monto"></app-input-secondary></div>
+      </div>
+
+      <!-- observaciones -->
+
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Observaciones</p>
+        <div class="w-84">
+          <app-text-area-secondary size="sm" [rows]="5" placeholder="Descripción"></app-text-area-secondary>
+        </div>
+      </div>
+      <!-- para comprobante -->
+      <div *ngIf="withVoucher" class="w-full flex flex-col gap-4 text-sm">
+        <p class=" text-base font-semibold">Comprobante</p>
+              <!-- ruc -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">RUC</p>
+        <div class="w-84"><app-input-secondary size="sm" type="number"></app-input-secondary></div>
+      </div>
+
+                    <!-- ruc -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Nombre empresa</p>
+        <div class="w-84"><app-input-secondary size="sm" type="number"></app-input-secondary></div>
+      </div>
+
+            <!-- comprobante -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Comprobante</p>
+        <div class="w-84 flex">
+          <app-select-secondary class="w-1/2" [options]="optionsVoucher" size="sm"></app-select-secondary>
+          <app-input-secondary class="w-1/2" type="number" size="sm" placeholder="N° de documento"></app-input-secondary>
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+  </app-card-save-secondary>
+</app-shared-modal>

@@ -1,7 +1,9 @@
 <div class="w-full flex items-center justify-center  min-w-min transition-colors duration-150 "
-[ngClass]="variant.toLowerCase() ==='secondary'?'rounded-xl bg-neutral-100 dark:bg-neutral-600':'text-neutral-800 dark:text-neutral-50 bg-transparent border-1 border-neutral-300 rounded-sm'">
-<input type="text" class="flex-1" [ngClass]="[size==='sm'?'text-sm py-2 px-3':'text-base py-3 px-4',
-  variant.toLowerCase() ==='secondary'?'rounded-l-xl focus:bg-white placeholder:font-medium placeholder:text-neutral-400':'appearance-none rounded-sm transition-shadow duration-300 focus:outline-none focus:border-red-500 focus:shadow-uniform-lg focus:shadow-red-300 placeholder:text-neutral-300'
+  [ngClass]="variant.toLowerCase() ==='secondary'?'rounded-xl bg-neutral-100 dark:bg-neutral-600':'text-neutral-800 dark:text-neutral-50 bg-transparent border-1 border-neutral-300 rounded-sm'">
+  <input type="text" class="flex-1" [ngClass]="[size==='sm'?'text-sm py-2 px-3':'text-base py-3 px-4',
+  variant.toLowerCase() ==='secondary'?'rounded-l-xl focus:bg-white placeholder:font-medium placeholder:text-neutral-400':'appearance-none rounded-sm transition-shadow duration-300 focus:outline-none focus:border-red-500 focus:shadow-uniform-lg focus:shadow-red-300 placeholder:text-neutral-300 p-1'
 ]" [placeholder]="placeholder">
-<app-icon ariaLabel="Buscar" class="py-1 px-2" [ngClass]="variant.toLowerCase() ==='secondary'?'':'bg-neutral-100 border-l border-neutral-300 '" iconName="search" size="text-xl"></app-icon>
+  <app-icon ariaLabel="Buscar" class="py-1 px-2"
+    [ngClass]="variant.toLowerCase() ==='secondary'?'':'bg-neutral-100 border-l border-neutral-300 '" iconName="search"
+    size="text-xl"></app-icon>
 </div>

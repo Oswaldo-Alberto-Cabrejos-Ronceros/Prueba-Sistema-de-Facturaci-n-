@@ -12,6 +12,13 @@ import { PopUpOptionsComponent } from '../../components/pop-up-options/pop-up-op
 import { CommonModule } from '@angular/common';
 import { DatePickerSetComponent } from '../../components/date-picker-set/date-picker-set.component';
 import { TableFilterComponent } from '../../components/table-filter/table-filter.component';
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardSaveSecondaryComponent } from "../../components/card-save-secondary/card-save-secondary.component";
+import { InputSecondaryComponent } from "../../components/input-secondary/input-secondary.component";
+import { SelectSecondaryComponent } from "../../components/select-secondary/select-secondary.component";
+import { InputSearchComponent } from "../../components/input-search/input-search.component";
+import { TextAreaSecondaryComponent } from "../../components/text-area-secondary/text-area-secondary.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-expenses-page',
@@ -22,7 +29,14 @@ import { TableFilterComponent } from '../../components/table-filter/table-filter
     PopUpOptionsComponent,
     DatePickerSetComponent,
     TableFilterComponent,
-  ],
+    SharedModalComponent,
+    CardSaveSecondaryComponent,
+    InputSecondaryComponent,
+    SelectSecondaryComponent,
+    InputSearchComponent,
+    TextAreaSecondaryComponent,
+    FormsModule
+],
   templateUrl: './expenses-page.component.html',
   styleUrl: './expenses-page.component.css',
 })
@@ -104,4 +118,37 @@ export class ExpensesPageComponent {
   handleEnabledTable = () => {
     this.isTableEnabled = !this.isTableEnabled;
   };
+
+  //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
+    optionsAccount: { label: string; value: string | number }[] = [
+    {
+      label: 'Efectivo (PEN)',
+      value: 1,
+    },
+  ];
+
+
+  //para ver o no comprobante en el formulario
+  withVoucher:boolean=false;
+
+    //opciones para comprobante
+  optionsVoucher: { label: string; value: string | number }[] = [
+    {
+      label: 'Boleta',
+      value: 1,
+    },
+    {
+      label: 'Factura',
+      value: 2,
+    },
+  ];
+
 }

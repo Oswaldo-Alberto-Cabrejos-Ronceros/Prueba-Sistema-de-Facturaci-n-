@@ -1,8 +1,9 @@
 <!-- contenido inyectado a nav-bar-menu -->
 <ng-template #customRightTemplate>
-      <app-button-icon-label-quaternary ariaLabel="Nueva transacción" iconName="add"
+  <app-button-icon-label-quaternary ariaLabel="Nueva transacción" (click)="openModal()" iconName="add"
     class="block xl:hidden"></app-button-icon-label-quaternary>
-  <app-button-icon-label-quaternary label="Nueva transacción" class="hidden xl:block"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary label="Nueva transacción" (click)="openModal()"
+    class="hidden xl:block"></app-button-icon-label-quaternary>
   <!-- para opciones -->
   <app-button-icon-label-terciary (click)="handlePopUpOptions()" #triggerOptions ariaLabel="Opciones"
     iconName="more_vert"></app-button-icon-label-terciary>
@@ -26,3 +27,97 @@
 
 <app-table-filter [columns]="columns" title="Transacciones" (enabled)="handleEnabledTable()"
   [filtersEnabled]="isTableEnabled"></app-table-filter>
+
+<!-- modal -->
+
+<app-shared-modal [typeConfirm]="true" [show]="showModal" (close)="closeModal()">
+  <app-card-save-secondary title="Nueva transacción" (close)="closeModal()">
+    <div class="w-full flex flex-col gap-4 text-sm">
+      <!-- descripcion -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Descripción</p>
+        <div class="w-84"><app-input-secondary size="sm" placeholder="Descripción"></app-input-secondary></div>
+      </div>
+
+      <!-- cuenta -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Cuenta</p>
+        <div class="w-84"><app-select-secondary [options]="optionsAccount" size="sm"></app-select-secondary></div>
+      </div>
+      <!-- fecha -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Fecha</p>
+        <div class="w-84 flex">
+          <div class="w-1/2">
+            <app-input-secondary size="sm" type="date" placeholder="Fecha"></app-input-secondary>
+          </div>
+        </div>
+      </div>
+      <!-- tipo -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Tipo</p>
+        <div class="w-84 flex">
+          <app-select-secondary class="w-1/2" [options]="optionsType" size="sm"></app-select-secondary>
+          <app-input-secondary class="w-1/2" type="number" size="sm" placeholder="Descripción"></app-input-secondary>
+        </div>
+      </div>
+
+
+      <!-- descripcion -->
+
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Descripción</p>
+        <div class="w-84 flex">
+          <app-text-area-secondary size="sm" [rows]="5" placeholder="Descripción"></app-text-area-secondary>
+        </div>
+      </div>
+
+    </div>
+  </app-card-save-secondary>
+</app-shared-modal>
+
+<!-- modal para transferencia -->
+
+<app-shared-modal [typeConfirm]="true" [show]="showModalTransfer" (close)="closeModalTransfer()">
+  <app-card-save-secondary title="Nueva tranferencia" (close)="closeModalTransfer()">
+    <div class="w-full flex flex-col gap-4 text-sm">
+      <!-- origen -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Origen</p>
+        <div class="w-84"><app-select-secondary [options]="optionsOrigin" size="sm"></app-select-secondary></div>
+      </div>
+
+      <!-- destino -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Origen</p>
+        <div class="w-84"><app-select-secondary [options]="optionsDestination" size="sm"></app-select-secondary></div>
+      </div>
+
+      <!-- fecha -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Fecha</p>
+        <div class="w-84 flex">
+          <div class="w-1/2">
+            <app-input-secondary size="sm" type="date" placeholder="Fecha"></app-input-secondary>
+          </div>
+        </div>
+      </div>
+
+      <!-- monto -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Monto</p>
+        <div class="w-84"><app-input-secondary size="sm" type="number" placeholder="Monto"></app-input-secondary></div>
+      </div>
+
+      <!-- observaciones -->
+
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Observaciones/p>
+        <div class="w-84 flex">
+          <app-text-area-secondary size="sm" [rows]="5" placeholder="Descripción"></app-text-area-secondary>
+        </div>
+      </div>
+
+    </div>
+  </app-card-save-secondary>
+</app-shared-modal>

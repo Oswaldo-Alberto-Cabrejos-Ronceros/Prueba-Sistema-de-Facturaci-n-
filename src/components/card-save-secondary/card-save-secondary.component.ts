@@ -10,7 +10,7 @@ import { ButtonSecondaryComponent } from "../button-secondary/button-secondary.c
 })
 export class CardSaveSecondaryComponent {
   @HostBinding('class') class =
-    'w-full max-w-lg min-w-md max-h-[50vh] rounded-sm flex flex-col bg-white dark:bg-neutral-800';
+    'w-full max-w-lg min-w-md max-h-[75vh] rounded-sm flex flex-col bg-white dark:bg-neutral-800';
   @Input() title: string = '';
   @Output() close = new EventEmitter<void>();
   onClose = () => {
