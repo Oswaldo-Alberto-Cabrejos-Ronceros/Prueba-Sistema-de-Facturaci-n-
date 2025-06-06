@@ -18,7 +18,6 @@ export class ConfigurationsPaymentMethodsPageComponent {
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
-taxe: any;
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
