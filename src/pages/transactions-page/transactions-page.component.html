@@ -49,10 +49,9 @@
         <p class="text-sm">Fecha</p>
         <div class="w-84 flex">
           <div class="w-1/2">
-        <app-input-secondary size="sm" type="date"
-            placeholder="Fecha"></app-input-secondary>
+            <app-input-secondary size="sm" type="date" placeholder="Fecha"></app-input-secondary>
           </div>
-  </div>
+        </div>
       </div>
       <!-- tipo -->
       <div class="w-full justify-between flex">
@@ -68,6 +67,52 @@
 
       <div class="w-full justify-between flex">
         <p class="text-sm">Descripción</p>
+        <div class="w-84 flex">
+          <app-text-area-secondary size="sm" [rows]="5" placeholder="Descripción"></app-text-area-secondary>
+        </div>
+      </div>
+
+    </div>
+  </app-card-save-secondary>
+</app-shared-modal>
+
+<!-- modal para transferencia -->
+
+<app-shared-modal [typeConfirm]="true" [show]="showModalTransfer" (close)="closeModalTransfer()">
+  <app-card-save-secondary title="Nueva tranferencia" (close)="closeModalTransfer()">
+    <div class="w-full flex flex-col gap-4 text-sm">
+      <!-- origen -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Origen</p>
+        <div class="w-84"><app-select-secondary [options]="optionsOrigin" size="sm"></app-select-secondary></div>
+      </div>
+
+      <!-- destino -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Origen</p>
+        <div class="w-84"><app-select-secondary [options]="optionsDestination" size="sm"></app-select-secondary></div>
+      </div>
+
+      <!-- fecha -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Fecha</p>
+        <div class="w-84 flex">
+          <div class="w-1/2">
+            <app-input-secondary size="sm" type="date" placeholder="Fecha"></app-input-secondary>
+          </div>
+        </div>
+      </div>
+
+      <!-- monto -->
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Monto</p>
+        <div class="w-84"><app-input-secondary size="sm" type="number" placeholder="Monto"></app-input-secondary></div>
+      </div>
+
+      <!-- observaciones -->
+
+      <div class="w-full justify-between flex">
+        <p class="text-sm">Observaciones/p>
         <div class="w-84 flex">
           <app-text-area-secondary size="sm" [rows]="5" placeholder="Descripción"></app-text-area-secondary>
         </div>
