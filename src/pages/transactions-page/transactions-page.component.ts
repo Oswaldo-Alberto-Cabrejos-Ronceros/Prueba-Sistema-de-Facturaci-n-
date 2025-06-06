@@ -6,10 +6,15 @@ import { CommonModule } from '@angular/common';
 import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
 import { DatePickerSetComponent } from "../../components/date-picker-set/date-picker-set.component";
 import { TableFilterComponent } from "../../components/table-filter/table-filter.component";
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardSaveSecondaryComponent } from "../../components/card-save-secondary/card-save-secondary.component";
+import { InputSecondaryComponent } from "../../components/input-secondary/input-secondary.component";
+import { SelectSecondaryComponent } from "../../components/select-secondary/select-secondary.component";
+import { TextAreaSecondaryComponent } from "../../components/text-area-secondary/text-area-secondary.component";
 
 @Component({
   selector: 'app-transactions-page',
-  imports: [CommonModule, ButtonIconLabelTerciaryComponent, PopUpOptionsComponent, ButtonIconLabelQuaternaryComponent, DatePickerSetComponent, TableFilterComponent],
+  imports: [CommonModule, ButtonIconLabelTerciaryComponent, PopUpOptionsComponent, ButtonIconLabelQuaternaryComponent, DatePickerSetComponent, TableFilterComponent, SharedModalComponent, CardSaveSecondaryComponent, InputSecondaryComponent, SelectSecondaryComponent, TextAreaSecondaryComponent],
   templateUrl: './transactions-page.component.html',
   styleUrl: './transactions-page.component.css'
 })
@@ -36,7 +41,7 @@ export class TransactionsPageComponent {
   }
 
 
-  
+
   //sobre exportar
 
   optionsExport: { title: string }[] = [
@@ -79,7 +84,7 @@ export class TransactionsPageComponent {
   }
 
   //sobre tabla
-  
+
   columns: {
     key: string;
     label: string;
@@ -131,6 +136,32 @@ export class TransactionsPageComponent {
   handleEnabledTable = () => {
     this.isTableEnabled = !this.isTableEnabled;
   };
+          //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+ //para opciones de tipo de documento
 
+  optionsAccount: { label: string; value: string | number }[] = [
+    {
+      label: 'Efectivo Pen',
+      value: 1,
+    }
+  ];
+  //opciones para tipo
+    optionsType: { label: string; value: string | number }[] = [
+    {
+      label: 'Déposito',
+      value: 1,
+    },
+        {
+      label: 'Rétiro',
+      value: 2,
+    }
+  ];
 
 }
