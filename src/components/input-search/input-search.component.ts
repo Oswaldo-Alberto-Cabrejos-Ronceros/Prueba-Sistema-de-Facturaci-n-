@@ -14,5 +14,6 @@ export class InputSearchComponent {
 @Input() name:string=''
 //placeholder
 @Input() placeholder:string='Buscar'
+@Input() variant:string='secondary'
 @Input() size:string='sm'
 }
