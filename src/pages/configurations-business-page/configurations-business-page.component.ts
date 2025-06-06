@@ -17,6 +17,7 @@ import { BusinessAdditionalProductFieldsCardComponent } from './components/busin
 import { BusinessAdditionalPurchaseDetailsCardComponent } from './components/business-additional-purchase-details-card/business-additional-purchase-details-card.component';
 import { BusinessAdditionalSalesDetailsCardComponent } from './components/business-additional-sales-details-card/business-additional-sales-details-card.component';
 import { BusinessPettyCashClosingCardComponent } from './components/business-petty-cash-closing-card/business-petty-cash-closing-card.component';
+import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-template-injector/nav-bar-user-template-injector.service';
 
 @Component({
   selector: 'app-configurations-business-page',
@@ -35,6 +36,9 @@ import { BusinessPettyCashClosingCardComponent } from './components/business-pet
 })
 export class ConfigurationsBusinessPageComponent implements AfterViewInit {
   @HostBinding('class') class = 'flex-1 flex flex-col min-w-0 gap-4';
+  @ViewChild('customRightTemplate', { static: true })
+  customRightTemplate!: TemplateRef<any>;
+  //inyectamos servicio template-injector
   //opciones para el card-options
   @ViewChild('characteristics') characteristicsCard!: TemplateRef<any>;
   @ViewChild('predeterminedObservations')
@@ -47,10 +51,14 @@ export class ConfigurationsBusinessPageComponent implements AfterViewInit {
   @ViewChild('additionalSalesDetails')
   additionalSalesDetails!: TemplateRef<any>;
   @ViewChild('pettyCashClosing') pettyCashClosing!: TemplateRef<any>;
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
+  ) {}
   //opciones
   options: CardOption[] = [];
   ngAfterViewInit(): void {
+    this.navBarUserTemplateInjector.setRightTemplate(this.customRightTemplate);
     this.options = [
       {
         key: 'characteristics',

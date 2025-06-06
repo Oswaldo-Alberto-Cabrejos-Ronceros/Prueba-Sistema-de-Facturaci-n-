@@ -4,10 +4,13 @@ import { TableFilterSecondaryComponent } from "../../components/table-filter-sec
 import { SwitchPrimaryComponent } from "../../components/switch-primary/switch-primary.component";
 import { ButtonIconTerciaryComponent } from "../../components/button-icon-terciary/button-icon-terciary.component";
 import { ButtonIconLabelQuaternaryComponent } from "../../components/button-icon-label-quaternary/button-icon-label-quaternary.component";
+import { SharedModalComponent } from "../../components/shared-modal/shared-modal.component";
+import { CardSaveSecondaryComponent } from "../../components/card-save-secondary/card-save-secondary.component";
+import { InputSearchComponent } from "../../components/input-search/input-search.component";
 
 @Component({
   selector: 'app-configurations-units-page',
-  imports: [TableFilterSecondaryComponent, SwitchPrimaryComponent, ButtonIconTerciaryComponent, ButtonIconLabelQuaternaryComponent],
+  imports: [TableFilterSecondaryComponent, SwitchPrimaryComponent, ButtonIconTerciaryComponent, ButtonIconLabelQuaternaryComponent, SharedModalComponent, CardSaveSecondaryComponent, InputSearchComponent],
   templateUrl: './configurations-units-page.component.html',
   styleUrl: './configurations-units-page.component.css',
 })
@@ -16,7 +19,6 @@ export class ConfigurationsUnitsPageComponent {
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
-taxe: any;
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
@@ -83,4 +85,14 @@ taxe: any;
       default: true
     }
   ]
+
+            //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
 }

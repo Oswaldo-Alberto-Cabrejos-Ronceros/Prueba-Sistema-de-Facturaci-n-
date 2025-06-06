@@ -1,6 +1,6 @@
 <!-- contenido inyectado -->
 <ng-template #customRightTemplate>
-  <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" iconName="add"></app-button-icon-label-quaternary>
+  <app-button-icon-label-quaternary ariaLabel="Nueva cuenta" (click)="openModal()" iconName="add"></app-button-icon-label-quaternary>
 </ng-template>
 <app-table-filter-secondary [columns]="columns" [data]="units">
   <ng-template #row let-unit let-i="index">
@@ -22,3 +22,9 @@
     </td>
   </ng-template>
 </app-table-filter-secondary>
+
+<app-shared-modal [typeConfirm]="true" [show]="showModal" (close)="closeModal()">
+   <app-card-save-secondary title="Nueva unidad" (close)="closeModal()">
+    <app-input-search placeholder="Buscar unidad" size="sm" variant="terciary"></app-input-search>
+   </app-card-save-secondary>
+</app-shared-modal>

@@ -3,6 +3,10 @@ import { NavBarUserTemplateInjectorService } from '../../services/nav-bar-user-t
 import { ButtonIconLabelQuaternaryComponent } from '../../components/button-icon-label-quaternary/button-icon-label-quaternary.component';
 import { TableFilterSecondaryComponent } from '../../components/table-filter-secondary/table-filter-secondary.component';
 import { SwitchPrimaryComponent } from '../../components/switch-primary/switch-primary.component';
+import { SharedModalComponent } from '../../components/shared-modal/shared-modal.component';
+import { CardSaveSecondaryComponent } from '../../components/card-save-secondary/card-save-secondary.component';
+import { InputSecondaryComponent } from '../../components/input-secondary/input-secondary.component';
+import { SelectSecondaryComponent } from "../../components/select-secondary/select-secondary.component";
 
 @Component({
   selector: 'app-configurations-serials-page',
@@ -10,7 +14,11 @@ import { SwitchPrimaryComponent } from '../../components/switch-primary/switch-p
     ButtonIconLabelQuaternaryComponent,
     TableFilterSecondaryComponent,
     SwitchPrimaryComponent,
-  ],
+    SharedModalComponent,
+    CardSaveSecondaryComponent,
+    InputSecondaryComponent,
+    SelectSecondaryComponent
+],
   templateUrl: './configurations-serials-page.component.html',
   styleUrl: './configurations-serials-page.component.css',
 })
@@ -19,7 +27,6 @@ export class ConfigurationsSerialsPageComponent {
   //referencia al rightTemplatePersonalizado
   @ViewChild('customRightTemplate', { static: true })
   customRightTemplate!: TemplateRef<any>;
-  taxe: any;
   //inyectamos servicio template-injector
   constructor(
     private navBarUserTemplateInjector: NavBarUserTemplateInjectorService
@@ -101,6 +108,35 @@ export class ConfigurationsSerialsPageComponent {
       typeDocument: 'Factura',
       description: 'Serie Facturas',
       active: false,
+    },
+  ];
+  //para modal
+  showModal: boolean = false;
+  openModal = () => {
+    this.showModal = true;
+  };
+  closeModal = () => {
+    this.showModal = false;
+  };
+
+  //para opciones de tipo de documento
+
+  optionsTypeDocument: { label: string; value: string | number }[] = [
+    {
+      label: 'Factura',
+      value: 1,
+    },
+    {
+      label: 'Boleta de venta',
+      value: 1,
+    },
+    {
+      label: 'Nota de crédito',
+      value: 1,
+    },
+    {
+      label: 'Nota de débito',
+      value: 1,
     },
   ];
 }
